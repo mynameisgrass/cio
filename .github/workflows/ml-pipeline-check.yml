@@ -1,0 +1,60 @@
+name: ML Pipeline Check
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "ml/**"
+      - "guidesnpdf/assets/**"
+      - ".github/workflows/ml-pipeline-check.yml"
+  pull_request:
+    paths:
+      - "ml/**"
+      - ".github/workflows/ml-pipeline-check.yml"
+
+jobs:
+  validate-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install minimal dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ml/requirements-ci.txt
+
+      - name: Syntax check
+        run: |
+          python -m py_compile ml/scripts/extract_game_corpus.py
+          python -m py_compile ml/scripts/distill_with_gemini.py
+          python -m py_compile ml/scripts/build_sft_dataset.py
+          python -m py_compile ml/scripts/validate_jsonl.py
+          python -m py_compile ml/scripts/smoke_eval.py
+          python -m py_compile ml/train/train_qlora.py
+
+      - name: Build small raw corpus sample
+        run: |
+          python ml/scripts/extract_game_corpus.py \
+            --assets-dir guidesnpdf/assets \
+            --output-dir ml/data/raw \
+            --max-files 20
+
+      - name: Validate corpus JSONL
+        run: |
+          python ml/scripts/validate_jsonl.py \
+            --input ml/data/raw/game_corpus.jsonl \
+            --required-fields id source_path file_name text tags difficulty_hint
+
+      - name: Upload corpus stats artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ml-corpus-stats
+          path: |
+            ml/data/raw/game_corpus_stats.json

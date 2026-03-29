@@ -1,0 +1,115 @@
+name: Generate Samples Only
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Gemini model name
+        required: false
+        default: gemini-flash-latest
+      max_docs:
+        description: Max documents to distill (0 = all)
+        required: false
+        default: "80"
+      tasks_per_doc:
+        description: Samples requested per document
+        required: false
+        default: "2"
+      include_all_assets:
+        description: Include all files in guidesnpdf/assets (not only keyword-matched)
+        required: false
+        type: boolean
+        default: true
+      include_compiler:
+        description: Include compiler source files
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ml/requirements-ci.txt
+
+      - name: Validate API key secret
+        run: |
+          if [ -z "${GEMINI_API_KEY}" ]; then
+            echo "::error::Missing GEMINI_API_KEY secret in repository settings."
+            exit 1
+          fi
+
+      - name: Extract corpus
+        run: |
+          set -euo pipefail
+          EXTRACT_ARGS=(
+            --assets-dir guidesnpdf/assets
+            --compiler-dir compiler
+            --output-dir ml/data/raw_ci
+          )
+
+          if [ "${{ inputs.include_all_assets }}" = "true" ]; then
+            EXTRACT_ARGS+=(--include-all)
+          fi
+
+          if [ "${{ inputs.include_compiler }}" != "true" ]; then
+            EXTRACT_ARGS+=(--no-compiler)
+          fi
+
+          python ml/scripts/extract_game_corpus.py "${EXTRACT_ARGS[@]}"
+
+      - name: Distill samples only
+        run: |
+          set -euo pipefail
+          python ml/scripts/distill_with_gemini.py \
+            --input ml/data/raw_ci/game_corpus.jsonl \
+            --output ml/data/distill/sft_candidates_ci.jsonl \
+            --model "${{ inputs.model }}" \
+            --max-docs "${{ inputs.max_docs }}" \
+            --tasks-per-doc "${{ inputs.tasks_per_doc }}" \
+            --sleep-sec 0.12 \
+            --max-retries 2 \
+            --retry-sec 0.8 \
+            --json-fix-retries 1
+
+      - name: Count generated samples
+        id: count
+        run: |
+          set -euo pipefail
+          count=$(wc -l < ml/data/distill/sft_candidates_ci.jsonl || echo 0)
+          echo "samples=${count}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-samples
+          path: |
+            ml/data/raw_ci/game_corpus_stats.json
+            ml/data/distill/sft_candidates_ci.jsonl
+            ml/data/distill/sft_candidates_ci.stats.json
+
+      - name: Write summary
+        run: |
+          {
+            echo "## Samples Generation Complete"
+            echo ""
+            echo "- Model: ${{ inputs.model }}"
+            echo "- Max docs: ${{ inputs.max_docs }}"
+            echo "- Tasks per doc: ${{ inputs.tasks_per_doc }}"
+            echo "- Samples generated: ${{ steps.count.outputs.samples }}"
+          } >> "$GITHUB_STEP_SUMMARY"

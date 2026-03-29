@@ -86,3 +86,17 @@ Nếu cần lưu file lớn nhiều:
 
 - Mỗi lần thêm/sửa export HTML hoặc assets, chạy lại `npm run prepare:data`
 - Nếu đổi quy tắc parser, sửa trong `scripts/build-data.mjs`
+
+## Train AI cho game-program
+
+Repo da co pipeline train model chuyen cho calculator-game tai thu muc `ml/`.
+
+Luot chay nhanh:
+
+1. `pip install -r ml/requirements.txt`
+2. `python ml/scripts/extract_game_corpus.py`
+3. `python ml/scripts/distill_with_gemini.py` (can `GEMINI_API_KEY`)
+4. `python ml/scripts/build_sft_dataset.py`
+5. `python ml/train/train_qlora.py`
+
+Xem huong dan day du tai `ml/README.md`.

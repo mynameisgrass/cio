@@ -12,3 +12,16 @@ pnpm-debug.log*
 data/catalog.json
 data/upload-metadata.json
 .vercel
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+ml/.env
+ml/data/raw/
+ml/data/distill/
+ml/data/processed/
+ml/data/raw*/
+ml/data/distill*/
+ml/data/processed*/
+ml/output/
+ml/runs/
