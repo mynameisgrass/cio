@@ -11,3 +11,4 @@ pnpm-debug.log*
 .env.*.local
 data/catalog.json
 data/upload-metadata.json
+.vercel
