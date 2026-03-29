@@ -36,6 +36,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--start-index", type=int, default=0, help="Start index in corpus (0-based)")
     parser.add_argument("--end-index", type=int, default=0, help="End index in corpus (exclusive, 0 = until end)")
     parser.add_argument("--tasks-per-doc", type=int, default=4, help="Max samples requested per document")
+    parser.add_argument(
+        "--max-samples-per-source",
+        type=int,
+        default=2,
+        help="Max accepted samples for each source_path across one run (0 = unlimited)",
+    )
     parser.add_argument("--sleep-sec", type=float, default=1.0, help="Sleep between API calls")
     parser.add_argument("--retry-sec", type=float, default=2.0, help="Base sleep before retry")
     parser.add_argument("--max-retries", type=int, default=3, help="Retries per document on transient errors")
@@ -374,9 +380,11 @@ def main() -> int:
 
     rows: list[dict[str, Any]] = []
     seen_ids: set[str] = set()
+    source_counts: dict[str, int] = {}
     attempted = 0
     used = 0
     failed = 0
+    skipped_by_source_cap = 0
 
     for doc in selected_docs:
         if args.max_docs and attempted >= args.max_docs:
@@ -408,6 +416,7 @@ def main() -> int:
                     args.temperature,
                     args.max_retries,
                     args.retry_sec,
+                    args.json_fix_retries,
                 )
 
             raw_samples = payload.get("samples", []) if isinstance(payload, dict) else []
@@ -415,6 +424,7 @@ def main() -> int:
                 raw_samples = []
 
             created = 0
+            source_key = str(doc.get("source_path") or "")
             for item in raw_samples:
                 if not isinstance(item, dict):
                     continue
@@ -424,8 +434,16 @@ def main() -> int:
                 sample_id = normalized["id"]
                 if sample_id in seen_ids:
                     continue
+
+                if args.max_samples_per_source > 0:
+                    count_now = source_counts.get(source_key, 0)
+                    if count_now >= args.max_samples_per_source:
+                        skipped_by_source_cap += 1
+                        continue
+
                 seen_ids.add(sample_id)
                 rows.append(normalized)
+                source_counts[source_key] = source_counts.get(source_key, 0) + 1
                 created += 1
 
             used += 1
@@ -448,6 +466,8 @@ def main() -> int:
         "processed_docs": used,
         "failed_docs": failed,
         "samples_written": len(rows),
+        "max_samples_per_source": args.max_samples_per_source,
+        "skipped_by_source_cap": skipped_by_source_cap,
         "model": args.model,
         "output": str(output_path),
     }
