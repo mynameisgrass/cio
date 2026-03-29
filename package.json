@@ -1,0 +1,19 @@
+{
+  "name": "bigcio-community-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prepare:data": "node scripts/build-data.mjs",
+    "dev": "npm run prepare:data && next dev",
+    "build": "npm run prepare:data && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "fuse.js": "^7.1.0",
+    "next": "^14.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

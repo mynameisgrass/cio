@@ -1,0 +1,126 @@
+HƯỚNG DẪN ROP EZ
+ở đây tôi sẽ hd rop đơn giản và dễ hiểu, ko giải thích chuyên sâu
+(Tin toi di ,no de vcl)
+1,IN CHỮ
+ta có các linepos thường dùng như sau
+    dòng 1: 3001
+    dòng 2: 3011
+    dòng 3: 3021
+    dòng 4: 3031
+*hd:
+org 0xe9e0  # đặt prog ở địa chỉ e9e0
+print:  # đặt label ,ở đây các bác thích đặt tên j cũng đc miễn là ko có dấu cách còn t đặt là print 
+xr0 = 0x<linepos> , adr_of text  # đặt 1 cái khác
+printline  # là dùng để in chữ
+render.ddd4 # render lên màn hình
+text: 
+str"Mẹ~các~bạn~béo~~~" # dấu "~" là dấu cách
+
+*vd khác in chữ "ai hỏi mà trả lời" ở line3:
+org 0xe9e0
+inchu:
+xr0 =  0x3021 , adr_of aihoi
+printline
+reder.ddd4
+aihoi:
+str"ai~hỏi~mà~trả~lời"
+
+2, WAITSHIFT
+tức là ấn shift thì mới chạy
+
+*hd: (thêm mỗi waitshift là xong)
+org 0xe9e0
+inchu:
+waitshift
+xr0 =  0x3021 , adr_of aihoi
+printline
+reder.ddd4
+aihoi:
+str"ai~hỏi~mà~trả~lời"
+
+*vd:ấn waitshift để in chữ lần lượt 3 dòng
+org 0xe9e0
+ngon:
+  waitshift
+  xr0 = 0x3001, adr_of text
+  printline 
+  render.ddd4
+  waitshift 
+  xr0= 0x3011, adr_of text2
+  printline
+  render.ddd4
+  waitshift 
+  xr0= 0x3021, adr_of text3
+  printline
+  render.ddd4
+text:
+  str"CUỘC~SỐNG~~~~~~~~"
+  0x00
+text2:
+  str"NHIỀU~ĐIỀU~~~~~~~"
+  0x00
+text3:
+  str"BẤT~NGỜ~~~~~~~~~~"
+  0x00
+
+
+3,RENDER BITMAP
+*hd
+org 0xe9e0
+bitmap:
+xr0 = hex <toạ đọ x> <toạ độ y> <kích thước x> <kích thước y> # dec -> hex
+call 09848 # render_bitmap
+er0 = adr_of tranh
+render.ddd4
+Tranh:
+hex <hex của tranh>
+
+*vd hiển thị kiếm minecraft có kích thước 16x16 (ae phải chuyển từ dec sang hex vd 16 -> 10)
+org 0xe9e0
+bitmap:
+xr0 = hex 20 20 10 10
+call 09848
+er0 = adr_of kiem
+render.ddd4
+kiem:
+hex 0007000F001F003E007C60F871F03BE01FC01F800F001F803BC0F1E0E060E000
+
+4,LINE DRAW
+*hd
+org 0xe9e0
+xr0= hex <toạ độ bắt đầu x> <toạ độ bắt đầu y> <toạ độ kết thúc x> <toạ độ kết thúc y>
+line_draw # hoặc BL line_draw
+render.ddd4
+
+*vd vẽ 1 đường chéo từ tòa độ (0,0) đến (c0,3f)
+org 0xe9e0
+xr0= hex 00 00 c0 3f
+line_draw # hoặc BL line_draw
+render.ddd4
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣟⣿⣿⣾⣿⣷⣦⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣿⣿⣿⣦⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣢⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀  ⠀⠀⠀⠀⠀⠊⣾⣿⣿⣿⣿⣿⣿⣿⡿⠛⠛⠋⠉⠉⠉⠹⣿⣿⣿⣿⣿⣿⣵⠐⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣍⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⡎⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⢀⢀⠀⠈⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⡀⡀⣴⣾⣿⠿⠯⢝⡁⢹⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⢿⡟⣩⡽⣾⡾⣟⢿⣿⠼⣿⣿⣷⣷⢲⠦⠈⠟⣯⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢩⣿⠀⢏⠁⠘⠻⢗⠋⣱⠋⠈⢿⡍⠋⠉⠀⠀⢠⠃⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢽⠀⠈⠐⠤⠠⢅⠺⠃⠀⠀⠀⠙⠒⠤⠔⠂⠁⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⡌⣀⠀⠀⢀⣀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠄⠀⠀⠀⠀⠀⠙⠛⢿⠙⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    ⠒⠀⠀⠀⣠⣤⣤⣶⣤⣶⣦⣤⠤⠀⠀⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀     ⢄⠀⠀⠈⣤⣦⣥⣦⠄⠀⠀⠠⠂⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀     ⣼⠀⠃⢜⡉⠂⡉⢈⠀⠀⢀⡔⠁⠀⢸⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⣠⣾⣿⠀⠀⠀⢉⢳⣝⣯⣛⡍⠃⠀⠀⢀⣿⣿⣿⣿⣶⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⣶⣿⣿⣿⣿⡇⠀⠀⠀⠄⢈⠚⡀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣤⣀⠀⠀⠀⠀
+⠀⠀⠀⠀⣀⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡧⢑⡠⢁⠊⡄⡠⢈⠀⠀⢂⠑⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣶⣄⠀⠀
+⢀⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡓⢆⠑⠌⢢⣡⡑⠤⠒⠈⠀⢂⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣦
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡍⡉⢉⠁⠀⢀⠀⡀⢀⠀⡠⢢⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣩⢦⡹⣜⢦⢳⣘⢦⡳⣜⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣿⣽⣿⣾⣯⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+

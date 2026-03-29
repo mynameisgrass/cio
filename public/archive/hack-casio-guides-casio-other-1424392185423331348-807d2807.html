@@ -1,0 +1,1743 @@
+<style id="bigcio-avatar-fix">
+  .chatlog__avatar-fallback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: linear-gradient(145deg, #d9f7df, #a7e0b5);
+    color: #1f5f37;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Segoe UI, Tahoma, sans-serif;
+    text-transform: uppercase;
+  }
+
+  .chatlog__reply .chatlog__avatar-fallback {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+</style>
+<!DOCTYPE html><html lang=en><head><title>HACK CASIO - 📚・other</title><meta charset=utf-8><meta name=viewport content="width=device-width"><style>@font-face{src:url("/assets/ggsans-normal-400-1456D.woff2");font-family:gg sans;font-weight:400;font-style:normal}@font-face{src:url("/assets/ggsans-normal-500-89CE5.woff2");font-family:gg sans;font-weight:500;font-style:normal}@font-face{src:url("/assets/ggsans-normal-600-C1EA8.woff2");font-family:gg sans;font-weight:600;font-style:normal}@font-face{src:url("/assets/ggsans-normal-700-1949A.woff2");font-family:gg sans;font-weight:700;font-style:normal}@font-face{src:url("/assets/ggsans-normal-800-58487.woff2");font-family:gg sans;font-weight:800;font-style:normal}@font-face{src:url("/assets/ggsans-italic-400-E988B.woff2");font-family:gg sans;font-weight:400;font-style:italic}@font-face{src:url("/assets/ggsans-italic-500-0777F.woff2");font-family:gg sans;font-weight:500;font-style:italic}@font-face{src:url("/assets/ggsans-italic-600-CB411.woff2");font-family:gg sans;font-weight:600;font-style:italic}@font-face{src:url("/assets/ggsans-italic-700-891AC.woff2");font-family:gg sans;font-weight:700;font-style:italic}@font-face{src:url("/assets/ggsans-italic-800-D36B0.woff2");font-family:gg sans;font-weight:800;font-style:italic}html,body{margin:0;padding:0;background-color:#ffffff;color:#23262a;font-family:"gg sans","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:17px;font-weight:500;scroll-behavior:smooth}a{color:#0068e0;text-decoration:none}a:hover{text-decoration:underline}img{object-fit:contain;image-rendering:high-quality;image-rendering:-webkit-optimize-contrast}.preamble{display:grid;grid-template-columns:auto 1fr;max-width:100%;padding:1rem}.preamble__guild-icon-container{grid-column:1}.preamble__guild-icon{max-width:88px;max-height:88px}.preamble__entries-container{grid-column:2;margin-left:1rem}.preamble__entry{margin-bottom:0.15rem;color:#2f3136;font-size:1.4rem}.preamble__entry--small{font-size:1rem}.chatlog{padding:1rem 0;width:100%;border-top:1px solid #eceeef;border-bottom:1px solid #eceeef}.chatlog__message-group{margin-bottom:1rem}.chatlog__message-container{background-color:transparent;transition:background-color 1s ease}.chatlog__message-container--highlighted{background-color:rgba(114,137,218,0.2)}.chatlog__message-container--pinned{background-color:rgba(249,168,37,0.05)}.chatlog__message{display:grid;grid-template-columns:auto 1fr;padding:0.15rem 0;direction:ltr;unicode-bidi:bidi-override}.chatlog__message:hover{background-color:#fafafa}.chatlog__message:hover .chatlog__short-timestamp{display:block}.chatlog__message-aside{grid-column:1;width:72px;padding:0.15rem 0.15rem 0 0.15rem;text-align:center}.chatlog__reply-symbol{height:10px;margin:6px 4px 4px 36px;border-left:2px solid #c7ccd1;border-top:2px solid #c7ccd1;border-radius:8px 0 0 0}.chatlog__avatar{width:40px;height:40px;border-radius:50%}.chatlog__short-timestamp{display:none;color:#5e6772;font-size:0.75rem;font-weight:500;direction:ltr;unicode-bidi:bidi-override}.chatlog__message-primary{grid-column:2;min-width:0}.chatlog__reply{display:flex;margin-bottom:0.15rem;align-items:center;color:#5f5f60;font-size:0.875rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chatlog__reply-avatar{width:16px;height:16px;margin-right:0.25rem;border-radius:50%}.chatlog__reply-author{margin-right:0.3rem;font-weight:600}.chatlog__reply-content{overflow:hidden;text-overflow:ellipsis}.chatlog__reply-link{cursor:pointer}.chatlog__reply-link *{display:inline;pointer-events:none}.chatlog__reply-link .chatlog__markdown-quote{display:inline}.chatlog__reply-link .chatlog__markdown-pre{display:inline}.chatlog__reply-link:hover{color:#2f3136}.chatlog__reply-link:hover *:not(.chatlog__markdown-spoiler){color:inherit}.chatlog__reply-edited-timestamp{margin-left:0.25rem;color:#5e6772;font-size:0.75rem;font-weight:500;direction:ltr;unicode-bidi:bidi-override}.chatlog__system-notification-icon{width:18px;height:18px}.chatlog__system-notification-author{font-weight:600;color:#2f3136}.chatlog__system-notification-content{color:#5e6772}.chatlog__system-notification-link{font-weight:500;color:#2f3136}.chatlog__system-notification-timestamp{margin-left:0.3rem;color:#5e6772;font-size:0.75rem;font-weight:500;direction:ltr;unicode-bidi:bidi-override}.chatlog__system-notification-timestamp a{color:inherit}.chatlog__header{margin-bottom:0.1rem}.chatlog__author{font-weight:600;color:#2f3136}.chatlog__author-tag{position:relative;top:-0.1rem;margin-left:0.3rem;padding:0.05rem 0.3rem;border-radius:3px;background-color:#5865F2;color:#ffffff;font-size:0.625rem;font-weight:500;line-height:1.3}.chatlog__timestamp{margin-left:0.3rem;color:#5e6772;font-size:0.75rem;font-weight:500;direction:ltr;unicode-bidi:bidi-override}.chatlog__timestamp a{color:inherit}.chatlog__content{padding-right:1rem;font-size:0.95rem;word-wrap:break-word}.chatlog__edited-timestamp{margin-left:0.15rem;color:#5e6772;font-size:0.75rem;font-weight:500}.chatlog__attachment{position:relative;width:fit-content;margin-top:0.3rem;border-radius:3px;overflow:hidden}.chatlog__attachment--hidden{cursor:pointer;box-shadow:0 0 1px 1px rgba(0,0,0,0.1)}.chatlog__attachment--hidden *{pointer-events:none}.chatlog__attachment-spoiler-caption{display:none;position:absolute;left:50%;top:50%;z-index:999;padding:0.4rem 0.8rem;border-radius:20px;transform:translate(-50%,-50%);background-color:rgba(0,0,0,0.9);color:#dcddde;font-size:0.9rem;font-weight:600;letter-spacing:0.05rem}.chatlog__attachment--hidden .chatlog__attachment-spoiler-caption{display:block}.chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption{color:#fff}.chatlog__attachment-media{max-width:45vw;max-height:500px;vertical-align:top;border-radius:3px}.chatlog__attachment--hidden .chatlog__attachment-media{filter:blur(44px)}.chatlog__attachment-generic{max-width:520px;width:100%;height:40px;padding:10px;border:1px solid #ebedef;border-radius:3px;background-color:#f2f3f5;overflow:hidden}.chatlog__attachment--hidden .chatlog__attachment-generic{filter:blur(44px)}.chatlog__attachment-generic-icon{float:left;width:30px;height:100%;margin-right:10px}.chatlog__attachment-generic-size{color:#72767d;font-size:12px}.chatlog__attachment-generic-name{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.chatlog__embed{display:flex;margin-top:0.3rem;max-width:520px}.chatlog__embed-color-pill{flex-shrink:0;width:0.25rem;border-top-left-radius:3px;border-bottom-left-radius:3px}.chatlog__embed-color-pill--default{background-color:rgba(227,229,232,1)}.chatlog__embed-content-container{display:flex;flex-direction:column;padding:0.5rem 0.6rem;border:1px solid rgba(204,204,204,0.3);border-top-right-radius:3px;border-bottom-right-radius:3px;background-color:rgba(249,249,249,0.3)}.chatlog__embed-content{display:flex;width:100%}.chatlog__embed-text{flex:1}.chatlog__embed-author-container{display:flex;margin-bottom:0.5rem;align-items:center}.chatlog__embed-author-icon{width:20px;height:20px;margin-right:0.5rem;border-radius:50%}.chatlog__embed-author{color:#4f545c;font-size:0.875rem;font-weight:600;direction:ltr;unicode-bidi:bidi-override}.chatlog__embed-author-link{color:#4f545c}.chatlog__embed-title{margin-bottom:0.5rem;color:#4f545c;font-size:0.875rem;font-weight:600}.chatlog__embed-description{color:#2e3338;font-weight:500;font-size:0.85rem}.chatlog__embed-fields{display:flex;flex-wrap:wrap;gap:0 0.5rem}.chatlog__embed-field{flex:0;min-width:100%;max-width:506px;padding-top:0.6rem;font-size:0.875rem}.chatlog__embed-field--inline{flex:1;flex-basis:auto;min-width:50px}.chatlog__embed-field-name{margin-bottom:0.2rem;color:#36393e;font-weight:600}.chatlog__embed-field-value{color:#2e3338;font-weight:500}.chatlog__embed-thumbnail{flex:0;max-width:80px;max-height:80px;margin-left:1.2rem;border-radius:3px}.chatlog__embed-images{display:grid;margin-top:0.6rem;grid-template-columns:repeat(2,1fr);gap:0.25rem}.chatlog__embed-images--single{display:block}.chatlog__embed-image{object-fit:cover;object-position:center;max-width:500px;max-height:400px;width:100%;height:100%;border-radius:3px}.chatlog__embed-footer{margin-top:0.6rem;color:#2e3338}.chatlog__embed-footer-icon{width:20px;height:20px;margin-right:0.2rem;border-radius:50%;vertical-align:middle}.chatlog__embed-footer-text{vertical-align:middle;font-size:0.75rem;font-weight:500}.chatlog__embed-invite-container{min-width:320px;padding:0.6rem 0.7rem;border:1px solid rgba(204,204,204,0.3);border-radius:3px;background-color:rgba(249,249,249,0.3)}.chatlog__embed-invite-title{margin:0 0 0.8rem 0;color:#4f5660;font-size:0.75rem;font-weight:700;text-transform:uppercase}.chatlog__embed-invite{display:flex}.chatlog__embed-invite-guild-icon{width:50px;height:50px;border-radius:0.85rem}.chatlog__embed-invite-info{margin-left:1rem}.chatlog__embed-invite-guild-name{color:#36393e;font-weight:600}.chatlog__embed-invite-guild-name a{color:inherit}.chatlog__embed-invite-channel-icon{width:18px;height:18px;vertical-align:bottom}.chatlog__embed-invite-channel-name{font-size:0.9rem;font-weight:600}.chatlog__embed-generic-image{object-fit:contain;object-position:left;max-width:45vw;max-height:500px;vertical-align:top;border-radius:3px}.chatlog__embed-generic-video{object-fit:contain;object-position:left;max-width:45vw;max-height:500px;vertical-align:top;border-radius:3px}.chatlog__embed-generic-gifv{object-fit:contain;object-position:left;max-width:45vw;max-height:500px;vertical-align:top;border-radius:3px}.chatlog__embed-spotify{border:0}.chatlog__embed-twitch{border:0}.chatlog__embed-youtube-container{margin-top:0.6rem}.chatlog__embed-youtube{border:0;border-radius:3px}.chatlog__sticker{width:180px;height:180px}.chatlog__sticker--media{max-width:100%;max-height:100%}.chatlog__reactions{display:flex}.chatlog__reaction{display:flex;margin:0.35rem 0.1rem 0.1rem 0;padding:0.125rem 0.375rem;border:1px solid transparent;border-radius:8px;background-color:#f2f3f5;align-items:center}.chatlog__reaction:hover{border:1px solid rgba(0,0,0,0.2);background-color:white}.chatlog__reaction-count{min-width:9px;margin-left:0.35rem;color:#4f5660;font-size:0.875rem}.chatlog__reaction:hover .chatlog__reaction-count{color:#2e3338}.chatlog__markdown{max-width:100%;line-height:1.3;overflow-wrap:break-word}.chatlog__markdown h1{margin:1rem 0 0.5rem;color:#060607;font-size:1.5rem;line-height:1}.chatlog__markdown h2{margin:1rem 0 0.5rem;color:#060607;font-size:1.25rem;line-height:1}.chatlog__markdown h3{margin:1rem 0 0.5rem;color:#060607;font-size:1rem;line-height:1}.chatlog__markdown h1:first-child,h2:first-child,h3:first-child{margin-top:0.5rem}.chatlog__markdown ul,ol{margin:0 0 0 1rem;padding:0}.chatlog__markdown-preserve{white-space:pre-wrap}.chatlog__markdown-spoiler{background-color:rgba(0,0,0,0.1);padding:0 2px;border-radius:3px}.chatlog__markdown-spoiler--hidden{cursor:pointer;background-color:#b9bbbe;color:rgba(0,0,0,0)}.chatlog__markdown-spoiler--hidden:hover{background-color:rgba(185,187,190,0.8)}.chatlog__markdown-spoiler--hidden::selection{color:rgba(0,0,0,0)}.chatlog__markdown-quote{display:flex;margin:0.05rem 0}.chatlog__markdown-quote-border{margin-right:0.5rem;border:2px solid #c7ccd1;border-radius:3px}.chatlog__markdown-pre{background-color:#f9f9f9;font-family:"Consolas","Courier New",Courier,monospace;font-size:0.85rem;text-decoration:inherit}.chatlog__markdown-pre--multiline{display:block;margin-top:0.25rem;padding:0.5rem;border:2px solid #f3f3f3;border-radius:5px;color:#657b83}.chatlog__markdown-pre--multiline.hljs{background-color:#f9f9f9;color:#657b83}.chatlog__markdown-pre--inline{display:inline-block;padding:2px;border-radius:3px}.chatlog__markdown-mention{border-radius:3px;padding:0 2px;background-color:rgba(88,101,242,.15);color:#505cdc;font-weight:500}.chatlog__markdown-mention:hover{background-color:#5865f2;color:#ffffff}.chatlog__markdown-timestamp{background-color:rgba(0,0,0,0.1);padding:0 2px;border-radius:3px}.chatlog__emoji{width:1.325rem;height:1.325rem;margin:0 0.06rem;vertical-align:-0.4rem}.chatlog__emoji--small{width:1rem;height:1rem}.chatlog__emoji--large{width:2.8rem;height:2.8rem}.postamble{padding:1.25rem}.postamble__entry{color:#2f3136}</style><link rel=stylesheet href=/assets/solarized-light.min-DB24A.css><script src=/assets/highlight.min-D8D27.js></script><script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.chatlog__markdown-pre--multiline').forEach(e=>hljs.highlightBlock(e));});</script><script src=/assets/lottie.min-99657.js></script><script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.chatlog__sticker--media[data-source]').forEach(e=>{const anim=lottie.loadAnimation({container:e,renderer:'svg',loop:true,autoplay:true,path:e.getAttribute('data-source')});anim.addEventListener('data_failed',()=>e.innerHTML='<strong>[Sticker cannot be rendered]</strong>');});});</script><script>function scrollToMessage(event,id){const element=document.getElementById('chatlog__message-container-'+id);if(!element)
+return;event.preventDefault();element.classList.add('chatlog__message-container--highlighted');window.scrollTo({top:element.getBoundingClientRect().top-document.body.getBoundingClientRect().top-(window.innerHeight/2),behavior:'smooth'});window.setTimeout(()=>element.classList.remove('chatlog__message-container--highlighted'),2000);}
+function showSpoiler(event,element){if(!element)
+return;if(element.classList.contains('chatlog__attachment--hidden')){event.preventDefault();element.classList.remove('chatlog__attachment--hidden');}
+if(element.classList.contains('chatlog__markdown-spoiler--hidden')){event.preventDefault();element.classList.remove('chatlog__markdown-spoiler--hidden');}}</script><svg style=display:none xmlns=http://www.w3.org/2000/svg><defs><symbol id=attachment-icon viewBox="0 0 720 960"><path fill=#f4f5fb d=M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z /><path fill=#7789c4 d=M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z /><path fill=#f4f5fb d=M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z /><path fill=#7789c4 d=M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z /></symbol><symbol id=join-icon viewBox="0 0 18 18"><path fill=#3ba55c d="m0 8h14.2l-3.6-3.6 1.4-1.4 6 6-6 6-1.4-1.4 3.6-3.6h-14.2" /></symbol><symbol id=leave-icon viewBox="0 0 18 18"><path fill=#ed4245 d="m3.8 8 3.6-3.6-1.4-1.4-6 6 6 6 1.4-1.4-3.6-3.6h14.2v-2" /></symbol><symbol id=call-icon viewBox="0 0 18 18"><path fill=#3ba55c fill-rule=evenodd d="M17.7163041 15.36645368c-.0190957.02699568-1.9039523 2.6680735-2.9957762 2.63320406-3.0676659-.09785935-6.6733809-3.07188394-9.15694343-5.548738C3.08002193 9.9740657.09772497 6.3791404 0 3.3061316v-.024746C0 2.2060575 2.61386252.3152347 2.64082114.2972376c.7110335-.4971705 1.4917101-.3149497 1.80959713.1372281.19320342.2744561 2.19712724 3.2811005 2.42290565 3.6489167.09884826.1608492.14714912.3554431.14714912.5702838 0 .2744561-.07975258.5770327-.23701117.8751101-.1527655.2902036-.65262318 1.1664385-.89862055 1.594995.2673396.3768148.94804468 1.26429792 2.351016 2.66357424 1.39173858 1.39027775 2.28923588 2.07641807 2.67002628 2.34187563.4302146-.2452108 1.3086162-.74238132 1.5972981-.89423205.5447887-.28682915 1.0907006-.31944893 1.4568885-.08661115.3459689.2182151 3.3383754 2.21027167 3.6225641 2.41611376.2695862.19234426.4144887.5399137.4144887.91672846 0 .2969525-.089862.61190215-.2808189.88523346" /></symbol><symbol id=pencil-icon viewBox="0 0 18 18"><path fill=#99aab5 d="m0 14.25v3.75h3.75l11.06-11.06-3.75-3.75zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75z" /></symbol><symbol id=pin-icon viewBox="0 0 18 18"><path fill=#b9bbbe d="m16.908 8.39684-8.29587-8.295827-1.18584 1.184157 1.18584 1.18584-4.14834 4.1475v.00167l-1.18583-1.18583-1.185 1.18583 3.55583 3.55502-4.740831 4.74 1.185001 1.185 4.74083-4.74 3.55581 3.555 1.185-1.185-1.185-1.185 4.1475-4.14836h.0009l1.185 1.185z" /></symbol><symbol id=channel-icon viewBox="0 0 24 24"><path fill=#b9bbbe d="M5.88657 21C5.57547 21 5.3399 20.7189 5.39427 20.4126L6.00001 17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746 2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 8.41381L3.68759 7.41381C3.72946 7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914 3.17391 8.64664 3 8.88907 3H9.87344C10.1845 3 10.4201 3.28107 10.3657 3.58738L9.76001 7H15.76L16.3968 3.41262C16.4391 3.17391 16.6466 3 16.8891 3H17.8734C18.1845 3 18.4201 3.28107 18.3657 3.58738L17.76 7H21.1649C21.4755 7 21.711 7.28023 21.6574 7.58619L21.4824 8.58619C21.4406 8.82544 21.2328 9 20.9899 9H17.41L16.35 15H19.7549C20.0655 15 20.301 15.2802 20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632 20.5874C15.3209 20.8261 15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325 20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104 9H9.41045Z" /></symbol><symbol id=thread-icon viewBox="0 0 24 24"><path fill=#b9bbbe d="M5.43309 21C5.35842 21 5.30189 20.9325 5.31494 20.859L5.99991 17H2.14274C2.06819 17 2.01168 16.9327 2.02453 16.8593L2.33253 15.0993C2.34258 15.0419 2.39244 15 2.45074 15H6.34991L7.40991 9H3.55274C3.47819 9 3.42168 8.93274 3.43453 8.85931L3.74253 7.09931C3.75258 7.04189 3.80244 7 3.86074 7H7.75991L8.45234 3.09903C8.46251 3.04174 8.51231 3 8.57049 3H10.3267C10.4014 3 10.4579 3.06746 10.4449 3.14097L9.75991 7H15.7599L16.4523 3.09903C16.4625 3.04174 16.5123 3 16.5705 3H18.3267C18.4014 3 18.4579 3.06746 18.4449 3.14097L17.7599 7H21.6171C21.6916 7 21.7481 7.06725 21.7353 7.14069L21.4273 8.90069C21.4172 8.95811 21.3674 9 21.3091 9H17.4099L17.0495 11.04H15.05L15.4104 9H9.41035L8.35035 15H10.5599V17H7.99991L7.30749 20.901C7.29732 20.9583 7.24752 21 7.18934 21H5.43309Z" /><path fill=#b9bbbe d="M13.4399 12.96C12.9097 12.96 12.4799 13.3898 12.4799 13.92V20.2213C12.4799 20.7515 12.9097 21.1813 13.4399 21.1813H14.3999C14.5325 21.1813 14.6399 21.2887 14.6399 21.4213V23.4597C14.6399 23.6677 14.8865 23.7773 15.0408 23.6378L17.4858 21.4289C17.6622 21.2695 17.8916 21.1813 18.1294 21.1813H22.5599C23.0901 21.1813 23.5199 20.7515 23.5199 20.2213V13.92C23.5199 13.3898 23.0901 12.96 22.5599 12.96H13.4399Z" /></symbol></defs></svg><body><div class=preamble><div class=preamble__guild-icon-container><img class=preamble__guild-icon src=/assets/92455e829ed5d6b88cab355be73fb109-48EB8.png alt="Guild icon" loading=lazy></div><div class=preamble__entries-container><div class=preamble__entry>HACK CASIO</div><div class=preamble__entry>🐧GUIDES CASIO / 📚・other</div></div></div>
+<div class="chatlog">
+
+<div class=chatlog__message-group><div id=chatlog__message-container-1425051454032318574 class=chatlog__message-container data-message-id=1425051454032318574><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/6a040f2c3adab21ddab5c39ae18318c6-CB5BC.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(144,117,117) title="Hack Casio#8580" data-user-id=1393512885476397157>Hack Casio</span> <span class=chatlog__author-tag>BOT</span> <span class=chatlog__timestamp title="Tuesday, October 7, 2025 4:25 PM"><a href=#chatlog__message-container-1425051454032318574>10/7/2025 4:25 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Tổng hợp hackstring spell 1, 2, 3, 4 lines cho m&#225;y t&#237;nh fx-570VN Plus:</h1><h2>1 line: </h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline language-c">&lt;16 k&#237; tự spell&gt;
+&lt;34 số&gt;
+12341 D0
+cv26 cv35
+RanInt#(910
+&lt;spam đến khi gặp k&#237; tự kh&#244;ng x&#225;c định</code>
+<h2>2 lines: </h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline language-c">&lt;4 k&#237; tự cuối line 1&gt;
+&lt;16 k&#237; tự line 2&gt;
+&lt;29 số&gt; 
+Pol( D 00
+cv26 cv35
+RanInt#(910
+&lt;28 số&gt;&lt;12 k&#237; tự đầu line 1&gt;
+&lt;spam đến khi gặp k&#237; tự kh&#244;ng x&#225;c định&gt;</code>
+<h2>3 lines: </h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline language-c">&lt;16 k&#237; tự line 1&gt; 5
+&lt;16 k&#237; tự line 2&gt; 7
+&lt;16 k&#237; tự line 3&gt;
+∑( D 00
+cv26 cv35
+&lt;spam đến khi gặp k&#237; tự kh&#244;ng x&#225;c định&gt;</code>
+<h2>4 lines: </h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline language-ansi">&lt;2nd line&gt; 5
+&lt;3rd line&gt; 7
+&lt;4th line&gt;
+cs22 cs40 cs22 cs40
+cv40 cv40 1 0
+1 2 3 4
+&lt;1st line&gt;
+[2;31mRef([0m π [2;31mRef([0m π
+[2;31mh[0m D [2;31mh[0m D
+[2;31mo[0m D [2;31mo[0m D
+cv40 cv40 1 0
+cv40 cv40 1 0
+Combi Combi</code><ul><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Ref(</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Y</code> +1</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">h</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&#247;</code> +1</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">o</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&#247;</code> +3</li></ul>cre: b&#250; được từ 2k9, steveyboi, Windy</span></div></div></div></div><div id=chatlog__message-container-1425051455752241227 class=chatlog__message-container data-message-id=1425051455752241227><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Scrolling text for 570esp: ```A F 0 0 cv24 M 1 0 cv08 pi cv16 Ran#</h1>(-) cs23 0 0
+cv24 M 1 0
+Permu pi Combi pi
+(-) cs23 0 0
+cv24 M 1 0
+Permu pi mp 0
+A 4 0 0
+cv24 M 1 0
+cv08 pi cs29 pi
+(-) cs23 0 0
+
+tanh( , 0 0
+x10 Ans
+sinh( , 0 0
+&lt;32 bytes to spell&gt;
+sin 2 0 0
+0 0```</span></div></div></div></div><div id=chatlog__message-container-1425051457329303693 class=chatlog__message-container data-message-id=1425051457329303693><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>ĐỒ THỊ 1.0 IN FX 570EX</h1><h2>Data 0xE9E0</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">B0 2D 33 33 A5 7B 11 11 F5 D0 01 00 D2 03 22 22
+D6 95 10 10 0E 97 10 10 B8 82 10 10 A5 7B 11 11
+FE D8 6A D3 C0 79 11 11 A5 7B 11 11 37 D1 08 00
+D2 03 22 22 A5 7B 11 11 61 01 11 00 B0 86 10 10
+A5 7B 11 11 B8 18 10 00 B0 86 10 10 A5 7B 11 11
+58 21 30 00 B0 86 10 10 A5 7B 11 11 60 40 60 00
+
+BC 84 10 10 A5 7B 11 11 00 20 C0 20 BC 84 10 10
+BE 8A 10 10 D6 95 10 10 A5 7B 11 11 00 D9 74 D3
+C0 79 11 11 A5 7B 11 11 02 D9 6A D3 C0 79 11 11
+A5 7B 11 11 04 D9 2E D3 C0 79 11 11 A5 7B 11 11
+06 D9 38 D3 C0 79 11 11 A5 7B 11 11 08 D9 A0 D3
+C0 79 11 11 EE 25 11 11 A0 D3 16 15 22 22 A0 D3
+
+6E 5F 11 11 E4 5F 11 11 F4 89 11 11 60 20 D6 95
+10 10 9E 4C 33 33 F4 89 11 11 E0 EB B8 75 11 11
+F4 89 11 11 01 01 88 8E 10 10 EE 25 11 11 2E D9
+BE 8A 10 10 F4 89 11 11 E0 EB D6 95 10 10 8A 3A
+11 11 F4 89 11 11 C0 00 00 C3 10 10 AA E1 22 22
+2A 6E 22 22 5A D8 F4 89 11 11 78 00 7A 3A 11 11
+
+B2 7B 11 11 30 30 30 30 56 0D 22 22 6C 3D 22 22
+A5 7B 11 11 F5 D0 00 00 D2 03 22 22 B0 2D 33 33
+D6 95 10 10 0E 97 10 10 B8 82 10 10 A5 7B 11 11
+FE D8 6A D3 C0 79 11 11 A5 7B 11 11 37 D1 08 00
+D2 03 22 22 A5 7B 11 11 61 01 11 00 B0 86 10 10
+A5 7B 11 11 B8 18 10 00 B0 86 10 10 A5 7B 11 11
+
+58 21 30 00 B0 86 10 10 A5 7B 11 11 60 40 60 00
+BC 84 10 10 A5 7B 11 11 00 20 C0 20 BC 84 10 10
+BE 8A 10 10 D6 95 10 10 8A 96 10 10 A5 7B 11 11
+F6 D8 01 00 C4 38 11 11 5A 7C 11 11 02 02 54 EA
+A4 D7 A2 D7 B2 89 38 00 30 30 1C 1D 22 22 0A D9
+80 D1 0F D9 17 D9 1F D9 26 D9 C0 39 2E 36 00 48
+
+A6 30 2E 30 32 37 00 C0 83 49 A8 31 30 D0 00 83
+48 A8 31 30 D0 00 32 35 36 A8 42 A6 43 00 FF FF</code>
+<h2>Launcher 0xD180</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 30 30 5A 7C 31 30 FE 02 E0 E9 30 D7 2E D7 B2 89 31 30 30 30 1C 1D 32 30</code>
+[=]
+<h2>Hướng dẫn sử dụng:</h2><ul><li>Bấm [Shift] [Menu] [2] [2] để v&#244; radian </li><li>Nhập h&#224;m số m&#236;nh muốn vẽ, rồi bấm [Menu][1].</li><li>Sau khi vẽ xong, bấm [Shift] để quay lại nhập h&#224;m số.</li></ul><strong>Original: Kator and @casio2009
+Translate: Kasio rop basic tutorial</strong></span></div></div></div></div><div id=chatlog__message-container-1425051459099033610 class=chatlog__message-container data-message-id=1425051459099033610><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>TRỤC XOAY LITE 570EX</h1><h2>Data E9E0</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">D6 95 30 30 B8 82 30 30 BE 8A 30 30 A5 7B 31 30
+00 00 C0 00 DE B8 32 30 BE 8A 30 30 A5 7B 31 30 
+F1 E9 20 00 D2 03 32 30 A5 7B 31 30 F3 E9 20 00
+D2 03 32 30 F4 89 31 30 01 00 1C A1 30 30 02 EA
+D8 92 30 30 30 30 30 30 F4 89 31 30 FF FF 1C A1
+30 30 0E EA D8 92 30 30 30 30 30 30 EE 25 31 30
+
+01 00 6A 95 30 30 A5 7B 31 30 30 D6 84 D1 C8 03
+32 30 42 07 31 30 2E D6 56 0D 32 30 </code>
+
+<strong>launcher</strong>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 30 30 D6 95 30 30 0E 97 30 30 5A 7C 31 30 01 01 E0 E9 30 D7 2E D7 B2 89 31 30 30 30 1C 1D 32 48</code>
+
+[CALC] [=]</span></div></div></div></div><div id=chatlog__message-container-1425051461049651370 class=chatlog__message-container data-message-id=1425051461049651370><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><strong>flappy bird</strong>
+<strong>570/580</strong>
+-by: <span class="chatlog__markdown-mention" title="Unknown">@Unknown</span> 
+-translate: <span class="chatlog__markdown-mention" title="Unknown">@Unknown</span> 
+
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">46 75 63 6b 20 79 6f 75 20 62 69 74 63 68 21 2e 2e 20 77 68 79 20 6e 6f 20 77 61 6e 74 20 74 65 63 68 20 6d 65 20 68 6f 77 20 74 6f 20 6d 61 6b 65 20 70 72 6f 67 72 61 6d 6d 20 61 6e 64 20 63 6f 6d 70 69 6c 65 20 69 74 2e 20 49 20 68 61 74 65 20 6b 61 74 6f 72 20 61 6e 64 20 66 75 63 6b 69 6e 67 20 74 68 65 79 20 66 72 69 65 6e 64 2e 2e 20 3a 28 </code>
+
+<strong>launcher</strong>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">57 68 79 20 79 6f 75 20 77 61 6e 74 20 74 68 65 20 6c 61 75 6e 63 68 65 72 3f 66 75 63 6b 20 79 6f 75 </code>
+*please share it this programm. make for all including &#39;kator&#39;</span></div></div></div></div><div id=chatlog__message-container-1425051462697746432 class=chatlog__message-container data-message-id=1425051462697746432><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>SLIDING BOX ON 991 EX</h1>(E9E0)
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A5 7B 31 30 13 D1 01 00 D2 03 32 30 D6 95 30 30
+8A 96 30 30 B8 82 30 30 A5 7B 31 30 01 01 08 08
+88 8E 30 30 EE 25 31 30 70 EA BE 8A 30 30 EE 25
+31 30 2C EA 76 47 33 30 30 07 32 30 78 EA 78 EA
+D6 95 30 30 26 7D 31 30 EE 25 31 30 00 00 58 92
+30 30 66 C5 31 30 1C 1D 32 30 F4 89 31 30 01 00
+
+1C A1 30 30 FC E9 D8 92 30 30 30 30 30 30 A5 7B
+31 30 2C EA FF FF C4 38 31 30 A5 7B 31 30 30 D6
+84 D1 CC 03 32 30 64 5B 31 30 2E D6 56 0D 32 30
+FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00
+00 00 80 01 88 D7 00 00 A8 D7</code>
+LAUNCHER:D180
+
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">fd 24 30 30 d6 95 30 30 0e 97 30 30 5a 7c 31 30 fe 02 e0 e9 30 d7 2e d7 b2 89 31 30 30 30 1c 1d 32 30</code></span></div></div></div></div><div id=chatlog__message-container-1425051464350568488 class=chatlog__message-container data-message-id=1425051464350568488><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Race games 991ex</h1><h2>Data E9E0:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A5 7B 31 30 13 D1 01 30 D2 03 32 30 A5 7B 31 30
+01 13 5A EB 36 0C 32 30 A5 7B 31 30 01 20 5C EB
+36 0C 32 30 A5 7B 31 30 00 2F C0 2F DE B8 32 30
+A5 7B 31 30 00 16 C0 16 DE B8 32 30 A5 7B 31 30
+00 22 C0 22 DE B8 32 30 BE 8A 30 30 EE 25 31 30
+00 D7 22 4B 32 30 D6 95 30 30 F4 89 31 30 00 D7
+8A 3A 31 30 F4 89 31 30 01 01 1E 91 30 30 AA E1
+32 30 2A 6E 32 30 BC D7 F4 89 31 30 38 30 7A 3A
+31 30 B2 7B 31 30 30 30 30 30 56 0D 32 30 D6 95
+30 30 F4 89 31 30 00 D7 8A 3A 31 30 F4 89 31 30
+01 02 1E 91 30 30 AA E1 32 30 2A 6E 32 30 12 D8
+F4 89 31 30 38 30 7A 3A 31 30 B2 7B 31 30 30 30
+30 30 56 0D 32 30 F4 89 31 30 02 00 1C A1 30 30
+F0 E9 D8 92 30 30 30 30 30 30 42 07 31 30 92 D8
+56 0D 32 30 D6 95 30 30 F4 89 31 30 00 D7 8A 3A
+31 30 F4 89 31 30 04 10 1E 91 30 30 AA E1 32 30
+2A 6E 32 30 68 D8 F4 89 31 30 0A 30 7A 3A 31 30
+B2 7B 31 30 30 30 30 30 56 0D 32 30 F4 89 31 30
+02 00 1C A1 30 30 FC E9 D8 92 30 30 30 30 30 30
+42 07 31 30 92 D8 56 0D 32 30 42 07 31 30 92 D8
+56 0D 32 30 A5 7B 31 30 F0 E9 01 13 C4 38 31 30
+A5 7B 31 30 FC E9 01 20 C4 38 31 30 D6 95 30 30
+B8 82 30 30 A5 7B 31 30 30 D6 84 D1 C8 03 32 30
+42 07 31 30 2E D6 56 0D 32 30 B1 00 B2 00 00 00
+52 61 63 65 20 67 61 6D 65 73 21 00 00 00 00 00</code>
+<h2>Launcher:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 30 30 A5 7B 31 FE 03 30 60 EB 56 3D 32 30
+BE 8A 30 30 5A 7C 31 30 FE 01 E0 E9 30 D7 2E D7
+B2 89 31 30 30 30 1C 1D 32 48</code></span></div></div></div></div><div id=chatlog__message-container-1425051484890071132 class=chatlog__message-container data-message-id=1425051484890071132><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>GEOMETRY DASH ON FX570EX/991EX</h1><h2>DATA E9E0</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">00 00 a5 7b 31 30 31 f0 15 00 d2 03 32 30 d6 95
+30 30 b8 82 30 30 a5 7b 31 30 37 d1 07 00 d2 03
+32 30 a5 7b 31 30 3a 20 66 eb 37 0c 32 30 be 8a
+30 30 a5 7b 31 30 07 ea 34 00 d2 03 32 30 a5 7b
+31 30 37 d1 0e 00 d2 03 32 30 a5 7b 31 30 15 30
+68 eb 37 0c 32 30 a5 7b 31 30 b0 10 6e eb 37 0c
+
+32 30 be 8a 30 30 f4 89 31 30 f9 ff 1c a1 30 30
+2e ea d8 92 30 30 30 30 30 30 f4 89 31 30 f9 ff
+1c a1 30 30 3a ea d8 92 30 30 30 30 30 30 a5 7b
+31 30 2f ea 30 00 d2 03 32 30 a5 7b 31 30 3b ea
+10 00 d2 03 32 30 a5 7b 31 30 00 11 c0 11 de b8
+32 30 a5 7b 31 30 00 3a c0 3a de b8 32 30 be 8a
+
+30 30 ee 25 31 30 01 00 6a 95 30 30 ee 25 31 30
+30 d7 76 47 33 30 d6 95 30 30 f4 89 31 30 30 d7
+8a 3a 31 30 f4 89 31 30 80 04 1e 91 30 30 aa e1
+32 30 2a 6e 32 30 3c d8 f4 89 31 30 38 00 7a 3a
+31 30 b2 7b 31 30 30 30 30 30 56 0d 32 30 d6 95
+30 30 f4 89 31 30 30 d7 8a 3a 31 30 f4 89 31 30
+
+01 02 1e 91 30 30 aa e1 32 30 2a 6e 32 30 8a d8
+F4 89 31 30 0a 00 7a 3a 31 30 b2 7b 31 30 30 30
+30 30 56 0d 32 30 a5 7b 31 30 07 ea 11 00 d2 03
+32 30 64 5b 31 30 9e d8 56 0d 32 30 64 5b 31 30
+9e d8 56 0d 32 30 64 5b 31 30 9e d8 56 0d 32 30
+a5 7b 31 30 30 d6 84 d1 cc 03 32 30 64 5b 31 30
+
+2e d6 56 0d 32 30 cc 00 14 14 14 14 14 00 15 15
+15 15 15 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</code>
+<h2>LAUNCHER D180 NON AN</h2><h2>SET HEX </h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">B= 1. 8A 64 5B 56 0D 23</code>
+<h2>TOKEN </h2><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">@ 0 0 4 cos⁻&#185;( 1 0 0 % &#120282; ▸Simp ∫( @ 0 0 cm▸in cos( @ 1 0 0 % ( @ 2 0</code>
+
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">fd 24 30 30 a5 7b 31 30 30 d7 e0 e9 a8 8a 30 30 fe 02 64 5b 31 30 30 d7 56 0d 32 30</code>
+
+ Program : @kator 
+ Translate rop : @fein and buon</span></div></div></div></div><div id=chatlog__message-container-1425051492397748286 class=chatlog__message-container data-message-id=1425051492397748286><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>QUICKCPY MAX IN CALC 570EX</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">G&#193;N BIẾN:
+A=10.000FD24EF20D1     10^( 0E:
+B=1.ED2080022080D1     10^( 20
+C=1.B06A9323
+D=10.000FD24EF205E     10^( 20:
+E=1.D1200E20ED2020     10^( 20:
+F=1.92E9B68923
+x=10.000FD24EF20D1     10^( 0E:
+y=1.EDD1B2BA23</code>
+
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">1.DC40
+@&#120641;@M&#176;=cos-&#185;(10=▸t@@00&#119844;E200000000000000000:
+00000@0@&#176;@▸t@30&#179;^(10Mean(!00&#179;√(Angle(00(
+[=] [ON]</code>
+
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">2.DC5E
+@&#120641;@@&#176;=cos-&#185;(10=▸t@@00&#119844;E200000000000000000:
+!UnitV(0000−0=cos-&#185;(10&#119814;▸Simp F&#176;@LCM(11(
+[=] [ON]</code>
+
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">3.DC74
+@&#120641;@√(&#176;=cos-&#185;(10=▸t@@00&#119844;E200000000000000000:
+00=cos-&#185;(10∑(0Pol(&#179;@ln(10=cos-&#185;(100&#179;0!@x₁0&#179;
+[=] [ON]
+
+# LAUNCHER:</code>
+fd26 30 d6 a5 7b 31 30 02 30 11 d1 b8 75 31 30
+a5 7b 31 30 30 d6 30 d8 b2 ba 30 30 5a
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">Token:</code>
+@0&#179;=cos-&#185;(10@0@▸t@ln(10=cos-&#185;(100&#179;0!@x₁00Mean(
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">[=] [AC]</code></span></div></div></div></div><div id=chatlog__message-container-1425051494029459497 class=chatlog__message-container data-message-id=1425051494029459497><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h2>Multi choice casio 570ex/991ex</h2>
+<h1>data(e9e0):</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A5 7b 31 30 13 d1 01 00 d2 03 32 30 a5 7b 31 30
+31 f0 15 00 d2 03 32 30 ee 25 31 30 66 d7 76 47
+33 30 30 07 32 30 0c d8 0c d8 d6 95 30 30 26 7d
+31 30 ee 25 31 30 00 00 58 92 30 30 66 c5 31 30
+1c 1d 32 30 a5 7b 31 30 31 30 2f d8 56 3d 32 30 
+Be 8a 30 30 64 5b 31 30 f4 d7 56 0d 32 30 a5 7b
+
+31 30 31 30 42 d8 56 3d 32 30 be 8a 30 30 64 5b
+31 30 f4 d7 56 0d 32 30 a5 7b 31 30 31 30 55 d8
+56 3d 32 30 be 8a 30 30 64 5b 31 30 f4 d7 56 0d
+32 30 a5 7b 31 30 31 30 68 d8 56 3d 32 30 be 8a
+30 30 64 5b 31 30 f4 d7 56 0d 32 30 a5 7b 31 30
+31 30 7b d8 56 3d 32 30 be 8a 30 30 64 5b 31 30
+
+F4 d7 56 0d 32 30 a5 7b 31 30 30 d6 84 d1 cc 03
+32 30 64 5b 31 30 2e d6 56 0d 32 30 30 30 30 30 
+30 30 30 30 30 30 80 01 72 d7 01 01 8c d7 01 02 
+a6 d7 01 04 c0 d7 02 01 da d7 00 00 f4 d7 00 00 00 00 00  00 00 00 00  00 00</code>
+
+<h3>Launcher(D180)</h3><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">Fd 24 30 30 a5 7b 31 30 30 d7 e0 e9 a8 8a 30 30 fe 02 64 5b 31 30 2e d7 56 0d 32 30</code>
+
+### warning this might doesn&#39;t work</span></div></div></div></div><div id=chatlog__message-container-1425051495396540507 class=chatlog__message-container data-message-id=1425051495396540507><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, October 7, 2025 4:25 PM">4:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>shut down with logo on 991ex</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">1. 100an
+2. &lt;34 bytes&gt; 26 95 30 30 (value)
+
+value:
+de 62: casio
+e2 62: asioc
+e5 62: sioca
+e8 62: iocas
+e9 62: ocasi</code></span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1429585226257928232 class=chatlog__message-container data-message-id=1429585226257928232><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Monday, October 20, 2025 4:41 AM"><a href=#chatlog__message-container-1429585226257928232>10/20/2025 4:41 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>c&#225;ch spell 1 line tr&#234;n fx-82 es plus</h1>1 V&#224;o chế độ tr&#224;n cơ bản ;
+2 nhập 32 frac, 2 số bất kỳ;
+3 Nhập 16 k&#253; tự, l&#224; c&#225;c k&#253; tự cấp một tương ứng với c&#225;c k&#253; tự ASCII bạn muốn hiển thị, sau đ&#243; l&#224; 20 k&#253; tự 1 , nhập lu&#226;n phi&#234;n 9 v&#224; D tổng cộng 7 lần , tan , nhập lu&#226;n phi&#234;n 9 v&#224; D tổng cộng 7 lần , tan, nhập lu&#226;n phi&#234;n 9 v&#224; D tổng cộng 7 lần ,
+4 Nhấn lần lượt 10101010..... tiếp tục đến khi đ&#232;n M s&#225;ng  sau đ&#243; AC  &lt;-    =</span></div></div></div></div><div id=chatlog__message-container-1429585238866133182 class=chatlog__message-container data-message-id=1429585238866133182><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Monday, October 20, 2025 4:41 AM">4:41 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>c&#225;ch v&#224;o mode 68 tr&#234;n fx-82 es plus</h1>1.[MODE][2][AC] Nhấn ON trong khi Disp được bật
+5. Nếu n&#243; vẫn l&#224; COMP hoặc kh&#244;ng c&#243; mục 5:Reg sau khi nhấn [SHIFT][1], h&#227;y lặp lại bước 1.
+L&#250;c n&#224;y, bạn c&#243; thể v&#224;o chế độ STAT bất thường (sau khi th&#224;nh thạo c&#225;c kỹ năng, tỷ lệ th&#224;nh c&#244;ng cao hơn nhiều so với =ON v&#224; nhấn phương thức c&#249;ng l&#250;c, hầu như kh&#244;ng cần RP)
+3.82 ES PLUS:
+Nhập (9999(9999(9999(9999r) rồi nhấn =, ON để v&#224;o chế độ 68, trong đ&#243; r được g&#245; bằng [shift] [1] [5]
+4.95ES PLUS:
+[0] [shift] [1] [5] [5] [=] shift] [RCL] [M]
+Tại thời điểm n&#224;y, gi&#225; trị M trống v&#224; M^0 c&#243; thể được sử dụng để tr&#224;n r</span></div></div></div></div><div id=chatlog__message-container-1429585568936759378 class=chatlog__message-container data-message-id=1429585568936759378><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Monday, October 20, 2025 4:42 AM">4:42 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Mode 68</h1><h1>For fx-570ESP</h1>
+B1: Bấm [e^] (13 lần) [alpha] [)] [-&gt;] (5 lần) [alpha] [)] [-&gt;] (5 lần) [alpha] [)] [-&gt;] (3 lần) [alpha] [t&#237;ch <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="💩"
+    title="poop"
+    src="/assets/1f4a9-1C1C9.svg">] [shift] [+] [1] [shift] [)] [0]
+B2: [calc] [(-)] [1] [=] (2 lần)
+B3:[&lt;-] (2 lần) [del] (6 lần) [&lt;-] [shift] [del] [sqrt] [t&#237;ch <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="💩"
+    title="poop"
+    src="/assets/1f4a9-1C1C9.svg">] [alpha] [)] [sqr] [-&gt;] [1] [-&gt;] [1] [-&gt;] [sqrt] [3]
+B4: [=] đợi đến khi status bar biến mất [on]
+
+<h1>For fx-570VNP</h1>
+B1: [mode] [3] [ac] [on] (bấm on sau khi bấm ac 0,5s)
+B2: [shift] [1] (nếu lựa chon 5 l&#224; reg th&#236; l&#224;m đ&#250;ng, nếu ko th&#236; l&#224;m lại)
+B3: [5] [1] [&lt;-] [(] (10 lần) 
+B4: [=] Đợi thanh status tắt [on]</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1429598802301685871 class=chatlog__message-container data-message-id=1429598802301685871><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Monday, October 20, 2025 5:35 AM"><a href=#chatlog__message-container-1429598802301685871>10/20/2025 5:35 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>【570ES+】timer hackstring:</h1> sin( 2 0 0 M <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐞"
+    title="𝐞"
+    src="/assets/1d41e-68341.svg"> cs6 , 0 0 Abs( cs17 1 0 sin( 2 0 0 cv18 cs3 A F 0 0 cv24 M 1 0 RanInt#( π ^( π - cs23 0 0   ∫( &#247; 0 0 cv40 Ran# log( &#247; 0 0 7 8 9 0 1 2 cv24 M 1 0 M <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐞"
+    title="𝐞"
+    src="/assets/1d41e-68341.svg"> cs1 0 cv32 sin⁻( 1 0 sin( 2 0 0 - <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐞"
+    title="𝐞"
+    src="/assets/1d41e-68341.svg"> cv32 sin⁻( 1 0 : &#176; 1 0   sin( 2 0 0 cs16 <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐞"
+    title="𝐞"
+    src="/assets/1d41e-68341.svg"> ∫( cs23 0 0 cv24 M 1 0 M <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐞"
+    title="𝐞"
+    src="/assets/1d41e-68341.svg"> - <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐞"
+    title="𝐞"
+    src="/assets/1d41e-68341.svg"> cs30 →D 1 0
+Cre link gốc:
+<a href="https://www.jianshu.com/p/856a51511e48">https://www.jianshu.com/p/856a51511e48</a></span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1430325601117536466 class=chatlog__message-container data-message-id=1430325601117536466><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Wednesday, October 22, 2025 5:43 AM"><a href=#chatlog__message-container-1430325601117536466>10/22/2025 5:43 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Scrolling text for 570esp: </h1><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A F 0 0 cv24 M 1 0 cv08 pi cv16 Ran#
+(-) cs23 0 0
+cv24 M 1 0
+Permu pi Combi pi
+(-) cs23 0 0
+cv24 M 1 0
+Permu pi mp 0
+A 4 0 0
+cv24 M 1 0
+cv08 pi cs29 pi
+(-) cs23 0 0
+
+tanh( , 0 0
+x10 Ans
+sinh( , 0 0
+&lt;32 bytes to spell&gt;
+sin 2 0 0
+0 0</code></span></div></div></div></div><div id=chatlog__message-container-1430325840301789306 class=chatlog__message-container data-message-id=1430325840301789306><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Wednesday, October 22, 2025 5:44 AM">5:44 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h2>Data loader for fx-570/991ES+ VerE</h2><em>by user202729</em><ul><li><a href="&lt;https://community.casiocalc.org/topic/7583-fx-82-83gt-115-991es-plus-hacking/page-9#entry61746&gt;">original post</a></li></ul><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">1 0
+cv12 = 0 0
+sin( 2 0 0
+0 cv34
+∫( cs23 0 0
+tan⁻&#185;( D 0 0
+cs01 cs01
+, &#176; 1 0
+Pol( &#215;10 0 0
+ʳ Ans
+cs10 D 0 0
+3 3 3 3
+cv24 M 1 0
+Rnd( Ans &#247; Ans
+- cs23 0 0
+
+∫( &#247; 0 0
+cs22 Ran#
+log( &#247; 0 0
+3 4 5 6 7 8 9 0 1 2
+- cs30 0 0
+Ran# F 1 0
+- cs30 0 0
+cv12 = 0 0
+sin⁻&#185;( , 0 0
+3 3
+Abs( cs17 1 0
+cv22 Pol(</code></span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1431984553177911388 class=chatlog__message-container data-message-id=1431984553177911388><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Sunday, October 26, 2025 7:35 PM"><a href=#chatlog__message-container-1431984553177911388>10/26/2025 7:35 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>C&#225;ch romdump m&#225;y t&#237;nh fx-82AU PLUS II 2nd</h1><h3>0. Khởi tạo:</h3>Nhấn theo thứ tự:
+<strong>[SHIFT] [9] [3] [=] [AC]</strong>
+<h3>1. Tạo “biến bất hợp ph&#225;p” (illegal variable)</h3>C&#243; <strong>2 c&#225;ch</strong> để l&#224;m điều n&#224;y:
+<h3><strong>C&#225;ch 1:</strong></h3>1. Nhấn <strong>[MODE] [2]</strong>, sau đ&#243; nhấn <strong>[AC]</strong>, rồi khoảng <strong>0.5 gi&#226;y sau</strong> nhấn <strong>[ON]</strong> — mục ti&#234;u l&#224; v&#224;o được <strong>STAT submode 0</strong>.
+<ul><li>Nếu l&#224;m đ&#250;ng: khi nhấn <strong>[SHIFT] [1]</strong>, bạn sẽ thấy d&#242;ng <strong>5:REG</strong>.</li></ul><ul><li>Nếu nhấn <strong>[ON]</strong> <strong>qu&#225; sớm</strong>, đ&#232;n <strong>STAT</strong> sẽ kh&#244;ng s&#225;ng — h&#227;y l&#224;m lại.</li></ul><ul><li>Nếu nhấn <strong>qu&#225; trễ</strong>, bạn sẽ thấy <strong>5:MinMax</strong>, h&#227;y trở về chế độ COMP bằng <strong>[MODE] [1]</strong> rồi thử lại.</li></ul>2. Khi đ&#227; v&#224;o đ&#250;ng <strong>STAT submode 0</strong>, nhấn:
+   <strong>[SHIFT] [1] [5] [3] [SHIFT] [RCL] [(-)]</strong>
+   → Lệnh n&#224;y sẽ lưu gi&#225; trị <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">r</code> v&#224;o biến <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code> (bạn c&#243; thể d&#249;ng bất kỳ biến n&#224;o, nhưng v&#237; dụ n&#224;y d&#249;ng <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code>).
+Sau đ&#243; chuyển sang bước 2.
+<h3><strong>C&#225;ch 2:</strong></h3>Nhấn:
+<strong>[SHIFT] [+] [0] [SHIFT] [)] [1] [=] [&#247;] [9]</strong>,
+rồi nhấn <strong>[(]</strong> li&#234;n tục cho đến khi hết phương tr&#236;nh.
+Sau đ&#243; nhấn <strong>[=] [AC] [↑] [AC] [←]</strong>, rồi <strong>x&#243;a hết mọi thứ trừ k&#253; tự <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">r</code></strong>.
+Nhấn <strong>[SHIFT] [RCL] [(-)]</strong> để lưu <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">r</code> v&#224;o biến <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code>.
+→ Sau đ&#243; sang bước 2.
+<h2>2. V&#224;o chế độ LineIO Verify</h2>Nhấn <strong>[SHIFT] [MODE] [2] [MODE] [3]</strong>
+<h3>3. Thực hiện lệnh A</h3>Nhấn <strong>[ALPHA] [(-)]</strong> để gọi biến <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code>.
+<ul><li>Nếu hiện <strong>Math ERROR</strong>, nghĩa l&#224; bạn đ&#227; l&#224;m đ&#250;ng.</li><li>Nếu hiện <strong>A=0 TRUE</strong>, th&#236; sai — l&#224;m lại từ bước 0.</li></ul><h3>4. Nhập k&#253; tự ngẫu nhi&#234;n 90 lần</h3>Nhấn lặp đi lặp lại một ph&#237;m (v&#237; dụ [9]) khoảng <strong>90 lần</strong>.
+Sau đ&#243; tiếp tục nhấn <strong>chậm lại</strong> cho đến khi bạn thấy <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A=0</code> hiện lại.
+V&#237; dụ, con trỏ l&#250;c n&#224;y tr&#244;ng như:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">999999|A=0</code> (k&#253; hiệu <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">|</code> l&#224; vị tr&#237; con trỏ).
+<h3>5. Nhập 44 k&#253; tự kh&#225;c để l&#224;m mốc</h3>V&#237; dụ, d&#249;ng <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">12</code>: nhấn <strong>[1] [2]</strong> lặp lại <strong>22 lần</strong> (v&#236; mỗi k&#253; tự đếm l&#224; 1).
+Kết th&#250;c phải l&#224; k&#253; tự <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">2</code>.</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=thumbsup><img class="chatlog__emoji chatlog__emoji--small" alt=👍 src=/assets/1f44d-27259.svg loading=lazy> <span class=chatlog__reaction-count>2</span></div></div></div></div></div><div id=chatlog__message-container-1431984561029517352 class=chatlog__message-container data-message-id=1431984561029517352><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Sunday, October 26, 2025 7:35 PM">7:35 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h3>6. Nhập một loại k&#253; tự kh&#225;c để đ&#225;nh dấu kết th&#250;c</h3>V&#237; dụ, d&#249;ng <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">45</code>: nhấn <strong>[4] [5]</strong> lặp lại li&#234;n tục cho đến khi xuất hiện một k&#253; tự <strong>kh&#225;c với bạn vừa g&#245;</strong> (k&#253; tự n&#224;y kh&#244;ng ổn định, c&#243; thể biến mất).
+Nhấn <strong>[DEL]</strong> cho đến khi k&#253; tự đ&#243; hiện lại — đ&#226;y l&#224; <strong>k&#253; tự kh&#244;ng ổn định (unstable character)</strong>.
+Khi con trỏ nhấp nh&#225;y, k&#253; tự n&#224;y sẽ thay đổi — c&#243; thể <strong>tạm dừng thay đổi</strong> bằng c&#225;ch di chuyển con trỏ qua lại.
+Mục ti&#234;u l&#224; <strong>biến k&#253; tự đ&#243; th&#224;nh <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">→D</code></strong>.
+Giữ chuỗi của bạn như:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">45454545&lt;unstable&gt;|</code>
+v&#224; nhấn <strong>[→] (mũi t&#234;n phải)</strong> mỗi lần con trỏ nhấp nh&#225;y.
+Thứ tự thay đổi k&#253; tự l&#224; c&#225;c chữ in hoa <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code>, <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">B</code>, ... rồi <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">→A</code>, <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">→B</code>, ... cuối c&#249;ng l&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">→D</code>.
+<h3>7. Khi thấy <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">→D</code>:</h3>Nhấn <strong>[←]</strong>, rồi nhấn <strong>[DEL]</strong> li&#234;n tục <strong>xo&#225; ngược về đầu chuỗi 44 k&#253; tự</strong> (tức l&#224; phần <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">12...</code>).
+Cuối c&#249;ng, chuỗi n&#234;n tr&#244;ng như:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">1212121212→D</code>
+Nếu c&#243; k&#253; tự thừa sau <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">→D</code> (v&#237; dụ <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">mP</code> hay k&#253; tự lạ kh&#225;c) th&#236; di chuyển tới v&#224; xo&#225; n&#243;.
+<h3>8. Sau đ&#243; nhập:</h3><strong>[-] [0] [0] &lt;ad dr&gt;</strong>,
+với <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;ad dr&gt;</code> l&#224; c&#225;c k&#253; hiệu tương ứng với địa chỉ (v&#237; dụ <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">% %</code>).
+Khi đ&#243; m&#224;n h&#236;nh sẽ tr&#244;ng như:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">121212→D-00%%</code>
+(lưu &#253;: đ&#226;y l&#224; dấu <strong>trừ</strong>, kh&#244;ng phải số &#226;m).
+<h3>9. Nhấn <strong>[0]</strong> li&#234;n tục cho đến khi <strong>đ&#232;n M</strong> s&#225;ng l&#234;n.</h3>Một mẹo l&#224; khi thấy k&#253; tự bắt đầu <strong>bất ổn</strong>, h&#227;y nhấn chậm lại — khoảng <strong>10–13 lần</strong> nữa th&#236; đ&#232;n <strong>M</strong> sẽ bật.
+<h3>10. Nhấn <strong>[AC] [←] [=]</strong></h3><h3>11. Ho&#224;n tất.</h3><strong>Ch&#250;c mừng! Bạn đ&#227; thực hiện th&#224;nh c&#244;ng romdump tr&#234;n fx-82AU PLUS II 2nd.</strong>
+ng sai thao t&#225;c.</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=thumbsup><img class="chatlog__emoji chatlog__emoji--small" alt=👍 src=/assets/1f44d-27259.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1432892987553349652 class=chatlog__message-container data-message-id=1432892987553349652><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Wednesday, October 29, 2025 7:45 AM"><a href=#chatlog__message-container-1432892987553349652>10/29/2025 7:45 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>570/991EX DISPLAY 3 LINE</h1>
+1. Line I/O mode - shift, menu, 1, 3
+
+2. Small font - shift, menu, up 1, 2
+
+3. overflow - [ x = ∫ ( x , 9 , 9 9 9 ], calc, =, ac, left, del, del, calc, =, left, shift, [ . ] -&gt; decimal point
+
+4. input special character - shift, 7, 3, [x^-1], shift, 7, 3, [(-)], shift, 7, 3, [x^-1], shift, 7, 3, [(-)], shift, 7, 3, 7, shift, 7, 3, [x^-1], left, 9, del, left, 9, del, left, 9, del, left, 9, del, left, 9, del, left, 9, del, del, del, del
+
+ [x=∫(x,9,999<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐀"
+    title="𝐀"
+    src="/assets/1d400-59F37.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg">]
+
+delete [=∫(x,9,999] to [x=<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐀"
+    title="𝐀"
+    src="/assets/1d400-59F37.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg">]
+
+5. QuickCpyMax thing
+{A - alpha, [(-)], = - alpha, calc]
+
+x:
+A=1.0000<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg">0<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐀"
+    title="𝐀"
+    src="/assets/1d400-59F37.svg">3<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg">23
+
+calc, =. =
+
+6. 100+50an mode
+then, do this -&gt; [ x = ∫ ( x , 9 , 9 9 9 ], calc, =, left, shift, [ . ], shift, [ . ], left, left, del, down, shift, 8, down, 2, 6, left, left, right, 9, del, left, [ ) ], +, [spam 100 numbers], +, [spam 50 numbers], calc, =
+
+7. idk
+shift, [ . ], =, left, shift, 7, 4, 8, left, left, left, right, shift, [ . ], del, del, right, right, del, shift, calc, alpha, [(-)], =, =, ac, up, left, left, left, left, right, shift, { . }, right, del, del 
+
+{ n &gt; N &gt; dynlb<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg"> ]
+
+8. Normal font - shift, menu, up, 1, 1
+
+9. input special character - shift, 8, 1, [(-)], left, 9, del, left, left, right, shift, 7, 3, [(-)], left, 9, del, left, left, left, right, shift, 8, 1, [(-)], left, 9, del, left, left, right, shift, 7, 3, [(-)], left, 9, del, left, left, left, right, shift, 8, 1, [(-)], left, 9, del, left, left, right,
+
+[ nlbf&gt;N&gt;lbfkgf&gt;|@<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg">@<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg">@<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg"> ]
+
+10. Typing
+
+Input 51 characters. dosen&#39;t matter numbers, letters or symbols.. 
+
+then, delete { nlbf&gt;N&gt;lbfkgf&gt; ] after inputting 51 characters
+
+11. Code Execution / Display text
+put the cursor [ | ]  to here
+
+[51 characters] | @<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg">@<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐃"
+    title="𝐃"
+    src="/assets/1d403-4669D.svg">@<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="𝐅"
+    title="𝐅"
+    src="/assets/1d405-F70F6.svg">
+
+{33 numbers], alpha, calc, right, 2, shift, 8, 1, 8, shift, 7, 1, 7, right, 2, 1, alpha, calc, right, 2, shift, [ . ], shift, 7, 1, 7, right, 2, 1, alpha, calc, right, 2, shift, 8, down, 3, 3, shift, 8, 1, [(-)], right, 2, [ x ], calc, =
+
+<strong>@haznishh._</strong></span></div></div></div></div><div id=chatlog__message-container-1432893385966096395 class=chatlog__message-container data-message-id=1432893385966096395><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Wednesday, October 29, 2025 7:46 AM">7:46 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>ALPHABET TABLE 991ex</h1>
+Type 1 - No using <strong>Character Conversion</strong>
+A: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Ans</code>
+B: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ALPHA -&gt; (-)</code>
+C: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ALPHA -&gt; &#176;&#39;&#39;&#39;</code>
+D: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ALPHA -&gt; x^-1</code>
+E: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ALPHA -&gt; sin</code>
+F: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ALPHA -&gt; cos</code>
+G: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ALPHA -&gt; tan</code>
+H: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">x</code>
+I: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ALPHA -&gt; S&lt;-&gt;D</code>
+P: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; x</code>
+Q: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Integral</code>
+R: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt;&#160;&#160;Integral</code>
+
+Type 2 - Use <strong>Character Conversion</strong>
+J: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 4 -&gt; 6</code>
+K: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 1 -&gt; 3</code>
+L: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 4 -&gt; 7</code>
+M: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 4 -&gt; 8</code>
+N: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 4 -&gt; 9</code>
+O: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 1 -&gt; 4</code>
+S: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 2 -&gt; 5</code>
+T: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 1 -&gt; 6</code>
+U: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; down -&gt; 2 -&gt; 1</code>
+V: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 1 -&gt; 7</code>
+W: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; down -&gt; 1 -&gt; 2</code>
+X: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 1 -&gt; 8</code>
+Y: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 1 -&gt; 9</code>
+Z: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">SHIFT -&gt; 7 -&gt; 2 -&gt; 6</code>
+
+<strong>Character Conversion:</strong> [&lt;-][9][DEL][&lt;-][-&gt;]
+<strong>Non-Character Conversion:</strong> [&lt;-][&lt;-][-&gt;]</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1432922769867145388 class=chatlog__message-container data-message-id=1432922769867145388><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Wednesday, October 29, 2025 9:43 AM"><a href=#chatlog__message-container-1432922769867145388>10/29/2025 9:43 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve>Thiết bị: fx-991ES Plus 2nd Edition
+Phi&#234;n bản: CY-845 VerA
+checksum: 7064
+
+Y&#234;u cầu trước khi hỏi:
+<ul><li>T&#244;i c&#243; thể v&#224;o chế độ tr&#224;n (basic overflow) bằng c&#225;ch d&#249;ng X=sum(X,1,x10^9 ... phương ph&#225;p như vậy.</li><li>T&#244;i c&#243; thể lấy được <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">r</code> trong chế độ COMP bằng phương ph&#225;p n&#224;y: <a href="http://casiocalc.wikidot.com/hackstring#get-r-calc"><a href="http://casiocalc.wikidot.com/hackstring#get-r-calc">http://casiocalc.wikidot.com/hackstring#get-r-calc</a></a></li><li>T&#244;i đ&#227; thử Mode-69, xin lỗi, &#253; l&#224; Mode-68 từ <a href="http://casiocalc.wikidot.com/mode-68"><a href="http://casiocalc.wikidot.com/mode-68">http://casiocalc.wikidot.com/mode-68</a></a>, nhưng n&#243; chỉ hiển thị m&#224;n h&#236;nh trắng (clear screen), con trỏ cũng kh&#244;ng nhấp nh&#225;y, tuy nhi&#234;n vẫn thấy <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">D</code> v&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Math</code> ở phần tr&#234;n của m&#224;n h&#236;nh hiển thị.</li><li>T&#244;i đ&#227; thử nhập một v&#224;i hackstring trong chế độ overflow, nhưng kh&#244;ng x&#225;c định được chuỗi hack đ&#243; c&#243; hoạt động hay kh&#244;ng; t&#244;i đ&#227; nhập hackstring n&#224;y:</li></ul>  <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;52 characters&gt; cv24 M 1 - F cv26 cv40 - Integrate econst 0 - tan^-1( D 0 - cs26 cv26 cs16 D 1 - cv12 = 0 - sin( 2 0 - 0 cv34 Integrate econst 0 - (-) cs32 0 - ⅃ Ans ^( cs32 0 - &lt;2 remaining characters&gt;</code>
+
+C&#226;u hỏi:
+
+1. Liệu t&#244;i c&#243; thể v&#224;o Mode-68 kh&#244;ng? Nếu c&#243; th&#236; l&#224;m sao nhận biết đ&#243; l&#224; Mode-68, v&#224; bước tiếp theo sau khi v&#224;o được Mode-68 l&#224; g&#236;?
+2. C&#225;c bước t&#244;i cần thực hiện để c&#243; thể nhập một số hackstrings v&#224; l&#224;m sao để x&#225;c minh những hackstrings đ&#243; c&#243; hoạt động hay kh&#244;ng? V&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;52 characters&gt;</code> hoặc <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;2 remaining characters&gt;</code> l&#224; g&#236;?
+3. Giả sử t&#244;i c&#243; thể chạy một số hackstrings tr&#234;n m&#225;y t&#237;nh, vậy l&#224;m thế n&#224;o để t&#244;i viết một hackstring t&#249;y chỉnh cho mục đ&#237;ch ri&#234;ng (để hiện thực một số h&#224;m to&#225;n học)?
+4. Giả sử t&#244;i c&#243; thể viết hackstring t&#249;y chỉnh, th&#236; để sản xuất nhanh c&#243; c&#244;ng cụ/bộ chuyển dịch n&#224;o c&#243; thể chuyển C sang hackstring để t&#244;i chỉ cần nhập v&#224;o m&#225;y t&#237;nh kh&#244;ng?
+5. Giả sử t&#244;i đ&#227; tạo được hackstring th&#236; l&#224;m sao để thử chạy n&#243; trong tr&#236;nh giả lập (emulator) để phục vụ mục đ&#237;ch kiểm thử?
+
+<em><strong>Dịch: <span class="chatlog__markdown-mention" title="phong2k11_4">@ShakePeare</span></strong></em></span></div></div></div></div><div id=chatlog__message-container-1432923981350047764 class=chatlog__message-container data-message-id=1432923981350047764><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Wednesday, October 29, 2025 9:48 AM">9:48 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>C&#225;c lỗi hiển thị (glitches) cho fx-82AU PLUSII 2nd Edition</h1>
+<h2>Thiết lập lại trước khi thử glitch</h2>Nhấn: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[SHIFT]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[9]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[3]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[AC]</code>
+
+<h1>M&#224;n h&#236;nh lỗi (Corrupt Screen)</h1>
+1. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[1]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[&#247;]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[1]</code>
+
+2. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[√]</code> li&#234;n tục cho đến khi kh&#244;ng thể nhấn th&#234;m được nữa
+
+3. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code> rồi <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[←]</code>
+
+4. X&#243;a hết c&#225;c k&#253; tự, chỉ để lại &#244; trống (hộp vu&#244;ng nhỏ ở giữa)
+
+5. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[←]</code> cho đến khi con trỏ nằm ở b&#234;n tr&#225;i &#244; trống
+
+6. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[→]</code> (con trỏ sẽ kh&#244;ng di chuyển)
+
+7. Nhấn li&#234;n tục <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[&#215;10ˣ]</code> v&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[Ans]</code> cho đến khi đ&#232;n “M” bật s&#225;ng (khoảng 60 lần hoặc hơn)
+
+8. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[AC]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[←]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code>
+
+9. L&#250;c n&#224;y <em>c&#243; thể</em> hiện lỗi “<strong>Syntax Error</strong>” (thỉnh thoảng m&#225;y treo, khi đ&#243; cần reset). Sau đ&#243; nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[AC]</code>.
+
+10. Giờ bạn c&#243; thể nhấn c&#225;c ph&#237;m tạo &#244; trống để thấy m&#224;n h&#236;nh bị lỗi hiển thị đẹp mắt, v&#237; dụ:
+    <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[fraction]</code>, <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[√]</code>, <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[Abs]</code>, <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[x^]</code>
+
+Lưu &#253;:
+<ul><li>Nếu nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code> ở bất kỳ thời điểm n&#224;o, m&#225;y c&#243; thể bị crash.</li><li>Nếu nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[ON]</code>, glitch sẽ kh&#244;ng c&#242;n hoạt động.</li><li>Để reset v&#224; thử lại, nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[SHIFT]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[9]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[3]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[AC]</code>.</li></ul>
+<h1>rϴ&#176;eMe</h1>
+1a. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[SHIFT]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[+]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[1]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[SHIFT]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[)]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[0]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code>
+1b. Nhấn (<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[1]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[sqrdeg]</code>) ba lần rồi <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code>
+2. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[&#247;]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[9]</code>
+3. Nhấn li&#234;n tục <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[(]</code> cho đến khi kh&#244;ng thể nhấn th&#234;m được nữa
+4. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[AC]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[↑]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[AC]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[←]</code>
+
+5. Giờ bạn sẽ thấy xuất hiện một số k&#253; tự đặc biệt m&#224; b&#236;nh thường kh&#244;ng thể c&#243; được, như <strong>r, ϴ, &#176;, e</strong> hoặc <strong>Me</strong>.
+
+<em><strong>Dịch: <span class="chatlog__markdown-mention" title="phong2k11_4">@ShakePeare</span> </strong></em></span></div></div></div></div><div id=chatlog__message-container-1432924889412796457 class=chatlog__message-container data-message-id=1432924889412796457><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Wednesday, October 29, 2025 9:51 AM">9:51 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h2>Chế độ LineIO Mode 68 / Reset 68</h2>
+1. Nhấn [SHIFT] [MODE] [1] [1] (k&#237;ch hoạt MathIO)
+2. Nhấn [SHIFT] [9] [3], sau đ&#243; <strong>nhấn c&#249;ng l&#250;c</strong> [=] v&#224; [ON].
+
+Nếu thực hiện đ&#250;ng, m&#225;y t&#237;nh sẽ chuyển sang <strong>chế độ LineIO</strong> (dấu chỉ b&#225;o “Math” sẽ biến mất v&#224; xuất hiện số 0 ở g&#243;c dưới b&#234;n phải m&#224;n h&#236;nh).
+Thử nhập một ph&#233;p t&#237;nh bất kỳ rồi nhấn [ON], bạn sẽ thấy m&#225;y vẫn giữ lại c&#225;c ph&#233;p t&#237;nh trước đ&#243;.
+
+Lưu &#253;:
+<ul><li>Chuyển lại sang MathIO sẽ <strong>kh&#244;ng hoạt động</strong> (m&#225;y bị buộc ở chế độ LineIO).</li><li>Nếu bạn v&#224;o một chế độ kh&#225;c bằng menu [MODE], <strong>Mode 68 sẽ bị mất</strong>.</li><li>Tuy nhi&#234;n, nếu bạn chỉ <strong>reset phần thiết lập</strong> ([SHIFT] [9] [1] [=] [AC]) th&#236; lịch sử ph&#233;p t&#237;nh của Mode 68 vẫn c&#242;n, <strong>nhưng Mode 68 vẫn sẽ bị mất</strong>.</li></ul>
+C&#243; thể bạn sẽ <strong>kh&#244;ng l&#224;m được ngay từ lần đầu</strong>, h&#227;y thử lại nhiều lần nếu cần.
+
+<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="📹"
+    title="video_camera"
+    src="/assets/1f4f9-452DE.svg"> <em>V&#237; dụ video</em> <a href="&lt;https://canary.discord.com/channels/839749858687844372/840391748063592449/1204317078736343080&gt;">người đăng may mắn l&#224;m được ngay lần đầu:</a>
+
+Mẫu m&#225;y trong video l&#224; <strong>fx-570VN PLUS 2nd Edition</strong>, nhưng phương ph&#225;p n&#224;y <strong>hoạt động với mọi m&#225;y đời 2nd Edition</strong>.</span> <span class=chatlog__edited-timestamp title="Wednesday, October 29, 2025 9:52 AM">(edited)</span></div></div></div></div><div id=chatlog__message-container-1432925458277732484 class=chatlog__message-container data-message-id=1432925458277732484><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Wednesday, October 29, 2025 9:54 AM">9:54 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h2>Ch&#250;ng t&#244;i vừa đạt được <strong>một bước đột ph&#225; lớn</strong> tr&#234;n fx-5800P!</h2>
+L&#224;m theo hướng dẫn trong b&#224;i viết n&#224;y, bạn c&#243; thể:
+
+1. Hiển thị <strong>chữ thường</strong>, <strong>k&#253; tự Hy Lạp</strong>, <strong>chỉ số dưới</strong>, v.v… trong chương tr&#236;nh.
+2. <strong>Sử dụng lệnh chương tr&#236;nh</strong> ngay trong <strong>c&#244;ng thức (Formula)</strong>.
+3. <strong>D&#249;ng hằng số v&#224; c&#225;c lệnh kh&#225;c</strong> trong chương tr&#236;nh <strong>BaseN</strong>.
+4. Trong <strong>bảng (Table)</strong>, c&#243; thể d&#249;ng c&#225;c k&#253; hiệu <strong>&gt;, &lt;, ≥, ≤, ≠, =</strong> để x&#225;c định điều kiện <strong>đ&#250;ng (1)</strong> hoặc <strong>sai (0)</strong>.
+
+Xem chi tiết tại:
+<a href="&lt;https://www.cncalc.org/thread-25526-1-1.html&gt;"><img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="🔗"
+    title="link"
+    src="/assets/1f517-0C7ED.svg"></a>
+dịch: <span class="chatlog__markdown-mention" title="phong2k11_4">@ShakePeare</span></span> <span class=chatlog__edited-timestamp title="Wednesday, October 29, 2025 9:55 AM">(edited)</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1433692024477061160 class=chatlog__message-container data-message-id=1433692024477061160><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Friday, October 31, 2025 12:40 PM"><a href=#chatlog__message-container-1433692024477061160>10/31/2025 12:40 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>TIMER CASIO fx-991/570ES+ 1st edition</h1><h2>B1: RESET</h2><h2>B2: BASIC OVERFLOW</h2>The hackstring:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">sin( 2 0 0 cv20 Ans cs06 , 0 0 Abs( cs17 1 0 tan-&#185;( D 0 0 cs05 cs05 ! F 0 0 cv24 M 1 0 X Ran# cv30 Ans - cs23 0 0 ∫( &#247; 0 0 cv40 Ran# log( &#247; 0 0 7 8 9 0 1 2 cv24 M 1 0 cv20 Ans cs01 0 cv32 sin-&#185;( 1 0 sin( 2 0 0 cv10 Ans cv32 sin-&#185;( 1 0 : &#176; 1 0 sin( 2 0 0 cs16 e ∫( cs23 0 0 cv24 M 1 0 cv20 Ans cv10 Ans cs30 →D 1 0</code>
+<h3>Note:</h3><div class="chatlog__markdown-quote"><div class="chatlog__markdown-quote-border"></div><div class="chatlog__markdown-quote-content">• cs: Scientific Constants
+• cv: Unit Conversions
+</div></div><h3>For e.g:</h3><div class="chatlog__markdown-quote"><div class="chatlog__markdown-quote-border"></div><div class="chatlog__markdown-quote-content">cs06→[Shift][7][0][6]
+cv20→[Shift][8][2][0]
+</div></div>
+This hackstring is discovered by @user202729
+Link video: <a href="https://www.youtube.com/watch?v=D_48ZsyQyLU">https://www.youtube.com/watch?v=D_48ZsyQyLU</a></span></div><div class=chatlog__embed><div class=chatlog__embed-color-pill style=background-color:rgba(255,0,0,255)></div><div class=chatlog__embed-content-container><div class=chatlog__embed-content><div class=chatlog__embed-text><div class=chatlog__embed-author-container><a class=chatlog__embed-author-link href=https://www.youtube.com/channel/UCKgTPVVKTqBuH-h24sa3gyw><div class=chatlog__embed-author>I Like Tortoises🐢🐢</div></a></div><div class=chatlog__embed-title><a class=chatlog__embed-title-link href="https://www.youtube.com/watch?v=D_48ZsyQyLU"><div class="chatlog__markdown chatlog__markdown-preserve">Make ur CASIO fx-991/570ES+ 1st edition VerE become a timer |ES+ #8|</div></a></div><div class=chatlog__embed-youtube-container><iframe class=chatlog__embed-youtube src=https://www.youtube.com/embed/D_48ZsyQyLU width=400 height=225></iframe></div></div></div></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1434440483878338621 class=chatlog__message-container data-message-id=1434440483878338621><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Sunday, November 2, 2025 2:14 PM"><a href=#chatlog__message-container-1434440483878338621>11/2/2025 2:14 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Draw 3 colors 570/991ex</h1><h2>Data (E9E0):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">1C D7 42 07 01 00 0C D7 7C 47 03 00 52 D7 00 00
+A0 ED 00 00 00 00 00 00 A5 7B 01 00 00 00 00 00
+D8 92 00 00 00 00 00 00 5C 60 01 00 D6 95 00 00
+8A 96 00 00 1E 91 00 00 F4 89 01 00 18 00 7A 3A
+01 00 B0 3F 02 00 00 00 00 00 00 00 00 00 1C 1D 
+02 00 A0 ED F6 81 01 00 00 00 74 D7 7C 3A 01 00
+
+DD 92 00 00 00 00 00 00 1C 1D 02 00 9C 39 01 00
+30 DA 1C 1D 02 00 5C 60 01 00 F4 89 01 00 10 40
+1E 91 00 00 F4 89 01 00 C4 00 2A 6E 02 00 A2 D7
+7A 3A 01 00 B0 3F 02 00 00 00 00 00 00 00 00 00
+1C 1D 02 00 5C 60 01 00 F4 89 01 00 01 01 1E 91
+00 00 F4 89 01 00 86 00 2A 6E 02 00 D0 D7 7A 3A
+
+01 00 B0 3F 02 00 00 00 00 00 00 00 00 00 1C 1D
+02 00 5C 60 01 00 F4 89 01 00 01 02 1E 91 00 00
+F4 89 01 00 48 00 2A 6E 02 00 FE D7 7A 3A 01 00
+B0 3F 02 00 00 00 00 00 00 00 00 00 1C 1D 02 00
+5C 60 01 00 F4 89 01 00 01 04 1E 91 00 00 F4 89
+01 00 0A 00 2A 6E 02 00 2C D8 7A 3A 01 00 B0 3F
+
+02 00 00 00 00 00 00 00 00 00 1C 1D 02 00 9C 39
+01 00 E8 D8 1C 1D 02 00 5A 7C 01 00 00 00 00 00
+00 00 72 D8 1C 1D 02 00 5A 7C 01 00 00 00 01 00
+00 00 72 D8 1C 1D 02 00 5A 7C 01 00 00 00 00 01
+00 00 72 D8 1C 1D 02 00 F4 89 01 00 01 01 1C A1
+00 00 A2 ED DD 92 00 00 A4 ED 00 00 F4 89 01 00
+
+00 00 D8 92 00 00 B8 D8 00 00 DD 92 00 00 E0 D8
+00 00 DD 92 00 00 00 00 00 00 A5 7B 01 00 39 D1
+00 00 D2 03 02 00 EE 25 01 00 A2 ED F4 82 01 00
+7C 3A 01 00 EE 25 01 00 00 00 54 88 00 00 5A 7C  
+01 00 39 D1 01 00 00 00 30 DA D2 03 02 00 EE 25
+01 00 A3 ED F4 82 01 00 7C 3A 01 00 EE 25 01 00
+
+00 00 54 88 00 00 1C 1D 02 00 5C 60 01 00 F4 89
+01 00 40 04 1E 91 00 00 F4 89 01 00 D6 00 2A 6E
+02 00 16 D9 7A 3A 01 00 B0 3F 02 00 00 00 00 00
+00 00 00 00 1C 1D 02 00 5C 60 01 00 F4 89 01 00
+80 08 1E 91 00 00 F4 89 01 00 B8 00 2A 6E 02 00
+44 D9 7A 3A 01 00 B0 3F 02 00 00 00 00 00 00 00</code></span> <span class=chatlog__edited-timestamp title="Sunday, November 2, 2025 2:18 PM">(edited)</span></div></div></div></div><div id=chatlog__message-container-1434441020065583114 class=chatlog__message-container data-message-id=1434441020065583114><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Sunday, November 2, 2025 2:16 PM">2:16 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">00 00 54 88 00 00 1C 1D 02 00 5C 60 01 00 F4 89
+01 00 40 04 1E 91 00 00 F4 89 01 00 D6 00 2A 6E
+02 00 16 D9 7A 3A 01 00 B0 3F 02 00 00 00 00 00
+00 00 00 00 1C 1D 02 00 5C 60 01 00 F4 89 01 00
+80 08 1E 91 00 00 F4 89 01 00 B8 00 2A 6E 02 00
+44 D9 7A 3A 01 00 B0 3F 02 00 00 00 00 00 00 00
+
+00 00 1C 1D 02 00 5C 60 01 00 F4 89 01 00 80 04
+1E 91 00 00 F4 89 01 00 9A 00 2A 6E 02 00 72 D9
+7A 3A 01 00 B0 3F 02 00 00 00 00 00 00 00 00 00
+1C 1D 02 00 5C 60 01 00 F4 89 01 00 40 08 1E 91
+00 00 F4 89 01 00 7C 00 2A 6E 02 00 A0 D9 7A 3A
+01 00 B0 3F 02 00 00 00 00 00 00 00 00 00 1C 1D
+
+02 00 5C 60 01 00 F4 89 01 00 04 10 1E 91 00 00
+F4 89 01 00 0A 00 2A 6E 02 00 CE D9 7A 3A 01 00
+B0 3F 02 00 00 00 00 00 00 00 00 00 1C 1D 02 00
+9C 39 01 00 30 DA 1C 1D 02 00 5A 7C 01 00 D4 DD
+00 0C 00 00 30 DA 6E 93 00 00 1C 1D 02 00 5A 7C 
+01 00 00 00 FF FF 00 00 28 DA 1C 1D 02 00 5A 7C
+
+01 00 00 00 01 00 00 00 28 DA 1C 1D 02 00 5A 7C
+01 00 00 00 00 FF 00 00 28 DA 1C 1D 02 00 F4 89 
+01 00 00 01 1C A1 00 00 A4 ED D8 92 00 00 A6 ED
+A6 ED F4 89 01 00 01 00 D8 92 00 00 00 00 00 00
+B4 CB 02 00 EE 25 01 00 03 00 1E 91 00 00 F4 89
+01 00 0E 00 2A 6E 02 00 6C DA 7A 3A 01 00 B0 3F
+
+02 00 00 00 00 00 00 00 00 00 1C 1D 02 00 C0 8A
+00 00 00 00 8C DA 1C 1D 02 00 A6 ED F4 89 01 00
+00 00 DD 92 00 00 00 00 00 00 B2 8A 30 30 A4 2B
+01 00 EE 00 D6 E9 00 04 00 00 3C 94 20 00 00 00
+00 00 00 00 00 00 9C 39 01 00 00 D7 1C 1D 02 00</code>
+<h2>Launcher (D522):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 33 33 D6 95 30 30 0E 97 30 30 A5 7B 31 30 34 F0 01 30 D2 03 32 30 5A 7C 31 30 30 04 E0 E9 30 D7 01 D7 CC 6C 31 30 B2 89 31 30 30 30 1C 1D 32 30</code>
+Set hex:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">x:
+A=1.0000FD2494200E&#215;1020
+B=1.97F001D203205A&#215;04
+C=1.E901CCB2891C1D&#215;23</code>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">@(748)=A
+@(749)=B
+@(714)=C</code>
+Token:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">@ 33 &#179; @ 00 @@ 00 = cos-&#185;( 1040 ▸a+b&#119946; @ 20 Mean( tan-&#185;( 100 @ &#119814;▸Simp 0% (Hex 01) % @ sinh( 10 @ LCM( 1000 @ @ 20</code>
+
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">↑↓←→: Move
+3: Draw Black
+2: Draw gray
+1: Draw White/Erase</code></span> <span class=chatlog__edited-timestamp title="Sunday, November 2, 2025 2:31 PM">(edited)</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=penguin><img class="chatlog__emoji chatlog__emoji--small" alt=🐧 src=/assets/1f427-DA043.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1434458033248927850 class=chatlog__message-container data-message-id=1434458033248927850><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Sunday, November 2, 2025 3:24 PM"><a href=#chatlog__message-container-1434458033248927850>11/2/2025 3:24 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Game Lumba 570/991ex</h1><h2>Data E9E0:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A5 7B 31 30 13 D1 01 30 D2 03 32 30 A5 7B 31 30
+01 13 5A EB 36 0C 32 30 A5 7B 31 30 01 20 5C EB
+36 0C 32 30 A5 7B 31 30 00 2F C0 2F DE B8 32 30
+A5 7B 31 30 00 16 C0 16 DE B8 32 30 A5 7B 31 30
+00 22 C0 22 DE B8 32 30 BE 8A 30 30 EE 25 31 30
+00 D7 22 4B 32 30 D6 95 30 30 F4 89 31 30 00 D7
+
+8A 3A 31 30 F4 89 31 30 01 01 1E 91 30 30 AA E1
+32 30 2A 6E 32 30 BC D7 F4 89 31 30 38 30 7A 3A
+31 30 B2 7B 31 30 30 30 30 30 56 0D 32 30 D6 95
+30 30 F4 89 31 30 00 D7 8A 3A 31 30 F4 89 31 30
+01 02 1E 91 30 30 AA E1 32 30 2A 6E 32 30 12 D8
+F4 89 31 30 38 30 7A 3A 31 30 B2 7B 31 30 30 30
+
+30 30 56 0D 32 30 F4 89 31 30 02 00 1C A1 30 30
+F0 E9 D8 92 30 30 30 30 30 30 42 07 31 30 92 D8
+56 0D 32 30 D6 95 30 30 F4 89 31 30 00 D7 8A 3A
+31 30 F4 89 31 30 04 10 1E 91 30 30 AA E1 32 30
+2A 6E 32 30 68 D8 F4 89 31 30 0A 30 7A 3A 31 30
+B2 7B 31 30 30 30 30 30 56 0D 32 30 F4 89 31 30
+
+02 00 1C A1 30 30 FC E9 D8 92 30 30 30 30 30 30
+42 07 31 30 92 D8 56 0D 32 30 42 07 31 30 92 D8
+56 0D 32 30 A5 7B 31 30 F0 E9 01 13 C4 38 31 30
+A5 7B 31 30 FC E9 01 20 C4 38 31 30 D6 95 30 30
+B8 82 30 30 A5 7B 31 30 30 D6 84 D1 C8 03 32 30
+42 07 31 30 2E D6 56 0D 32 30 B1 00 B2 00 00 00
+
+52 61 63 65 20 67 61 6D 65 73 21 00 00 00 00 00</code>
+<h2>Launcher:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 30 30 A5 7B 31 FE 03 30 60 EB 56 3D 32 30
+BE 8A 30 30 5A 7C 31 30 FE 01 E0 E9 30 D7 2E D7
+B2 89 31 30 30 30 1C 1D 32 48</code>
+Set heks:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">x:
+@=10.000FD24EB2056:
+@=13.DBE8A5AE920B2:
+@=1891C1D23</code>
+Token:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">@ 00 = cos-&#185;( 1 ft▸m 0 ( @ @ &#120279; 20 @ RndFix( 00 Mean( tan-&#185;( 10 in▸cm &#119814;▸Simp 0 % . % @ LCM( 1000 @ @ 2&#119961;</code>
+*Dev dari Kator
+Penterjemah: kasio rop basic tutorial &amp; Buon...ngu &amp; <span class="chatlog__markdown-mention" title="variablean2k12">@Mr. Kuala Lumpur</span> *</span> <span class=chatlog__edited-timestamp title="Sunday, November 2, 2025 3:28 PM">(edited)</span></div></div></div></div><div id=chatlog__message-container-1434458485776580731 class=chatlog__message-container data-message-id=1434458485776580731><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Sunday, November 2, 2025 3:25 PM">3:25 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Text editor 991ex</h1><h2>Data (E9E0):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A5 7B 31 30 13 D1 01 30 D2 03 32 30 A5 7B 31 30
+40 E8 30 30 D2 03 32 30 A5 7B 31 30 0E 01 40 E8
+5A 3D 32 30 EE 25 31 30 0E 11 5A 3D 32 30 EE 25
+31 30 0E 21 5A 3D 32 30 EE 25 31 30 0E 31 5A 3D
+32 30 be 8a 30 30 ee 25 31 30 00 D7 22 4b 32 30 
+d6 95 30 30 f4 89 31 30 00 D7 8a 3a 31 30 f4 89
+
+31 30 40 04 1E 91 30 30 aa e1 32 30 2a 6e 32 30 
+B6 D7 f4 89 31 30 38 30 7A 3a 31 30 B2 7B 31 30 
+30 30 30 30 56 0D 32 30 d6 95 30 30 f4 89 31 30
+00 D7 8a 3a 31 30 f4 89 31 30 80 08 1e 91 30 30
+aa e1 32 30 2a 6e 32 30 0C D8 f4 89 31 30 38 30
+7a 3a 31 30 b2 7B 31 30 30 30 30 30 56 0D 32 30
+
+f4 89 31 30 FF FF 1c a1 30 30 F0 E9 d8 92 30 30 
+30 30 30 30 64 5B 31 30 F8 D9 56 0D 32 30 d6 95
+30 30 f4 89 31 30 00 D7 8a 3a 31 30 f4 89 31 30 
+10 40 1e 91 30 30 aa e1 32 30 2a 6e 32 30 62 D8
+f4 89 31 30 38 30 7a 3a 31 30 b2 7B 31 30 30 30 
+30 30 56 0D 32 30 f4 89 31 30 01 00 1c a1 30 30
+
+F0 E9 d8 92 30 30 30 30 30 30 64 5b 31 30 F8 D9
+56 0D 32 30 d6 95 30 30 f4 89 31 30 00 D7 8a 3a
+31 30 f4 89 31 30 01 01 1e 91 30 30 aa e1 32 30
+2a 6e 32 30 B8 D8 f4 89 31 30 38 30 7a 3a 31 30 
+b2 7B 31 30 30 30 30 30 56 0D 32 30 f4 89 31 30 
+FF FF 1c A1 30 30 F2 E9 d8 92 30 30 30 30 30 30
+
+64 5B 31 30 F8 D9 56 0D 32 30 d6 95 30 30 f4 89 
+31 30 00 D7 8a 3a 31 30 f4 89 31 30 01 02 1e 91
+30 30 aa e1 32 30 2a 6e 32 30 0E D9 f4 89 31 30
+38 30 7a 3a 31 30 b2 7B 31 30 30 30 30 30 56 0D 
+32 30 f4 89 31 30 01 00 1c a1 30 30 F2 E9 d8 92
+30 30 30 30 30 30 64 5b 31 30 F8 D9 56 0D 32 30
+
+d6 95 30 30 f4 89 31 30 00 D7 8a 3a 31 30 f4 89 
+31 30 01 04 1e 91 30 30 aa e1 32 30 2a 6e 32 30
+5C D9 f4 89 31 30 38 30 7a 3a 31 30 b2 7B 31 30 
+30 30 30 30 56 0D 32 30 a5 7B 31 30 F2 E9 41 30 
+D2 03 32 30 64 5b 31 30 F8 D9 56 0D 32 30 d6 95
+30 30 f4 89 31 30 00 D7 8a 3a 31 30 f4 89 31 30
+
+01 40 1e 91 30 30 aa e1 32 30 2a 6e 32 30 AA D9
+f4 89 31 30 38 30 7a 3a 31 30 b2 7B 31 30 30 30 
+30 30 56 0D 32 30 a5 7B 31 30 F2 E9 61 30 D2 03</code></span></div></div></div></div><div id=chatlog__message-container-1434458608476622870 class=chatlog__message-container data-message-id=1434458608476622870><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Sunday, November 2, 2025 3:26 PM">3:26 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">32 30 64 5b 31 30 F8 D9 56 0D 32 30 d6 95 30 30 
+f4 89 31 30 04 08 1e 91 30 30 aa e1 32 30 2a 6e
+32 30 E2 D9 f4 89 31 30 0A 30 7a 3a 31 30 b2 7B
+
+31 30 30 30 30 30 56 0D 32 30 64 5b 31 30 F8 D9
+56 0D 32 30 a5 7B 31 30 F2 E9 20 30 D2 03 32 30 
+64 5b 31 30 F8 D9 56 0D 32 30 a5 7B 31 30 30 D6
+90 D1 C8 03 32 30 64 5b 31 30 2E D6 56 0D 32 30 </code>
+<h2>Launcher:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD24 30 30 a5 7B 31 30 F0E9 40 30 D2 03 32 30 5a 7c 31 30 E0 02 E0 E9 30 D7 2E D7 b2 89 31 30 30 30 1c 1d 32 48</code></span></div></div></div></div><div id=chatlog__message-container-1434458915273441396 class=chatlog__message-container data-message-id=1434458915273441396><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Sunday, November 2, 2025 3:27 PM">3:27 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve>Cre: Buon...ngu &amp; <span class="chatlog__markdown-mention" title="variablean2k12">@Mr. Kuala Lumpur</span></span></div></div></div></div><div id=chatlog__message-container-1434459967665999932 class=chatlog__message-container data-message-id=1434459967665999932><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Sunday, November 2, 2025 3:31 PM">3:31 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Credits:</h1><em><strong>Geometry dash: Me, Gaysio, Sigma, Kator
+Race Game: Me, Buon ngu, Kator
+Text editor: Buon ngu, (idk who originally made it)
+Draw: Me, Buon ngu, (idk who originally made it)</strong></em></span> <span class=chatlog__edited-timestamp title="Sunday, November 2, 2025 3:34 PM">(edited)</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1434832608918769705 class=chatlog__message-container data-message-id=1434832608918769705><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Monday, November 3, 2025 4:12 PM"><a href=#chatlog__message-container-1434832608918769705>11/3/2025 4:12 PM</a></span></div></div></div></div><div id=chatlog__message-container-1434832709686923344 class=chatlog__message-container data-message-id=1434832709686923344><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Monday, November 3, 2025 4:12 PM">4:12 PM</div></div><div class=chatlog__message-primary></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1434850161791864923 class=chatlog__message-container data-message-id=1434850161791864923><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Monday, November 3, 2025 5:22 PM"><a href=#chatlog__message-container-1434850161791864923>11/3/2025 5:22 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>C&#225;ch tạo “3lines spell” tr&#234;n fx-82AU PLUS II 2nd</h1>
+0. Nhấn <strong>[SHIFT] [9] [3] [=] [AC]</strong>
+1. Lấy biến <em>illegal variable</em>. C&#243; 2 c&#225;ch để l&#224;m điều n&#224;y:
+
+<strong>C&#225;ch 1:</strong>
+Nhấn <strong>[MODE] [2]</strong>, sau đ&#243; nhấn <strong>[AC]</strong>, rồi nhấn <strong>[ON]</strong> sau khoảng <strong>0.5 gi&#226;y</strong> để cố v&#224;o <em>STAT submode 0</em>.
+Bạn đ&#227; v&#224;o đ&#250;ng nếu khi nhấn <strong>[SHIFT] [1]</strong> bạn thấy <strong>5:REG</strong>.
+Nếu nhấn <strong>[ON]</strong> qu&#225; sớm th&#236; đ&#232;n <em>STAT</em> sẽ kh&#244;ng s&#225;ng → thử lại.
+Nếu nhấn qu&#225; muộn bạn sẽ thấy <strong>5:MinMax</strong>, khi đ&#243; h&#227;y đổi về <em>COMP mode</em> bằng <strong>[MODE] [1]</strong> rồi l&#224;m lại.
+
+Khi đ&#227; ở trong <em>STAT submode 0</em>:
+Nhấn <strong>[SHIFT] [1] [5] [3] [SHIFT] [RCL] [(-)]</strong>.
+Thao t&#225;c n&#224;y sẽ lưu <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">r</code> v&#224;o biến <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code> (c&#243; thể d&#249;ng biến kh&#225;c, ở đ&#226;y d&#249;ng <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code> l&#224;m v&#237; dụ).
+Sau đ&#243; chuyển sang bước 2.
+
+<strong>C&#225;ch 2:</strong>
+Nhấn <strong>[SHIFT] [+] [0] [SHIFT] [)] [1] [=] [&#247;] [9]</strong>,
+sau đ&#243; nhấn <strong>[(]</strong> li&#234;n tục cho đến hết biểu thức.
+Nhấn <strong>[=] [AC] [↑] [AC] [←]</strong>, rồi x&#243;a tất cả trừ k&#253; tự <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">r</code>.
+Nhấn <strong>[SHIFT] [RCL] [(-)]</strong>.
+Thao t&#225;c n&#224;y cũng lưu <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">r</code> v&#224;o biến <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code>. Sau đ&#243; qua bước 2.
+
+2. V&#224;o chế độ <em>LineIO Verify</em>: nhấn <strong>[SHIFT] [MODE] [2] [MODE] [3]</strong>
+
+3. G&#245; <strong>A [ALPHA] [(-)]</strong> để t&#237;nh <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A</code>.
+   Nếu thấy <strong>Math ERROR</strong> l&#224; đ&#250;ng.
+   Nếu hiện <strong>A=0 TRUE</strong> th&#236; sai → l&#224;m lại từ bước 0.
+
+4. G&#245; một k&#253; tự bất kỳ (v&#237; dụ <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">9</code>) <strong>90 lần</strong>.
+   Sau đ&#243; tiếp tục g&#245; <strong>chậm hơn</strong> cho đến khi thấy <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">A=0</code> xuất hiện lại.
+   V&#237; dụ con trỏ của bạn sẽ như thế n&#224;y: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">999999|A=0</code> (dấu <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">|</code> l&#224; con trỏ).
+
+5. G&#245; chuỗi số <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">20</code> <strong>5 lần</strong> (tức l&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">2020202020</code>).
+
+6. G&#245; d&#227;y số bạn muốn.
+   Thứ tự hiển thị chưa r&#245;, n&#234;n bạn c&#243; thể thử ngẫu nhi&#234;n để xem kết quả.
+   Bạn cũng c&#243; thể g&#245; <strong>chữ c&#225;i</strong> hoặc <strong>k&#253; tự trong bảng k&#253; tự</strong>,
+   nhưng nếu g&#245; <strong>hơn 2 k&#253; tự</strong>, m&#225;y sẽ bắt đầu đọc từ <strong>ROM</strong> (hiện tượng đặc biệt).
+
+7. Khi đ&#232;n <strong>M</strong> s&#225;ng l&#234;n hoặc bạn đạt đến lệnh <strong>ref(ref(ref</strong>,
+   nhấn <strong>[AC] [←] [=]</strong>.
+
+8. D&#242;ng “3lines spell” sẽ được hiển thị.</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=thumbsup><img class="chatlog__emoji chatlog__emoji--small" alt=👍 src=/assets/1f44d-27259.svg loading=lazy> <span class=chatlog__reaction-count>2</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1435192908499390495 class=chatlog__message-container data-message-id=1435192908499390495><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Tuesday, November 4, 2025 4:04 PM"><a href=#chatlog__message-container-1435192908499390495>11/4/2025 4:04 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>INVERT ON CASIO fx-82AU PLUS II 2nd</h1><strong>[SHIFT] [9] [3] [=] [AC]</strong>
+1. Lấy <strong>biến bất hợp ph&#225;p (illegal variable)</strong>. C&#243; 2 c&#225;ch để l&#224;m điều n&#224;y:
+
+<strong>C&#225;ch 1:</strong>
+Nhấn <strong>[MODE] [2]</strong>, sau đ&#243; nhấn <strong>[AC]</strong>, rồi nhấn <strong>[ON]</strong> khoảng <strong>0.5 gi&#226;y</strong> sau đ&#243; để thử v&#224;o <strong>STAT submode 0</strong>.
+Bạn đ&#227; v&#224;o đ&#250;ng khi nhấn <strong>[SHIFT] [1]</strong> v&#224; thấy <strong>5:REG</strong>.
+
+Nếu bạn nhấn <strong>[ON]</strong> <strong>qu&#225; sớm</strong>, đ&#232;n <strong>STAT</strong> sẽ <strong>kh&#244;ng s&#225;ng</strong>, h&#227;y thử lại.
+Nếu bạn nhấn <strong>qu&#225; muộn</strong>, bạn sẽ thấy <strong>5:MinMax</strong>, h&#227;y chuyển về chế độ <strong>COMP</strong> bằng <strong>[MODE] [1]</strong> rồi thử lại.
+
+Khi bạn đ&#227; v&#224;o <strong>STAT submode 0</strong>:
+Nhấn <strong>[SHIFT] [1] [5] [3] [SHIFT] [RCL] [(-)]</strong>.
+Thao t&#225;c n&#224;y sẽ <strong>lưu r v&#224;o biến A</strong> (bạn c&#243; thể d&#249;ng biến kh&#225;c, nhưng v&#237; dụ n&#224;y d&#249;ng A).
+B&#226;y giờ chuyển sang <strong>bước 2</strong>.
+
+<strong>C&#225;ch 2:</strong>
+Nhấn <strong>[SHIFT] [+] [0] [SHIFT] [)] [1] [=] [&#247;] [9]</strong>, sau đ&#243; <strong>spam [(]</strong> cho đến hết phương tr&#236;nh.
+Nhấn <strong>[=] [AC] [↑] [AC] [←]</strong>, rồi x&#243;a mọi thứ <strong>trừ k&#253; tự r</strong>.
+Nhấn <strong>[SHIFT] [RCL] [(-)]</strong> để lưu <strong>r v&#224;o biến A</strong> (c&#243; thể d&#249;ng biến kh&#225;c, nhưng ở đ&#226;y l&#224; A).
+B&#226;y giờ chuyển sang <strong>bước 2</strong>.
+
+2. V&#224;o <strong>LineIO Verify</strong>:
+   Nhấn <strong>[SHIFT] [MODE] [2] [MODE] [3]</strong>
+
+3. <strong>Đ&#225;nh gi&#225; biến A:</strong>
+   Nhấn <strong>[ALPHA] [(-)]</strong>.
+   Nếu bạn thấy <strong>Math ERROR</strong>, l&#224; <strong>đ&#250;ng</strong>.
+   Nếu bạn thấy <strong>A=0 TRUE</strong>, l&#224; <strong>sai</strong>, h&#227;y l&#224;m lại từ <strong>bước 0</strong>.
+
+4. <strong>Spam bất kỳ k&#253; tự n&#224;o</strong> khoảng <strong>90 lần</strong>.
+   Sau đ&#243; <strong>spam chậm lại</strong> cho đến khi bạn thấy <strong>A=0</strong> xuất hiện lại.
+   L&#250;c n&#224;y con trỏ của bạn sẽ tr&#244;ng như:
+   <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">999999|A=0</code>
+   trong đ&#243; <strong>|</strong> l&#224; vị tr&#237; con trỏ.
+
+5. <strong>Nhập d&#227;y số 20 năm lần:</strong>
+   → <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">2020202020</code>
+
+6. Sau đ&#243; nhấn <strong>[&#215;10][ANS]</strong> cho đến khi <strong>M s&#225;ng l&#234;n</strong>,
+   rồi nhấn <strong>[AC] [←] [=]</strong>.
+
+Bạn sẽ thấy <strong>4 d&#242;ng ph&#233;p t&#237;nh (4lines spell)</strong> c&#249;ng <strong>đồng hồ đếm ngược đến Syntax Error</strong>.
+Khi nhấn <strong>[←]</strong>, bạn sẽ thấy một phương tr&#236;nh kiểu <strong>2020=02020</strong> v&#224; v&#224;i k&#253; hiệu <strong>&#215;10ANS</strong>.
+Nhấn <strong>[=]</strong>, bạn sẽ thấy <strong>Syntax Error</strong>.
+Nhấn <strong>[←]</strong>, bạn sẽ thấy <strong>=0Ref(0mn</strong>,
+nhấn <strong>[=]</strong> lần nữa, bạn sẽ thấy <strong>m&#224;n h&#236;nh Syntax Error đảo ngược (inverted)</strong>.</span> <span class=chatlog__edited-timestamp title="Tuesday, November 4, 2025 4:04 PM">(edited)</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=thumbsup><img class="chatlog__emoji chatlog__emoji--small" alt=👍 src=/assets/1f44d-27259.svg loading=lazy> <span class=chatlog__reaction-count>2</span></div></div></div></div></div><div id=chatlog__message-container-1435192915990155275 class=chatlog__message-container data-message-id=1435192915990155275><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Tuesday, November 4, 2025 4:04 PM">4:04 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve>Cre: <span class="chatlog__markdown-mention" title="ilovecats4606">@M&#200;O B&#201;O</span></span></div><div class=chatlog__reactions><div class=chatlog__reaction title=thumbsup><img class="chatlog__emoji chatlog__emoji--small" alt=👍 src=/assets/1f44d-27259.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1436111990207811685 class=chatlog__message-container data-message-id=1436111990207811685><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Friday, November 7, 2025 4:56 AM"><a href=#chatlog__message-container-1436111990207811685>11/7/2025 4:56 AM</a></span></div><div class=chatlog__attachment><a href=/assets/4166f41f3a292df5ea17e9dcf9315c6036a873af-86A91.png> <img class=chatlog__attachment-media src=/assets/4166f41f3a292df5ea17e9dcf9315c6036a873af-86A91.png alt="Image attachment" title="Image: 4166f41f3a292df5ea17e9dcf9315c6036a873af.png (1.57 MB)" loading=lazy> </a></div><div class=chatlog__attachment><a href=/assets/47cdd288d43f8794e72b0de7971b0ef419d53aaf-109AB.png> <img class=chatlog__attachment-media src=/assets/47cdd288d43f8794e72b0de7971b0ef419d53aaf-109AB.png alt="Image attachment" title="Image: 47cdd288d43f8794e72b0de7971b0ef419d53aaf.png (1.84 MB)" loading=lazy> </a></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1436113806727184547 class=chatlog__message-container data-message-id=1436113806727184547><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Friday, November 7, 2025 5:03 AM"><a href=#chatlog__message-container-1436113806727184547>11/7/2025 5:03 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>SPELL 4 LINES ON CASIO fx-991CN X</h1><h2>1. 进入100+34an模式</h2><h2>2. 1 shift 8 下 2 7 = 上 左 shift 8 下 2 6 左 左 右</h2><h2>3. 打四遍（shift 8 1 A 左 1 del 左 右）</h2><h2>4. 开始拼字（1-17个字符对应第一行，18-34个字符对应第二行，39-51个字符对应第三行，第52-68个字符对应第四行）</h2><h2>5. 光标移到最后，左5下，排版</h2>= @ 2 in&gt;cm 0 C e 2 0 = @ 2 pc&gt;km 0 C e 2 0 = @ 2 0 e 0 C e 2 0 = @ 2 0 1 mτ i 2 x （@是第3步的shift 8 1 A，C是shift &#247;）
+<h2>6. <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[CALC]</code> <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[=]</code></h2><a href="&lt;https://tieba.baidu.com/p/7861042795&gt;">Link</a></span></div></div></div></div><div id=chatlog__message-container-1436114574347731005 class=chatlog__message-container data-message-id=1436114574347731005><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, November 7, 2025 5:06 AM">5:06 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve># MODE 68 ON CASIO fx-991CN X</span></div><div class=chatlog__attachment><a href=/assets/e3592b2eb9389b50c107d2ea9235e5dde6116e12-29549.png> <img class=chatlog__attachment-media src=/assets/e3592b2eb9389b50c107d2ea9235e5dde6116e12-29549.png alt="Image attachment" title="Image: e3592b2eb9389b50c107d2ea9235e5dde6116e12.png (868.23 KB)" loading=lazy> </a></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1439100901477580881 class=chatlog__message-container data-message-id=1439100901477580881><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Saturday, November 15, 2025 10:53 AM"><a href=#chatlog__message-container-1439100901477580881>11/15/2025 10:53 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>DUMP ROM SEGMENT 0 FOR fx-82 AU PLUS II 2nd edition</h1>B1: Sử dụng LineIO Overflow(VERIF mode) v&#224; spam đến kho con trỏ đứng ngay trước đoạn A=0.
+B2: Nhập hackstring sau:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">2E 1F 2E 2E 
+36 37 30 30 
+52 28 30 30
+2E 88
+8C 05 31 30
+30 30 30 30
+40 23 30 30
+40 23 30 30
+40 23 30 30
+40 23 30 30
+44 2D 30 30
+30 30
+
+F8 27 30 30
+AE 8B
+F6 27 8E 34
+10 06 01 01
+D0 78 31 30
+52 28 30 30
+DC 8B
+D2 33 30 30
+30 30 30 30
+B4 2E 30 30
+EC 8B
+B2 22 30 30
+8E 34 30 30 
+30 A0
+B2 2C 30 30
+FF FF 2E 2E</code>
+Token:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">. &#120583;ᴘ . . 6 7 0 0 o ( 0 0 . Conjg( Ran# ao 1 0 0 0 0 0 Vm &#120583;n 0 0 Vm &#120583;n 0 0 Vm &#120583;n 0 0 D - 0 0 0 0 J▶kgf⋅m e 0 0 ⌟ Ans Pa▶kgf/cm&#178; e Q3 4 Σx&#178; h mᴘ mᴘ P( R 1 0 o ( 0 0 m▶yd Ans R( 3 0 0 0 0 0 0 c₂ . 0 0 g▶oz Ans tan⁻&#185;( &#120583;e 0 0 Q3 4 0 0 0 sin( tan⁻&#185;( , 0 0 @ @ . .</code>
+B3: Bấm AC tr&#225;i = l&#224; xong. Full segment 0 sẽ mất khoảng 3 ph&#250;t rưỡi để dump
+Cre: <span class="chatlog__markdown-mention" title="ilovecats4606">@M&#200;O B&#201;O</span></span> <span class=chatlog__edited-timestamp title="Saturday, November 15, 2025 10:53 AM">(edited)</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1439104008945012926 class=chatlog__message-container data-message-id=1439104008945012926><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Saturday, November 15, 2025 11:05 AM"><a href=#chatlog__message-container-1439104008945012926>11/15/2025 11:05 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>C&#193;CH SPELL 1 LINE TR&#202;N 991CNX V.C</h1>1. V&#224;o 100an như c&#225;c d&#242;ng m&#225;y kh&#225;c
+2. Nhập theo form sau:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[17 k&#253; tự spell] [16 số] [cs26] : 2&#119961;</code>
+[CALC] [=]
+Cre: ILT (maybe)</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1439202022611226796 class=chatlog__message-container data-message-id=1439202022611226796><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Saturday, November 15, 2025 5:35 PM"><a href=#chatlog__message-container-1439202022611226796>11/15/2025 5:35 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>C&#193;CH SPELL 1 D&#210;NG TA TR&#202;N 991EX</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">CP: m&gt;n mile F2x</code>
+<h1>C&#193;C SPELL 4 D&#210;NG TR&#202;N 991EX</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">CP: @2in&gt;cmGD21=@2pc&gt;kmGD21=@21eGD21=@211m&gt;n mile F2x</code>
+<h1>C&#193;CH SPELL 2 D&#210;NG TR&#202;N 991EX</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">CP: @2pc&gt;kmGD21=@21eG F2x</code>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Lưu &#253;: G l&#224; S717</code>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline"> C&#225;ch t&#237;nh nums sẽ giống 580 ( trừ 1 d&#242;ng v&#236; m&gt;n mile )</code>
+Cre: <span class="chatlog__markdown-mention" title="thuthuatcasio3">@Thủ Thuật Casio</span>
+<span class="chatlog__markdown-spoiler chatlog__markdown-spoiler--hidden" onclick="showSpoiler(event, this)"> Mới ăn trộm tr&#234;n toptop<img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="🤫"
+    title="shushing_face"
+    src="/assets/1f92b-DABDE.svg"> </span></span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1443913724791488583 class=chatlog__message-container data-message-id=1443913724791488583><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Friday, November 28, 2025 5:37 PM"><a href=#chatlog__message-container-1443913724791488583>11/28/2025 5:37 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Quickcpy ++ on CASIO fx-991CN X</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A=C6.4020000003461 độ (m&#227; trong h&#236;nh vu&#244;ng nhỏ)
+B=8.D624D36C4B01 x10 98
+C=1.0030D6381D02
+D=10.00E9502000281
+E=1.80100097D880D1
+F=1.00BC7301
+x=C6.4020030D63461
+y=1.00A0D8CE8701 x10</code>
+Sau khi g&#225;n gi&#225; trị cho biến , nhập <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">an+12</code> theo sau l&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">720D32302CD3700D32</code>
+sẽ hiển thị l&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">an123456789012e^(@20,&gt;a+bicosh-1(@2)</code>
+. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">=</code> v&#224; m&#224;n h&#236;nh sẽ x&#243;a, cho biết bạn đ&#227; v&#224;o chế độ radix. Thực hiện theo phương ph&#225;p th&#244;ng thường khi sử dụng quickcpy++, h&#227;y nhập chương tr&#236;nh ch&#237;nh quickcpy++ sau: (Phần được t&#244; s&#225;ng l&#224; vị tr&#237; ti&#234;m mong muốn; h&#227;y thay thế bằng địa chỉ của bạn khi sử dụng). Nhấn [Menu] [3] để v&#224;o chương tr&#236;nh ch&#237;nh quickcpy++.</span></div></div></div></div><div id=chatlog__message-container-1443913800658063370 class=chatlog__message-container data-message-id=1443913800658063370><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, November 28, 2025 5:37 PM">5:37 PM</div></div><div class=chatlog__message-primary><div class=chatlog__attachment><a href=/assets/image-1A14F.png> <img class=chatlog__attachment-media src=/assets/image-1A14F.png alt="Image attachment" title="Image: image.png (9.65 KB)" loading=lazy> </a></div></div></div></div><div id=chatlog__message-container-1443913839807692811 class=chatlog__message-container data-message-id=1443913839807692811><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, November 28, 2025 5:38 PM">5:38 PM</div></div><div class=chatlog__message-primary><div class=chatlog__attachment><a href=/assets/image-1C985.png> <img class=chatlog__attachment-media src=/assets/image-1C985.png alt="Image attachment" title="Image: image.png (17.05 KB)" loading=lazy> </a></div><div class=chatlog__reactions><div class=chatlog__reaction title=rofl><img class="chatlog__emoji chatlog__emoji--small" alt=🤣 src=/assets/1f923-5854E.svg loading=lazy> <span class=chatlog__reaction-count>2</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1443914103394664509 class=chatlog__message-container data-message-id=1443914103394664509><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__reply-symbol></div><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__reply><img class=chatlog__reply-avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy><div class=chatlog__reply-author style=color:rgb(255,247,134) title=phong2k11_4>ShakePeare</div><div class=chatlog__reply-content><span class=chatlog__reply-link onclick="scrollToMessage(event,'1443913724791488583')"> <h1>Quickcpy ++ on CASIO fx-991CN X</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A=C6.4020000003461 độ (m&#227; trong h&#236;nh vu&#244;ng nhỏ)
+B=8.D624D36C4B01 x10 98
+C=1.0030D6381D02
+D=10.00E9502000281
+E=1.80100097D880D1
+F=1.00BC7301
+x=C6.4020030D63461
+y=1.00A0D8CE8701 x10</code>
+Sau khi g&#225;n gi&#225; trị cho biến , nhập <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">an+12</code> theo sau l&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">720D32302CD3700D32</code>
+sẽ hiển thị l&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">an123456789012e^(@20,&gt;a+bicosh-1(@2)</code>
+. Nhấn <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">=</code> v&#224; m&#224;n h&#236;nh sẽ x&#243;a, cho biết bạn đ&#227; v&#224;o chế độ radix. Thực hiện theo phương ph&#225;p th&#244;ng thường khi sử dụng quickcpy++, h&#227;y nhập chương tr&#236;nh ch&#237;nh quickcpy++ sau: (Phần được t&#244; s&#225;ng l&#224; vị tr&#237; ti&#234;m mong muốn; h&#227;y thay thế bằng địa chỉ của bạn khi sử dụng). Nhấn [Menu] [3] để v&#224;o chương tr&#236;nh ch&#237;nh quickcpy++. </span></div></div><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Friday, November 28, 2025 5:39 PM"><a href=#chatlog__message-container-1443914103394664509>11/28/2025 5:39 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve>Phương ph&#225;p g&#225;n trực tiếp:
+Số phức tuyến t&#237;nh
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">-E.804B0200D65AD2x10-80→M
+E.8801005A00248F+E.0000002E0110D3i→A
+E.006AD6AA7901+E.008890i→B
+E0.0A2C301007263+E00.48EF402601i→C
+E.00B400[địa chỉ ban đầu]+E8.8010011D11A65i→
+D25402008A6D01+E.9101i→
+E4.24020008FD36D7→F
+E.00889020→x
+E.004EEF700D02→y
+2.00C473010076D7</code>
+Launcher
+FD 20 30 30 30 30 30 30 30 30 16 D3 26 D6 48 A8 32 30
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">=</code>，
+Nhấp chuột tr&#225;i v&#224;o C v&#224; A để mở lịch sử, x&#243;a 26 D6, th&#234;m hai số trước 16 D3 v&#224; th&#234;m nội dung được ch&#232;n v&#224;o cuối.
+So với phi&#234;n bản gốc, phần ảo của c&#225;c biến C, D v&#224; E đ&#227; được sửa đổi.</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=octagonal_sign><img class="chatlog__emoji chatlog__emoji--small" alt=🛑 src=/assets/1f6d1-49B07.svg loading=lazy> <span class=chatlog__reaction-count>2</span></div><div class=chatlog__reaction title=100><img class="chatlog__emoji chatlog__emoji--small" alt=💯 src=/assets/1f4af-4CFF5.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div><div class=chatlog__reaction title=thumbsup><img class="chatlog__emoji chatlog__emoji--small" alt=👍 src=/assets/1f44d-27259.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1443914331904278598 class=chatlog__message-container data-message-id=1443914331904278598><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__reply-symbol></div><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__reply><img class=chatlog__reply-avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy><div class=chatlog__reply-author style=color:rgb(255,247,134) title=phong2k11_4>ShakePeare</div><div class=chatlog__reply-content><span class=chatlog__reply-link onclick="scrollToMessage(event,'1443914103394664509')"> Phương ph&#225;p g&#225;n trực tiếp:
+Số phức tuyến t&#237;nh
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">-E.804B0200D65AD2x10-80→M
+E.8801005A00248F+E.0000002E0110D3i→A
+E.006AD6AA7901+E.008890i→B
+E0.0A2C301007263+E00.48EF402601i→C
+E.00B400[địa chỉ ban đầu]+E8.8010011D11A65i→
+D25402008A6D01+E.9101i→
+E4.24020008FD36D7→F
+E.00889020→x
+E.004EEF700D02→y
+2.00C473010076D7</code>
+Launcher
+FD 20 30 30 30 30 30 30 30 30 16 D3 26 D6 48 A8 32 30
+<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">=</code>，
+Nhấp chuột tr&#225;i v&#224;o C v&#224; A để mở lịch sử, x&#243;a 26 D6, th&#234;m hai số trước 16 D3 v&#224; th&#234;m nội dung được ch&#232;n v&#224;o cuối.
+So với phi&#234;n bản gốc, phần ảo của c&#225;c biến C, D v&#224; E đ&#227; được sửa đổi. </span></div></div><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Friday, November 28, 2025 5:40 PM"><a href=#chatlog__message-container-1443914331904278598>11/28/2025 5:40 PM</a></span></div><div class=chatlog__attachment><a href=/assets/image-49D3F.png> <img class=chatlog__attachment-media src=/assets/image-49D3F.png alt="Image attachment" title="Image: image.png (54.07 KB)" loading=lazy> </a></div></div></div></div><div id=chatlog__message-container-1443914428834906202 class=chatlog__message-container data-message-id=1443914428834906202><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, November 28, 2025 5:40 PM">5:40 PM</div></div><div class=chatlog__message-primary><div class=chatlog__attachment><div class=chatlog__attachment-generic><svg class=chatlog__attachment-generic-icon><use href=#attachment-icon /></svg><div class=chatlog__attachment-generic-name><a href=/assets/message-21B76.txt> message.txt </a></div><div class=chatlog__attachment-generic-size>6.96 KB</div></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1454807671034351709 class=chatlog__message-container data-message-id=1454807671034351709><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Sunday, December 28, 2025 7:06 PM"><a href=#chatlog__message-container-1454807671034351709>12/28/2025 7:06 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h2>Hex editor 991ex</h2>
+<h2>Data 0&#215;E9E0</h2>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">10 E3 42 07 01 00 0C E3 7C 47 03 00 00 00 00 00
+00 00 00 00 00 00 00 00 1A 61 01 00 10 E3 EC 7A
+D6 95 00 00 8A 96 00 00 B2 C7 02 00 00 00 00 00
+5C 60 01 00 76 93 00 00 2F 00 00 C3 00 00 76 93 
+00 00 04 00 7A 3A 01 00 76 93 00 00 A7 00 F6 55
+02 00 66 E3 7A 3A 01 00  B0 3F 02 00 00 00 00 00
+
+00 00 00 00 1C 1D 02 00 5C 60 01 00 F6 55 02 00
+40 00 A2 BA 02 00 98 E3 00 00 00 C3 00 00 76 93
+00 00 A8 00 7A 3A 01 00 B0 3F 02 00 00 00 00 00
+00 00 00 00 1C 1D 02 00 42 E6 76 93 00 00 00 00
+D8 92 00 00 44 E6 0F 00 56 19 02 00 B8 60 01 00
+02 38 01 00 7C 3A 01 00 52 0B 02 00 00 00 00 00
+
+D2 03 02 00 76 93 00 00 44 E6 00 C3 00 00 76 93
+00 00 38 00 F6 55 02 00 EE E3 7A 3A 01 00 B0 3F
+02 00 00 00 00 00 00 00 00 00 1C 1D 02 00 40 E6
+76 93 00 00 00 00 D8 92 00 00 1A E4 00 00 DD 92
+00 00 00 00 02 00 9C 39 01 00 01 00 7A 0E 01 00
+44 E6 00 00 2A E5 16 15 02 00 00 00 70 6D 01 00
+
+00 00 1C 1D 02 00 42 E6 76 93 00 00 01 00 D8 92
+00 00 00 00 00 00 9C 39 01 00 FA E5 1C 1D 02 00
+86 E4 7C 3A 01 00 DD 92 00 00 00 00 00 00 F6 55
+02 00 1F FC B4 95 01 00 D6 95 00 00 8A 96 00 00
+76 93 00 00 C4 00 F6 55 02 00 80 E4 7A 3A 01 00
+B0 3F 02 00 00 00 00 00 00 00 00 00 1C 1D 02 00
+
+C8 E4 76 93 00 00 00 00 DD 92 00 00 00 00 00 00
+F6 55 02 00 1E FC B4 95 01 00 D6 95 00 00 8A 96
+00 00 76 93 00 00 68 00 F6 55 02 00 C2 E4 7A 3A 
+01 00 B0 3F 02 00 00 00 00 00 00 00 00 00 1C 1D
+02 00 00 00 76 93 00 00 00 00 F6 55 02 00 26 FC
+B4 95 01 00 D6 95 00 00 8A 96 00 00 76 93 00 00
+
+0C 00 F6 55 02 00 FA E4 7A 3A 01 00 B0 3F 02 00
+00 00 00 00 00 00 00 00 1C 1D 02 00 9C 39 01 00
+02 E6 1C 1D 02 00 40 E6 76 93 00 00 00 00 D8 92 
+00 00 00 00 00 00 FC B9 00 00 B0 3F 02 00 00 00
+00 00 00 00 00 00 1C 1D 02 00 40 E6 76 93 00 00
+01 00 D8 92 00 00 00 00 00 00 9C 39 01 00 52 E5 </code></span></div></div></div></div><div id=chatlog__message-container-1454807681981354169 class=chatlog__message-container data-message-id=1454807681981354169><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Sunday, December 28, 2025 7:06 PM">7:06 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">1C 1D 02 00 40 E6 76 93 00 00 FF FF D8 92 00 00
+42 E6 42 E6 76 93 00 00 00 00 DD 92 00 00 40 E6
+00 00 76 93 00 00 00 00 D8 92 00 00 BE E5 00 00
+DD 92 00 00 00 00 00 00 FC B9 00 00 5C 60 01 00
+A2 3F 02 00 00 00 00 00 00 00 00 00 D6 95 00 00
+8A 96 00 00 3A BD 00 00 00 00 4E E6 DD 92 00 00
+
+00 00 00 00 C2 FF 01 00 50 E6 00 00 00 00 7C 3A 
+01 00 DD 92 00 00 5A E6 00 00 56 21 01 00 00 00
+F4 82 01 00 B8 3F 02 00 7C 3A 01 00 DD 92 00 00
+00 00 00 00 1A 61 01 00 D4 DD 00 06 6E 93 00 00
+1A 61 01 00 05 05 48 E6 D8 85 00 00 1A 61 01 00
+05 25 53 E6 D8 85 00 00 BE 8A 00 00 54 74 01 00
+
+00 05 20 00 72 52 01 00 6A 95 00 00 8A 96 00 00
+76 98 00 00 32 E6 76 93 00 00  01 00 DD 92 00 00
+00 00 00 00 91 30 01 00 40 03 60 E6 00 E3 00 00
+B2 89 0E 00 00 00 9C 39 01 00 00 E3 1C 1D 02 00
+E0 E9 00 00 00 00 00 00 41 64 64 72 3A 20 00 00
+00 00 00 56 61 6C 75 65 3A 20 00 00 00 00 00 00</code>
+
+<h2>Launcher 0&#215;D180 (114an)</h2>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">&lt;48 byte&gt; 91 30 31 30 60 03 E0 E9 30 E3 30 30 CC 6C 31 30 B2 89 31 30 30 30 91 30 31 30 40 03 E0 E9 60 E6 01 E3 B2 89 31 30 30 30 1c 1d 32 30</code>
+
+<h2>Set Hex:</h2>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">123456x:
+A=10.000 91 03 E9 20 CC
+B=1B.289 91 03 E9 01 B2
+C=1 89 1C 1D 23</code>
+
+<h2>Token:</h2>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">&lt;48 bytes&gt; Identity( 010 ( @ &#119814;▸Simp 0 &#119846; 00 @ sinh( 10 @ LCM( 1000 Identity( 010 M @ &#119814;▸Simp ( &#119849; &#119846; @ LCM( 1000 @ @ 20</code></span></div><div class=chatlog__reactions><div class=chatlog__reaction title=flag_vn><img class="chatlog__emoji chatlog__emoji--small" alt=🇻🇳 src=/assets/1f1fb-1f1f3-BB6FB.svg loading=lazy> <span class=chatlog__reaction-count>5</span></div><div class=chatlog__reaction title=x><img class="chatlog__emoji chatlog__emoji--small" alt=❌ src=/assets/274c-EA1F1.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1460509862495649864 class=chatlog__message-container data-message-id=1460509862495649864><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Tuesday, January 13, 2026 12:44 PM"><a href=#chatlog__message-container-1460509862495649864>1/13/2026 12:44 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>TR&#204;NH SOẠN THẢO VĂN BẢN tr&#234;n CASIO fx-991CN X (V1.2)</h1><h2>DATA (E9E0):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">48 B9 02 00 10 93 00 00 00 7F 00 00 A8 21 01 00
+20 00 52 0E 02 00 C0 D0 34 61 01 00 01 00 00 D9
+AE 21 02 00 A8 21 01 00 11 00 AE 21 02 00 A8 21
+01 00 21 00 AE 21 02 00 A8 21 01 00 31 00 AE 21
+02 00 28 8F 00 00 00 00 00 00 06 87 00 00 A8 21
+01 00 B0 D0 48 F7 00 00 E4 D4 01 00 06 EB 06 EB
+
+48 B9 02 00 40 7B 01 00 34 61 01 00 04 08 B0 D0
+DC 3A 01 00 A4 8E 00 00 68 C3 01 00 34 61 01 00
+00 D9 FF FF 38 1D 02 00 34 61 01 00 E9 DD 01 00
+D2 03 02 00 06 87 00 00 A8 21 01 00 B2 D0 48 F7
+00 00 34 61 01 00 B0 D0 5C 77 48 B9 02 00 DC 52
+02 00 76 60 01 00 34 61 01 00 B2 D0 5C 77 DC 52
+
+02 00 14 88 01 00 18 D1 96 75 01 00 C4 52 01 00
+3C 08 02 00 72 0D 02 00 00 D8 34 2D 01 00 12 6C
+01 00 B2 08 02 00 6C C0 00 00 C0 D0 24 8F 00 00
+00 00 00 00 C6 8F 00 00 14 88 01 00 C0 D0 DC 3A
+01 00 14 88 01 00 18 D1 C8 03 02 00 E2 30 01 00
+10 DB 84 D1 00 00 0E DB C8 03 02 00 72 0D 32 30
+
+05 D7 38 1D 02 00 00 00 04 00 00 00 00 00 00 00
+04 08 F4 D7 04 10 EC D7 01 40 33 D8 00 00 96 D7
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</code>
+<h2>LAUNCHER (D180):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 05 D7 34 61 31 30 10 D7 E0 E9 CE EB E0 D8 30 01</code>
+<h2>TOKEN:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">@ @ % 4 P( 1 0 @ % &#119814; ▸Simp @ @ &#119814; ! 0</code>
+<h2>NOTE:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">1. Hỗ trợ x&#243;a [AC] v&#224; kh&#243;a một lần nhấp ph&#237;m bằng ch&#237;nh tả (kh&#244;ng thể thao t&#225;c nếu kh&#244;ng tắt thiết bị)
+2. Chương tr&#236;nh đ&#227; được thay đổi sang nh&#225;nh 08EA4. Đ&#227; l&#224;m cho n&#243; ngắn gọn hơn. Một số logic đ&#227; được tối ưu h&#243;a v&#224; k&#237;ch thước tệp đ&#227; được n&#233;n (hiện tại l&#224; 320 byte, chỉ nhiều hơn 16 byte so với phi&#234;n bản trước).
+3. C&#225;c vấn đề đ&#227; biết từ phi&#234;n bản trước vẫn c&#242;n (nhưng dường như kh&#244;ng qu&#225; nghi&#234;m trọng).
+4. C&#243; vẻ như c&#243; vấn đề về hiệu suất với việc l&#224;m mới m&#224;n h&#236;nh; n&#243; bị nhấp nh&#225;y, c&#243; thể do việc x&#243;a m&#224;n h&#236;nh li&#234;n tục, nhưng mức độ nghi&#234;m trọng chưa r&#245; r&#224;ng. Nếu n&#243; nghi&#234;m trọng sau khi ti&#234;m v&#224;o m&#225;y vật l&#253;, t&#244;i sẽ sửa n&#243; (xin h&#227;y gi&#250;p đỡ, t&#244;i qu&#225; lười để ti&#234;m ).</code>
+<div class="chatlog__markdown-quote"><div class="chatlog__markdown-quote-border"></div><div class="chatlog__markdown-quote-content">Chức năng hiện tại về cơ bản đ&#227; ho&#224;n thiện, v&#224; nếu kh&#244;ng c&#243; bất kỳ trường hợp bất ngờ n&#224;o, phi&#234;n bản tiếp theo sẽ l&#224; phi&#234;n bản cuối c&#249;ng. Cảm ơn tất cả người d&#249;ng, v&#236; sự hỗ trợ của c&#225;c bạn trong suốt qu&#225; tr&#236;nh; t&#244;i sẽ kh&#244;ng thể tiến xa đến vậy nếu kh&#244;ng c&#243; sự gi&#250;p đỡ của c&#225;c bạn.
+</div></div><em><strong>Cre: <a href="&lt;https://tieba.baidu.com/p/9976163281&gt;">wlyibo</a></strong></em>
+<em><strong>Dịch: <span class="chatlog__markdown-mention" title="phong2k11_4">@ShakePeare</span> </strong></em></span> <span class=chatlog__edited-timestamp title="Tuesday, January 13, 2026 12:47 PM">(edited)</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=trollface><img class="chatlog__emoji chatlog__emoji--small" alt=trollface src=/assets/1445033288002699294-C9F52.png loading=lazy> <span class=chatlog__reaction-count>6</span></div><div class=chatlog__reaction title=thumbsup><img class="chatlog__emoji chatlog__emoji--small" alt=👍 src=/assets/1f44d-27259.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1461155452019802349 class=chatlog__message-container data-message-id=1461155452019802349><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Thursday, January 15, 2026 7:30 AM"><a href=#chatlog__message-container-1461155452019802349>1/15/2026 7:30 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Multiple Choices on CASIO fx-991CN X (Ver C)</h1><h2>NOTE:</h2>• the main text: 0xea60
+• the <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[0]</code> text: 0xea30
+• the <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[1]</code> text: 0xea41
+<h2>DATA (ED30)</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">34 7b 31 30 01 01 60 ea c8 3d 32 31 c8 3d 32 31 
+7e 94 30 30 02 26 31 30 80 d8 4e f2 31 30 74 89 
+31 30 80 d8 a8 9f 30 30 9e 3b 31 30 74 89 31 30 
+30 30 90 c7 30 30 4e ac 32 30 74 89 31 30 96 d8 
+9a 3b 31 30 22 7b 31 30 30 30 30 30 ea 8d 31 30 
+30 30 74 89 31 30 30 ea 14 3d 32 30 74 89 31 30 
+
+41 ea 14 3d 32 30 80 d8 8a d8 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</code>
+<h2>LAUNCHER:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">&lt;48 bytes&gt; da 7b 31 30 30 d8 30 ed 30 30 30 30 c8 03 32 30 78 5c 21 30 28 d8 c8 2a 21 30</code></span> <span class=chatlog__edited-timestamp title="Thursday, January 15, 2026 8:06 AM">(edited)</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=question><img class="chatlog__emoji chatlog__emoji--small" alt=❓ src=/assets/2753-7C696.svg loading=lazy> <span class=chatlog__reaction-count>5</span></div><div class=chatlog__reaction title=think><img class="chatlog__emoji chatlog__emoji--small" alt=think src=/assets/1445037534316072960-EB11A.png loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=sybau><img class="chatlog__emoji chatlog__emoji--small" alt=sybau src=/assets/1398167224618848407-E1F7C.png loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1463887334784110728 class=chatlog__message-container data-message-id=1463887334784110728><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/bddf0c290c2dce3033d4e4bfbe5fe098-68B69.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(0,255,213) title=231_513 data-user-id=1339923015730724874>Thiêu Phóng</span> <span class=chatlog__timestamp title="Thursday, January 22, 2026 8:25 PM"><a href=#chatlog__message-container-1463887334784110728>1/22/2026 8:25 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Newbies should watch this video!</h1><a href="https://www.youtube.com/watch?v=_Xw82E5zOP0">https://www.youtube.com/watch?v=_Xw82E5zOP0</a></span></div><div class=chatlog__embed><div class=chatlog__embed-color-pill style=background-color:rgba(255,0,0,255)></div><div class=chatlog__embed-content-container><div class=chatlog__embed-content><div class=chatlog__embed-text><div class=chatlog__embed-author-container><a class=chatlog__embed-author-link href=https://www.youtube.com/channel/UC-PmXX12JA2siMlfm7xg3Qw><div class=chatlog__embed-author>Chung TN</div></a></div><div class=chatlog__embed-title><a class=chatlog__embed-title-link href="https://www.youtube.com/watch?v=_Xw82E5zOP0"><div class="chatlog__markdown chatlog__markdown-preserve">[HD] Cách spell Ti&#234;́ng Vi&#234;̣t + m&#226;̃u tr&#234;n casiofx580 《T...</div></a></div><div class=chatlog__embed-youtube-container><iframe class=chatlog__embed-youtube src=https://www.youtube.com/embed/_Xw82E5zOP0 width=400 height=225></iframe></div></div></div></div></div><div class=chatlog__reactions><div class=chatlog__reaction title=joy><img class="chatlog__emoji chatlog__emoji--small" alt=😂 src=/assets/1f602-168C5.svg loading=lazy> <span class=chatlog__reaction-count>5</span></div><div class=chatlog__reaction title=penguin><img class="chatlog__emoji chatlog__emoji--small" alt=🐧 src=/assets/1f427-DA043.svg loading=lazy> <span class=chatlog__reaction-count>7</span></div><div class=chatlog__reaction title=sybau><img class="chatlog__emoji chatlog__emoji--small" alt=sybau src=/assets/1398167224618848407-E1F7C.png loading=lazy> <span class=chatlog__reaction-count>7</span></div><div class=chatlog__reaction title=emoji_70><img class="chatlog__emoji chatlog__emoji--small" alt=emoji_70 src=/assets/1415358440192082073-90556.gif loading=lazy> <span class=chatlog__reaction-count>1</span></div><div class=chatlog__reaction title=bcacasio><img class="chatlog__emoji chatlog__emoji--small" alt=bcacasio src=/assets/1464060013428473989-E5908.png loading=lazy> <span class=chatlog__reaction-count>2</span></div><div class=chatlog__reaction title=trollface><img class="chatlog__emoji chatlog__emoji--small" alt=trollface src=/assets/1445033288002699294-C9F52.png loading=lazy> <span class=chatlog__reaction-count>2</span></div><div class=chatlog__reaction title=ok_hand><img class="chatlog__emoji chatlog__emoji--small" alt=👌 src=/assets/1f44c-59547.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1464481460722335979 class=chatlog__message-container data-message-id=1464481460722335979><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Saturday, January 24, 2026 11:46 AM"><a href=#chatlog__message-container-1464481460722335979>1/24/2026 11:46 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>FLEXIO fx-799VN C&#225;ch kho&#225; m&#225;y (ko cần th&#225;o pin)</h1>B1: Reset m&#225;y
+B2: Nhập [Shift],[5],[1],[Giữ n&#250;t b&#234;n tr&#225;i khoảng 0,5-1s],[1],[Shift],[MENU đợi 1s],[1],[Giữ n&#250;t b&#234;n tr&#225;i khoảng 0,5-1s],[Giữ n&#250;t b&#234;n tr&#225;i khoảng 0,5-1s],[AC],[Giữ n&#250;t b&#234;n tr&#225;i khoảng 0,5-1s]
+fix: [7,Shift,ON],[9],[on]
+kh&#244;ng bt gắn thẻ g&#236; n&#234;n gắn tạm</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=joy><img class="chatlog__emoji chatlog__emoji--small" alt=😂 src=/assets/1f602-168C5.svg loading=lazy> <span class=chatlog__reaction-count>13</span></div><div class=chatlog__reaction title=hot_face><img class="chatlog__emoji chatlog__emoji--small" alt=🥵 src=/assets/1f975-12B7C.svg loading=lazy> <span class=chatlog__reaction-count>6</span></div><div class=chatlog__reaction title=sybau><img class="chatlog__emoji chatlog__emoji--small" alt=sybau src=/assets/1398167224618848407-E1F7C.png loading=lazy> <span class=chatlog__reaction-count>6</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1471851895143534733 class=chatlog__message-container data-message-id=1471851895143534733><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Friday, February 13, 2026 7:53 PM"><a href=#chatlog__message-container-1471851895143534733>2/13/2026 7:53 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Logo Editor (fix - shorten) on 570/991ex</h1><h2>Data e9e0</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">a4 7b 31 30 31 f0 15 00 d2 03 32 30 a4 7b 31 30 
+22 18 80 16 88 8e 30 30 a4 7b 31 30 de 62 00 00 
+0c 91 30 30 d6 95 30 30 b8 82 30 30 ee 25 31 30 
+b6 d7 77 47 33 30 a4 7b 31 30 b6 d7 0e 7b d6 95 
+30 30 b0 c7 32 30 1c a1 30 30 1c 00 ee a4 30 30 
+30 30 aa e1 32 30 f4 89 31 30 c6 d8 86 3a 31 30 
+
+c2 4a 31 30 1c a1 30 30 f0 e9 d6 92 30 30 30 30 
+30 30 30 07 32 30 a0 d8 a0 d8 d6 95 30 30 26 7d 
+31 30 ee 25 31 30 00 00 58 92 30 30 66 c5 31 30 
+1c 1d 32 30 ee 25 31 30 f0 e9 f4 89 31 30 22 18 
+c4 38 31 30 ee 25 31 30 fd e9 f4 89 31 30 de 62 
+c4 38 31 30 a4 7b 31 30 38 d1 00 00 d2 03 32 30 
+
+a4 7b 31 30 34 f0 09 00 d2 03 32 30 a4 7b 31 30 
+30 f0 00 00 d2 03 32 30 b8 82 30 30 9c 39 31 30 
+92 d8 1c 1d 32 30 f4 89 31 30 01 00 1c a1 30 30 
+fc e9 d8 92 30 30 30 30 30 30 9c 39 31 30 92 d8 
+1c 1d 32 30 f4 89 31 30 ff ff 1c a1 30 30 fc e9 
+d8 92 30 30 30 30 30 30 9c 39 31 30 92 d8 1c 1d 
+
+32 30 a4 7b 31 30 38 d1 04 00 d2 03 32 30 9c 39 
+31 30 92 d8 1c 1d 32 30 a4 7b 31 30 34 f0 7f 00 
+d2 03 32 30 9c 39 31 30 92 d8 1c 1d 32 30 a4 7b 
+31 30 30 f0 05 00 d2 03 32 30 9c 39 31 30 92 d8 
+1c 1d 32 30 a4 7b 31 30 30 d6 84 d1 cc 03 32 30 
+64 5b 31 30 2e d6 56 0d 32 30 04 10 c2 d7 01 08
+ 
+14 d8 01 10 32 d8 01 01 50 d8 01 02 66 d8 01 04 
+7c d8 00 00 92 d8 00 ff 00 01 01 00 ff ff 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</code>
+<h2>Launcher</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">fd 24 30 fd 5a 7c 31 30 fe 02 e0 e9 30 d7 2e d7 b2 89 31 30 30 fe 1c 1d 32 48</code>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">@ 0 Kj tan⁻&#185;( 1 0 cm&gt;in G &gt;Simp 0 % . % @ LCM( 1 0 0 Pa&gt;mmHg @ 2 x</code><ul><li>Set hex</li></ul><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A=10.000FD24E920B2
+B=1891D23</code>
+<h2>HOW TO USE:</h2><ul><li>Tự m&#242;!</li><li>Translator by <span class="chatlog__markdown-mention" title="bluecasio">@Blue</span> (Cre)</li></ul></span> <span class=chatlog__edited-timestamp title="Friday, February 13, 2026 7:57 PM">(edited)</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=poop><img class="chatlog__emoji chatlog__emoji--small" alt=💩 src=/assets/1f4a9-1C1C9.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div><div class=chatlog__reaction title=regional_indicator_n><img class="chatlog__emoji chatlog__emoji--small" alt=🇳 src=/assets/1f1f3-6F811.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div><div class=chatlog__reaction title=regional_indicator_i><img class="chatlog__emoji chatlog__emoji--small" alt=🇮 src=/assets/1f1ee-3EA80.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div><div class=chatlog__reaction title=regional_indicator_g><img class="chatlog__emoji chatlog__emoji--small" alt=🇬 src=/assets/1f1ec-61436.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div><div class=chatlog__reaction title=regional_indicator_a><img class="chatlog__emoji chatlog__emoji--small" alt=🇦 src=/assets/1f1e6-19170.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div><div id=chatlog__message-container-1471852324287942747 class=chatlog__message-container data-message-id=1471852324287942747><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, February 13, 2026 7:55 PM">7:55 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Rotating Rectangle (H&#236;nh chữ nhật xoay) 570ex</h1><h2>Data E9E0 (592 bytes):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">D6 95 30 30 0E 97 30 30 8A 96 30 30 B8 82 30 30
+A4 7B 31 30 47 10 79 10 BC 84 30 30 A4 7B 31 30
+47 2E 79 2E BC 84 30 30 A4 7B 31 30 47 10 47 2E
+BC 84 30 30 A4 7B 31 30 79 10 79 2E BC 84 30 30
+BE 8A 30 30 A4 7B 31 30 10 D9 24 D3 C2 79 31 30
+A4 7B 31 30 12 D9 7E D3 C2 79 31 30 A4 7B 31 30
+
+FE D8 2E D3 C2 79 31 30 A4 7B 31 30 00 D9 38 D3
+C2 79 31 30 A4 7B 31 30 02 D9 42 D3 C2 79 31 30
+A4 7B 31 30 04 D9 4C D3 C2 79 31 30 A4 7B 31 30
+06 D9 56 D3 C2 79 31 30 A4 7B 31 30 08 D9 60 D3
+C2 79 31 30 A4 7B 31 30 0A D9 6A D3 C2 79 31 30
+A4 7B 31 30 0C D9 74 D3 C2 79 31 30 A4 7B 31 30
+
+0E D9 88 D3 C2 79 31 30 EE 25 31 30 38 D3 A8 DB
+31 30 F4 89 31 30 F4 E9 B8 75 31 30 F4 89 31 30
+1A EA B8 75 31 30 EE 25 31 30 42 D3 A8 DB 31 30
+F4 89 31 30 F5 E9 B8 75 31 30 F4 89 31 30 1B EA
+B8 75 31 30 EE 25 31 30 4C D3 A8 DB 31 30 F4 89
+31 30 F6 E9 B8 75 31 30 F4 89 31 30 00 EA B8 75
+
+31 30 EE 25 31 30 56 D3 A8 DB 31 30 F4 89 31 30
+F7 E9 B8 75 31 30 F4 89 31 30 01 EA B8 75 31 30
+EE 25 31 30 60 D3 A8 DB 31 30 F4 89 31 30 02 EA
+B8 75 31 30 F4 89 31 30 0C EA B8 75 31 30 EE 25
+31 30 6A D3 A8 DB 31 30 F4 89 31 30 03 EA B8 75
+31 30 F4 89 31 30 0D EA B8 75 31 30 EE 25 31 30
+
+74 D3 A8 DB 31 30 F4 89 31 30 0E EA B8 75 31 30
+F4 89 31 30 18 EA B8 75 31 30 EE 25 31 30 88 D3
+A8 DB 31 30 F4 89 31 30 0F EA B8 75 31 30 F4 89
+31 30 19 EA B8 75 31 30 A4 7B 31 30 30 D6 84 D1
+CC 03 32 30 64 5B 31 30 2E D6 56 0D 32 30 14 D9
+18 D9 24 D9 30 D9 3C D9 48 D9 54 D9 60 D9 6C D9
+
+78 D9 7C D9 42 A6 36 00 A7 32 35 41 A6 31 35 4A
+A6 39 36 00 A7 32 35 4A A7 31 35 41 A6 33 32 00
+32 35 41 A6 31 35 4A A6 39 36 00 00 32 35 4A A7
+31 35 41 A6 33 32 00 00 32 35 41 A7 31 35 4A A6
+39 36 00 00 32 35 4A A6 31 35 41 A6 33 32 00 00
+A7 32 35 41 A7 31 35 4A A6 39 36 00 A7 32 35 4A
+
+A6 31 35 41 A6 33 32 00 78 42 D0 00 77 42 D0 00</code><ul><li>Set hex</li></ul><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A = 0.01</code>
+<h2>Launcher:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD24 30 30 A5 7B 31 30 30 D7 E0 E9 A8 8A 30 30 FE 02 64 5B 31 30 2E D7 56 0D 32 30</code></span></div></div></div></div><div id=chatlog__message-container-1471852554416554097 class=chatlog__message-container data-message-id=1471852554416554097><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, February 13, 2026 7:56 PM">7:56 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><ul><li>Translator by <span class="chatlog__markdown-mention" title="bluecasio">@Blue</span> (Cre - 570)
+<ul><li>Original by <span class="chatlog__markdown-mention" title=".minh12312">@Lawliet-L</span> (Dev - 580)</li></ul></li></ul></span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1471855367523799040 class=chatlog__message-container data-message-id=1471855367523799040><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Friday, February 13, 2026 8:07 PM"><a href=#chatlog__message-container-1471855367523799040>2/13/2026 8:07 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Text Editor (added scroll effect) 570ex</h1><h2>Data(e9e0):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">a4 7b 31 30 e0 e3 20 00 d2 03 32 30 a4 7b 31 30 
+31 f0 15 00 d2 03 32 30 a4 7b 31 30 f5 d0 01 00 
+d2 03 32 30 f4 89 31 30 00 00 1c a1 30 30 39 f0 
+d8 92 30 30 30 30 30 30 ee 25 31 30 01 00 6a 95 
+30 30 a4 7b 31 30 0e 01 e0 e3 5a 3d 32 30 ee 25 
+31 30 0e 11 5a 3d 32 30 ee 25 31 30 0e 21 5a 3d 
+
+32 30 ee 25 31 30 0e 31 5a 3d 32 30 be 8a 30 30 
+ee 25 31 30 be d7 76 47 33 30 30 07 32 30 cc d9 
+cc d9 d6 95 30 30 26 7d 31 30 ee 25 31 30 00 00 
+58 92 30 30 66 c5 31 30 1c 1d 32 30 1c a1 30 30 
+e4 e9 d8 92 30 30 30 30 30 30 9c 39 31 30 c0 d9 
+1c 1d 32 30 1c a1 30 30 28 ea d8 92 30 30 30 30 
+
+30 30 b8 82 30 30 9c 39 31 30 c0 d9 1c 1d 32 30 
+f4 89 31 30 01 00 9c 39 31 30 b2 d9 1c 1d 32 30 
+f4 89 31 30 ff ff 9c 39 31 30 b2 d9 1c 1d 32 30 
+f4 89 31 30 ff ff 9c 39 31 30 ca d7 1c 1d 32 30 
+f4 89 31 30 01 00 9c 39 31 30 ca d7 1c 1d 32 30 
+a4 7b 31 30 e6 e9 41 00 d2 03 32 30 9c 39 31 30</code></span></div></div></div></div><div id=chatlog__message-container-1471855554866450478 class=chatlog__message-container data-message-id=1471855554866450478><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, February 13, 2026 8:08 PM">8:08 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">c0 d9 1c 1d 32 30 a4 7b 31 30 e6 e9 61 00 d2 03 
+32 30 9c 39 31 30 c0 d9 1c 1d 32 30 a4 7b 31 30 
+e6 e9 f0 00 d2 03 32 30 9c 39 31 30 c0 d9 1c 1d 
+32 30 a4 7b 31 30 e6 e9 20 00 d2 03 32 30 9c 39 
+31 30 c0 d9 1c 1d 32 30 a4 7b 31 30 e6 e9 01 00 
+d2 03 32 30 9c 39 31 30 c0 d9 1c 1d 32 30 a4 7b 
+
+31 30 08 ea 00 01 c4 38 31 30 9c 39 31 30 c0 d9 
+1c 1d 32 30 a4 7b 31 30 08 ea ff ff c4 38 31 30 
+9c 39 31 30 c0 d9 1c 1d 32 30 a4 7b 31 30 08 ea 
+00 00 c4 38 31 30 a4 7b 31 30 39 f0 00 00 d2 03 
+32 30 9c 39 31 30 c0 d9 1c 1d 32 30 a4 7b 31 30 
+56 ea 76 47 c4 38 31 30 a4 7b 31 30 58 ea 33 00 
+
+d2 03 32 30 9c 39 31 30 c0 d9 1c 1d 32 30 a4 7b 
+31 30 56 ea 22 4b c4 38 31 30 a4 7b 31 30 58 ea 
+32 00 d2 03 32 30 9c 39 31 30 c0 d9 1c 1d 32 30 
+f4 89 31 30 01 00 9c 39 31 30 e2 d7 1c 1d 32 30 
+f4 89 31 30 ff ff 9c 39 31 30 e2 d7 1c 1d 32 30 
+a4 7b 31 30 e6 e9 00 00 c4 38 31 30 b8 82 30 30 
+
+f4 89 31 30 ff ff 9c 39 31 30 ca d7 1c 1d 32 30 
+b8 82 30 30 a4 7b 31 30 28 ea e0 e3 c4 38 31 30 
+a4 7b 31 30 e6 e9 20 00 d2 03 32 30 a4 7b 31 30 
+e4 e9 e0 e3 c4 38 31 30 a4 7b 31 30 e0 e3 e0 05 
+6e 93 30 30 1c a1 30 30 e6 e9 d8 92 30 30 30 30 
+30 30 5a 7c 31 30 30 d6 84 d1 30 30 2e d6 c8 03 
+
+32 30 1c 1d 32 30 80 04 fe d7 40 08 0e d8 40 04 
+1e d8 80 08 2e d8 01 01 3e d8 01 02 54 d8 01 04 
+6a d8 02 01 80 d8 02 02 96 d8 02 04 ac d8 04 01 
+c2 d8 10 40 d8 d8 80 01 fa d8 80 02 1c d9 01 08 
+3e d9 01 10 4e d9 04 08 5e d9 04 10 7e d9 00 00 
+c0 d9 00 00 00 00 00 00 00 00 00 00 00 00 00 00</code></span></div></div></div></div><div id=chatlog__message-container-1471855761469477077 class=chatlog__message-container data-message-id=1471855761469477077><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, February 13, 2026 8:09 PM">8:09 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h2>Launcher:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">fd24 30 30 a5 7b 31 30 30 d7 e0 e9 a8 8a 30 30 fe 03 42 07 31 30 2e d7 40 07 31 30</code>
+[=] [ac]
+<h2>How to use:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">[▲]: Increase value
+[▼]: Decrease value
+[▶]: Increase position
+[◀]: Decrease position
+[1]: Set value to &quot;41&quot;
+[2]: Set value to &quot;61&quot;
+[3]: Set value to &quot;F0&quot; (Japanese chars)
+[4]: Set value to &quot;20&quot; (space)
+[5]: Set value to &quot;01&quot; (1/3 space)
+[6]: Roll down
+[7]: Roll up
+[0]: Stop rolling
+[Del]: -1 character position (like the del button)
+[Ac]: clear screen and go back the start
+[+]: increase address
+[-]: decrease address
+Shift: to press other buttons faster
+Alpha: to press other buttons, press them repeatedly
+Bonus: it doesnt shut down unexpectedly</code>
+Cre: <span class="chatlog__markdown-mention" title="231_513">@Thi&#234;u Ph&#243;ng</span> 
+Translator: <span class="chatlog__markdown-mention" title="bluecasio">@Blue</span></span></div></div></div></div><div id=chatlog__message-container-1471856512807862427 class=chatlog__message-container data-message-id=1471856512807862427><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Friday, February 13, 2026 8:12 PM">8:12 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve>### Result by <span class="chatlog__markdown-mention" title="variablean2k12">@Mr. Kuala Lumpur</span></span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1474324860313534639 class=chatlog__message-container data-message-id=1474324860313534639><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/5286f2e6d62331c75c1d163549e29fe0-65E40.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(128,80,211) title=dusaothii data-user-id=1032282982393851965>Đếck Quan Tâm</span> <span class=chatlog__timestamp title="Friday, February 20, 2026 3:40 PM"><a href=#chatlog__message-container-1474324860313534639>2/20/2026 3:40 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>spell press shift to show text for fx570es plus 2nd edition</h1><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">&lt;16 char 1st text&gt;
+&lt;16 char 2nd text&gt;
+&lt;12 nums&gt;
+maxY[cs15+13 hex] Abs( 1 0
+&#179; →B[F+2 hex] 1 0 
+cs09 0 M &#119838;
+cs10 Abs( 1 0
+cs17 Abs( 1 0
+&#179; →B[F+2 hex] 1 0
+Σx[cs15+2 hex] 0 x̂1[Abs(+1 hex] &#119838;
+cs21 Not([(-)+1 hex] 1 0
+cv27 cv27 cv27 cv27
+cv27 cv27 cv27 cv27
+cv27 cv27
+&lt;spam until see unstable char&gt;</code>
+how to use:
+<div class="chatlog__markdown-quote"><div class="chatlog__markdown-quote-border"></div><div class="chatlog__markdown-quote-content">After [AC][←][=], the screen will filled by idk how it called.
+Press SHIFT to show the 1st text.
+Press SHIFT again to show the 2nd text.
+</div></div>guide by <span class="chatlog__markdown-mention" title="dusaothii">@Đếck Quan T&#226;m</span> <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="ok"
+    title="ok"
+    src="/assets/1456876491303424111-73B50.png"> 
+<strong>SHARING THIS GUIDE TO TIKTOK, YOUTUBE AND FACEBOOK... IS ALLOWED <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="toinaydinhanghivoit"
+    title="toinaydinhanghivoit"
+    src="/assets/1469270908702167274-B78BA.png"> </strong>.</span> <span class=chatlog__edited-timestamp title="Friday, February 20, 2026 3:41 PM">(edited)</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1474705409322258543 class=chatlog__message-container data-message-id=1474705409322258543><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Saturday, February 21, 2026 4:52 PM"><a href=#chatlog__message-container-1474705409322258543>2/21/2026 4:52 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>DRAW SHORTEN on CASIO fx-991EX (Ver F)</h1><h2>Data (E9E0):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A4 7B 31 30 13 D1 01 00 D2 03 32 30 EE 25 31 30
+96 D7 22 4B 32 30 A4 7B 31 30 96 D7 0E 7B D6 95
+30 30 B0 C7 32 30 1C A1 30 30 1C 00 EE A4 30 30
+30 30 AA E1 32 30 F4 89 31 30 C6 EA 86 3A 31 30
+C2 4A 31 30 1C A1 30 30 9A D1 D6 92 30 30 30 30
+30 30 30 07 32 30 FC D7 FC D7 D6 95 30 30 26 7D
+
+31 30 EE 25 31 30 00 00 58 92 30 30 66 C5 31 30
+1C 1D 32 30 F4 89 31 30 9A D1 8A 3A 31 30 F4 89
+31 30 00 00 54 88 30 30 BE 8A 30 30 64 5B 31 30
+EE D7 56 0D 32 30 F4 89 31 30 9A D1 8A 3A 31 30
+F4 89 31 30 01 00 54 88 30 30 BE 8A 30 30 64 5B
+31 30 EE D7 56 0D 32 30 B8 82 30 30 BE 8A 30 30
+
+A4 7B 31 30 30 D6 84 D1 CC 03 32 30 64 5B 31 30
+2E D6 56 0D 32 30 01 01 A2 D7 01 02 C4 D7 04 10
+E6 D7 00 00 EE D7 00 FF 00 01 01 00 FF FF</code>
+<h2>Launcher (D180):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 30 FD 5A 7C 31 30 FE 01 E0 E9 30 D7 2E D7 
+B2 89 31 30 30 FE 1C 1D 32 30</code>
+Cre: @masio2009
+Translator: <span class="chatlog__markdown-mention" title="bluecasio">@Blue</span></span></div><div class=chatlog__reactions><div class=chatlog__reaction title=regional_indicator_l><img class="chatlog__emoji chatlog__emoji--small" alt=🇱 src=/assets/1f1f1-B2572.svg loading=lazy> <span class=chatlog__reaction-count>8</span></div><div class=chatlog__reaction title=regional_indicator_u><img class="chatlog__emoji chatlog__emoji--small" alt=🇺 src=/assets/1f1fa-B30D6.svg loading=lazy> <span class=chatlog__reaction-count>8</span></div><div class=chatlog__reaction title=regional_indicator_e><img class="chatlog__emoji chatlog__emoji--small" alt=🇪 src=/assets/1f1ea-6381F.svg loading=lazy> <span class=chatlog__reaction-count>8</span></div><div class=chatlog__reaction title=regional_indicator_b><img class="chatlog__emoji chatlog__emoji--small" alt=🇧 src=/assets/1f1e7-ECD78.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1477121445652992051 class=chatlog__message-container data-message-id=1477121445652992051><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Saturday, February 28, 2026 8:53 AM"><a href=#chatlog__message-container-1477121445652992051>2/28/2026 8:53 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>2048</h1>1. Data(E9E0)
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">D4 BA 02 00 F8 92 00 00 E2 30 01 00 00 D4 05 00
+7A ED 00 00 0E 81 01 00 12 4B 01 00 14 4B 01 00
+40 26 01 00 00 03 8C 82 00 00 72 87 00 00 D4 BA
+02 00 7A 3E 02 00 90 D7 90 8F 00 00 04 EA 00 00
+2E 90 00 00 30 00 90 8F 00 00 EC E9 00 00 14 4B
+01 00 90 8F 00 00 04 EA 00 00 42 07 01 00 2E D8
+
+12 8B 00 00 00 00 2E D8 34 61 01 00 12 00 90 D7
+1A 65 01 00 2E 90 00 00 40 0F 90 8F 00 00 C0 D7
+00 00 2E 90 00 00 01 00 90 8F 00 00 04 D8 00 00
+12 8B 00 00 00 00 54 D8 E2 30 01 00 04 00 37 D8
+52 D9 01 00 96 75 01 00 2E 90 00 00 F5 D0 1A 65
+01 00 2E 90 00 00 EC E9 1A 65 01 00 C4 52 01 00</code></span></div><div class=chatlog__reactions><div class=chatlog__reaction title=yum><img class="chatlog__emoji chatlog__emoji--small" alt=😋 src=/assets/1f60b-B5303.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div></div></div></div></div><div id=chatlog__message-container-1477121499545604279 class=chatlog__message-container data-message-id=1477121499545604279><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Saturday, February 28, 2026 8:53 AM">8:53 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">CC F7 00 00 D4 BA 02 00 7C 93 00 00 76 0E 01 00
+A6 DA 00 00 11 45 22 40 01 00 10 8F 00 00 34 61
+01 00 04 EA 00 03 16 39 01 00 F0 9B 01 00 36 1D
+02 00 34 61 01 00 00 D4 40 00 26 90 00 00 EC 7E
+00 00 36 32 01 00 50 00 E0 E9 30 D7 24 D7 C4 52
+01 00 8A CD 00 00 70 0D 02 00 01 00 70 0D 02 00 
+
+70 0D 02 00 03 00 E2 30 01 00 11 45 10 00 66 DA
+01 00 C4 52 01 00 12 4B 01 00 14 4B 01 00 D4 87
+01 00 88 D8 00 00 16 39 01 00 76 0E 01 00 BE DA
+04 00 00 FA 34 61 01 00 11 45 C2 ĐA A8 3A 01 00
+16 4B 01 00 0E 81 01 00 02 4F 01 00 E6 6C 01 00
+BE 3A 01 00 0E 81 01 00 1A 65 01 00 DC E7 01 00
+
+00 00 6C 19 02 00 BE 3A 01 00 0E 81 01 00 10 8F
+00 00 F0 9B 01 00 34 61 01 00 E2 D8 00 00 72 19
+02 00 16 39 01 00 52 0B 02 00 4E D9 00 00 04 4F
+01 00 FF FF 01 00 2A D9 70 0D 02 00 AA BB CC DD
+40 26 01 00 01 00 56 8D 00 00 0E 81 01 00 76 60
+01 00 DC E7 01 00 00 00 14 4B 01 00 0E 81 01 00
+
+6C 19 02 00 1A 65 01 00 52 0B 02 00 4E D9 00 00
+14 4B 01 00 18 8F 00 00 1A 65 01 00 2E 90 00 00
+01 00 42 07 01 00 6E D8 90 8F 00 00 80 D8 00 00
+2E 90 00 00 01 00 90 8F 00 00 4C D9 52 D9 10 11
+02 00 84 D9 2E 90 80 EA 01 00 90 8F 00 00 36 1D
+02 00 40 26 01 00 76 D8 CC 79 01 00 04 00 80 D8
+
+1A 65 01 00 E2 30 01 00 10 00 4E D9 00 00 01 00
+1A 65 01 00 13 8B 00 00 00 00 00 00 34 61 01 00
+64 DA 00 D5 DC 77 01 00 E2 30 01 00 00 D5 B4 D9
+CE D9 F6 D9 0E 81 01 00 1A 65 01 00 D4 BA 02 00
+E2 30 01 00 45 00 02 00 50 EC 2C D8 CA 41 01 00
+70 DA 01 00 12 4B 01 00 76 60 01 00 36 1D 02 00
+
+E2 30 01 00 11 45 FC D9 FF FF 2C D8 DC 3A 01 00
+16 4B 01 00 2E 90 00 00 01 00 D2 03 02 00 18 8F
+00 00 38 1D 02 00 B4 D9 34 61 01 00 00 D4 FF 2B
+0E 81 01 00 CA 41 01 00 70 DA 01 00 5A 8F 00 00
+14 4B 01 00 90 8F 00 00 FC D9 30 D8 2E 90 00 00
+01 00 90 8F 00 00 AA D9 52 DA E2 30 01 00 FC D9</code></span></div></div></div></div><div id=chatlog__message-container-1477121557976453131 class=chatlog__message-container data-message-id=1477121557976453131><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Saturday, February 28, 2026 8:53 AM">8:53 AM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">02 00 26 DA F0 FF 0E 81 01 00 02 4F 01 00 CA 41
+01 00 20 4A 02 00 12 4B 01 00 76 60 01 00 36 1D
+02 00 BA D9 34 61 01 00 00 00 FC D9 1A 65 01 00
+36 1D 02 00 98 D1 FC FF 00 00 04 05 06 07 08 09
+0A 0B 0C 0D 0E 0F 04 00 00 00 08 09 0A 0B 04 05 
+06 07 00 01 02 03 01 00 00 00 02 06 0A 0E 01 05
+
+09 0D 00 04 08 0C FF FF 00 00 01 05 09 0D 02 06 
+0A 0E 03 07 0B 0F 80 04 E6 DA 40 08 DC DA 80 08
+D6 DA 40 04 D2 DA 04 10 CC DA 00 00 1A DA 00 D4
+C8 5F 45 D4 DA 61 00 00 42 07 00 00 20 D8 00 32
+00 00 54 D8 34 00 4E D8 00 38 00 00 4A D8 31 36
+00 00 00 33 32 00 44 D8 36 34 00 00 00 31 32 38
+
+00 00 32 35 36 00 00 35 31 32 00 00 31 30 32 34
+00 32 30 34 38 00 34 30 39 36 00 38 31 39 32 00
+31 36 38 34 00 00 00 FF 00 00 00 00 00 00 00 00</code>
+2. Launcher(D180)
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">fd 24 30 30 36 32 31 30 31 05 e0 e9 30 d7 24 d7 c4 52 31 30 8a cd 30 30 fd 18</code>
+
+Program by XgoodollsX</span> <span class=chatlog__edited-timestamp title="Saturday, February 28, 2026 8:54 AM">(edited)</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=heart><img class="chatlog__emoji chatlog__emoji--small" alt=❤️ src=/assets/2764-A3D25.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=fire><img class="chatlog__emoji chatlog__emoji--small" alt=🔥 src=/assets/1f525-8FE4F.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1477902860233605221 class=chatlog__message-container data-message-id=1477902860233605221><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Monday, March 2, 2026 12:38 PM"><a href=#chatlog__message-container-1477902860233605221>3/2/2026 12:38 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Roll The Dice fx-570/991EX (Ver F)</h1><h2>DATA (E9E0):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">D6 95 30 30 0E 97 30 30 A4 7B 31 30 13 D1 01 00 
+D2 03 32 30 A4 7B 31 30 07 0E A0 D7 36 0C 32 30 
+EE 25 31 30 1E 1E 36 0C 32 30 BE 8A 30 30 6C 3D 
+32 30 A4 7B 31 30 9E D7 00 E9 C2 79 31 30 F4 89 
+31 30 00 E9 D6 95 30 30 8A 3A 31 30 F4 89 31 30 
+69 EA 78 8F 30 30 5A 7C 31 30 30 D6 84 D1 30 30 
+
+2E D6 C8 03 32 30 1C 1D 32 30 6C 3D 32 30 BB D7 
+20 52 6F 6C 6C 20 54 68 65 20 44 69 63 65 21 20 
+20 4E 75 6D 62 65 72 3A 30 30 00 87 31 2C 36 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</code>
+<h2>LAUNCHER (D180):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 30 30 90 30 31 30 FE 02 E0 E9 30 D7 2E D7 B2 89 31 30 30 30 1C 1D 32 48</code><ul><li>Token:</li></ul><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">@ 0 0 ImP 0 1 0 cm▸in &#119814; ▸Simp 0 % . % @ LCM( 1 0 0 0 @ @ 2 &#119961;</code><ul><li>Assign Hex:</li></ul><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">@ = 1 0.0 00 FD 24 90 20 E9
+@ = 1 B2 89 1C 1D 23</code>
+<h2>KEY BINDING:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">[SHIFT]: Roll the dice</code>
+Dev by <span class="chatlog__markdown-mention" title="whackstudio">@Whack Studio</span> 
+Support by <span class="chatlog__markdown-mention" title="phong2k11_4">@ShakePeare</span> 
+Translator: <span class="chatlog__markdown-mention" title="bluecasio">@Blue</span> 
+<h2>NOTE:</h2><ul><li>Remember to credit when posting on social media</li></ul></span> <span class=chatlog__edited-timestamp title="Monday, March 2, 2026 12:39 PM">(edited)</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1478325097184890981 class=chatlog__message-container data-message-id=1478325097184890981><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Tuesday, March 3, 2026 4:36 PM"><a href=#chatlog__message-container-1478325097184890981>3/3/2026 4:36 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>SHIFTREVEAL tr&#234;n CASIO fx-570/991 EX</h1><h2>DATA (E9E0):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">B8 82 30 30 BE 8A 30 30 A4 7B 31 30 13 D1 01 00
+D2 03 32 30 6C 3D 32 30 A4 7B 31 30 21 30 20 EA
+56 3D 32 30 6C 3D 32 30 BE 8A 30 30 5A 7C 31 30
+30 D6 84 D1 30 30 2E D6 C8 03 32 30 1C 1D 32 30
+[17TEXT] 00 00</code>
+<h2>LAUNCHER (D180):</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">FD 24 30 30 90 30 31 30 FE 02 E0 E9 30 D7 2E D7 B2 89 31 30 30 30 1C 1D 32 48</code>
+<h2>KEY BINDING:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">[SHIFT]: Text</code>
+<h2>CREATER:</h2><em>Cre (Original) - Translator by <span class="chatlog__markdown-mention" title="phong2k11_4">@ShakePeare</span></em>
+<h2>NOTE:</h2><ul><li>Remember to credit when posting on social media. <span class="chatlog__markdown-mention" title="variablean2k12">@Mr. Kuala Lumpur</span> test prog</li></ul></span> <span class=chatlog__edited-timestamp title="Tuesday, March 3, 2026 4:36 PM">(edited)</span></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1479136968595079198 class=chatlog__message-container data-message-id=1479136968595079198><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/7a4e489049bd13bc66ee367e7045d4a1-92AC5.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(255,247,134) title=phong2k11_4 data-user-id=1329789949372797001>ShakePeare</span> <span class=chatlog__timestamp title="Thursday, March 5, 2026 10:22 PM"><a href=#chatlog__message-container-1479136968595079198>3/5/2026 10:22 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Hard 119 mode for 570/991ES+ VerE</h1><strong>by user202729</strong>
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight"> {1 2 3 4 5 6 7 8 9 0}^5 1 2 tan-&#185;( ∠ 0 0 cv24 M10 cs02 &#119942; cs08 1 ∫( cs23 0 0 cv24 M 1 0 cs03 &#119942; cv40 ∫( cs23 0 0 cv24 E 0 0 5 6 7 1 2 3 4 5 6 7 8 9 0</code></span></div><div class=chatlog__reactions><div class=chatlog__reaction title=wilted_rose><img class="chatlog__emoji chatlog__emoji--small" alt=🥀 src=/assets/1f940-1ACD9.svg loading=lazy> <span class=chatlog__reaction-count>2</span></div><div class=chatlog__reaction title=thumbsup><img class="chatlog__emoji chatlog__emoji--small" alt=👍 src=/assets/1f44d-27259.svg loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div><div id=chatlog__message-container-1479137174543925328 class=chatlog__message-container data-message-id=1479137174543925328><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Thursday, March 5, 2026 10:23 PM">10:23 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h2>Unknown Mode for fx-570ES+ VerF</h2>Cre:HUYKIRI
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">0 1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 
+[log √(] x18
+x10  √( frac frac
+[log( √(] x22</code>
+-The way active this mode: After you type the hackstring, press [&lt;][AC][=][=].Now it seem like it is hang, wait a few second for the curcor appear again, press [=],repeat it about 3 times and there will be an syntax error, press [&lt;], an error &quot;0&quot; will appear, press [AC] again and we are done</span></div></div></div></div><div id=chatlog__message-container-1479138146548584519 class=chatlog__message-container data-message-id=1479138146548584519><div class=chatlog__message><div class=chatlog__message-aside><div class=chatlog__short-timestamp title="Thursday, March 5, 2026 10:26 PM">10:26 PM</div></div><div class=chatlog__message-primary><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Segment 0 on Casio fx-570ES Plus 2nd edition</h1><h2>Bytes:</h2><code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">ss ss xx xx xx 1F xx xx
+3E 4B x0 xx
+15 6F x1 xx
+2E 8C
+5A 35 x1 xx
+EC 0E x1 xx
+xx xx xx xx
+6C 29 x0 xx
+6C 29 x0 xx
+01 34 x0 xx
+xx xx
+
+B5 2E x0 xx
+AE 8B
+F2 05
+15 6F F3 05
+01 A0
+C4 33 x1 xx
+66 41 x0 xx
+30 0E x1 xx
+E0 8B
+DA 47 x0 xx
+xx xx xx 88
+15 6F x1 xx
+2E 8C
+6E 29 x0 xx
+97 48 x0 xx
+30 A0
+6F 33 x0 xx</code>
+<h2>Converted to tokens</h2>If you&#39;re on desktop, tokens in red require the unstable character.
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline language-ansi">&lt;src&gt; $ $ $ cs18 $ $
+[31m&gt;[0m [31m-&gt;M[0m 0 $
+[31m∑xy[0m [31mor[0m 1 $
+. Ran# 
+[31mRef([0m 5 1 $
+cv22 cs14 1 $
+$ $ $ $
+Pol( ) 0 $
+Pol( ) 0 $
+cs01 4 0 $
+$ $
+cs31 . 0 $
+⌟ Ans
+cv28 cs05
+[31m∑xy[0m [31mor[0m cv29 cs05
+cs01 sin(
+cs34 3 1 $
+[31mŷ[0m A 0 $
+0 cs14 1 $
+cv10 Ans
+cv04 [31m-&gt;A[0m 0 $
+$ $ $ [31mConjg([0m
+[31m∑xy[0m [31mor[0m 1 $
+. Ran#
+[31mand[0m ) 0 $
+[31m&gt;Simp [0m [31m-&gt;B[0m 0 $
+0 sin(
+[31mor[0m 3 0 $</code><ul><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">$</code>: any characters</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&gt;</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">=</code> + 1</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">-&gt;M</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">F</code> + 5</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">∑xy</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">cs15</code> + 6</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">or</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Rec(</code> + 2</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Ref(</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Y</code> + 1</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ŷ</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Abs(</code> + 3</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">-&gt;A</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">F</code> + 1</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Conjg(</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">ᵍ</code> + 1</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">and</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Rec(</code> + 1</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&gt;Simp</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">10^(</code> + 4</li><li><code class="chatlog__markdown-pre chatlog__markdown-pre--inline">-&gt;B</code>: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">F</code> + 2</li></ul></span></div><div class=chatlog__reactions><div class=chatlog__reaction title=rainbow_flag><img class="chatlog__emoji chatlog__emoji--small" alt=🏳️‍🌈 src=/assets/1f3f3-fe0f-200d-1f308-F64A2.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=ok><img class="chatlog__emoji chatlog__emoji--small" alt=ok src=/assets/1445037378195689563-5C694.png loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1481813131591286817 class=chatlog__message-container data-message-id=1481813131591286817><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/0ef656e022426fa2e1dec091ec40a451-AF3A1.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(58,26,245) title=red_0xalive data-user-id=705043446284419104>I dont have a name.</span> <span class=chatlog__timestamp title="Friday, March 13, 2026 7:36 AM"><a href=#chatlog__message-container-1481813131591286817>3/13/2026 7:36 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>C&#243; thể c&#225;c bạn chưa biết về 2 ph&#233;p t&#237;nh b&#237; ẩn n&#224;y: @ (<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">0x81</code>) v&#224; @ (<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">0x82</code>)</h1>Thực ra, 2 k&#237; tự n&#224;y <strong>cũng</strong> l&#224; một dạng ph&#233;p t&#237;nh lượng gi&#225;c <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Pol(</code> v&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Rec(</code> nhưng ở một dạng n&#226;ng cấp hơn 1 ch&#250;t. C&#225;ch t&#237;nh l&#224; <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_1&gt;</code> @ <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_2&gt;</code>, nhưng kh&#225;c ở 2 điểm sau:
+
+• <strong>Với @ (<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">0x81</code>):</strong> Nếu kh&#244;ng c&#243; sự xuất hiện của <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_1&gt;</code> th&#236; ph&#233;p t&#237;nh n&#224;y ho&#224;n to&#224;n tương đương với Pol(<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_2&gt;</code>, <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_2&gt;</code>), c&#242;n nếu c&#243; sự xuất hiện của <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_1&gt;</code> th&#236; ph&#233;p t&#237;nh n&#224;y lại tương đương với <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_1&gt;</code>&#178; + <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_2&gt;</code>&#178;
+• <strong>Với @ (<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">0x82</code>):</strong> Nếu kh&#244;ng c&#243; sự xuất hiện của <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_1&gt;</code> th&#236; ph&#233;p t&#237;nh n&#224;y tương đương với Rec(<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_2&gt;</code>, <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_2&gt;</code>), c&#242;n nếu c&#243; sự xuất hiện của <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_1&gt;</code> th&#236; n&#243; lại tương đương với [<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_1&gt;</code> &#215; cos(<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">&lt;num_2&gt;</code>)]&#178;
+
+-# Th&#250; vị phải kh&#244;ng n&#224;o <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="trollface"
+    title="trollface"
+    src="/assets/1476230589773516800-12A4A.png">? Thử ngay tr&#234;n con fx-580VN X đi nh&#233; <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="hehe_boi"
+    title="hehe_boi"
+    src="/assets/1476231830951694337-CBF9A.png">  
+
+<em>Credit:</em> <span class="chatlog__markdown-mention" title="red_0xalive">@I dont have a name.</span> v&#224; <span class="chatlog__markdown-mention" title="thecatwasencrypted">@Encryptan</span><a href="tel://&lt;@&amp;1424608716141101149&gt;">︎</a>
+
+P/s: <em>Do m&#233;o thấy k&#234;nh n&#224;o để post một số điều th&#250; vị tr&#234;n con Casio n&#234;n t&#244;i đăng đại ở đ&#226;y...</em> <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="pensiveGIF"
+    title="pensiveGIF"
+    src="/assets/853220538792542238-AA9F6.gif"></span> <span class=chatlog__edited-timestamp title="Friday, March 13, 2026 7:37 AM">(edited)</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=trollface><img class="chatlog__emoji chatlog__emoji--small" alt=trollface src=/assets/1445033288002699294-C9F52.png loading=lazy> <span class=chatlog__reaction-count>9</span></div><div class=chatlog__reaction title=regional_indicator_s><img class="chatlog__emoji chatlog__emoji--small" alt=🇸 src=/assets/1f1f8-DB875.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=regional_indicator_e><img class="chatlog__emoji chatlog__emoji--small" alt=🇪 src=/assets/1f1ea-6381F.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=regional_indicator_c><img class="chatlog__emoji chatlog__emoji--small" alt=🇨 src=/assets/1f1e8-7D86E.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=regional_indicator_h><img class="chatlog__emoji chatlog__emoji--small" alt=🇭 src=/assets/1f1ed-38085.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=batngo><img class="chatlog__emoji chatlog__emoji--small" alt=batngo src=/assets/1475473368131178566-FA9A3.png loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=um><img class="chatlog__emoji chatlog__emoji--small" alt=um src=/assets/1475700325926047931-C8ECC.png loading=lazy> <span class=chatlog__reaction-count>2</span></div><div class=chatlog__reaction title=yum><img class="chatlog__emoji chatlog__emoji--small" alt=😋 src=/assets/1f60b-B5303.svg loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=phuocthiencheck><img class="chatlog__emoji chatlog__emoji--small" alt=phuocthiencheck src=/assets/1464990597722017892-F5ABE.png loading=lazy> <span class=chatlog__reaction-count>3</span></div><div class=chatlog__reaction title=fx580vnx><img class="chatlog__emoji chatlog__emoji--small" alt=fx580vnx src=/assets/1424620856495050814-1E715.png loading=lazy> <span class=chatlog__reaction-count>1</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1482452322331136020 class=chatlog__message-container data-message-id=1482452322331136020><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/5286f2e6d62331c75c1d163549e29fe0-65E40.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(128,80,211) title=dusaothii data-user-id=1032282982393851965>Đếck Quan Tâm</span> <span class=chatlog__timestamp title="Sunday, March 15, 2026 1:56 AM"><a href=#chatlog__message-container-1482452322331136020>3/15/2026 1:56 AM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Spell 4 lines on fx-570es plus 2nd edition</h1>
+Hackstring:
+<code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">&lt;4 last character line 3&gt; . &lt;16 character line 4&gt; &lt;23 number&gt;
+sinh( 5 0 0
+cs32 π
+cs12 7 0 0
+&lt;16 character line 1&gt; . &lt;16 character line 2&gt; . &lt;12 first character line 3&gt; . . . . . . . . .</code>
+
+Then [AC] [=], enjoy!!!
+Guide: <span class="chatlog__markdown-mention" title="dusaothii">@Đếck Quan T&#226;m</span> <img
+    loading="lazy"
+    class="chatlog__emoji "
+    alt="ok"
+    title="ok"
+    src="/assets/1456876491303424111-73B50.png"></span> <span class=chatlog__edited-timestamp title="Sunday, March 15, 2026 2:35 AM">(edited)</span></div><div class=chatlog__reactions><div class=chatlog__reaction title=fire><img class="chatlog__emoji chatlog__emoji--small" alt=🔥 src=/assets/1f525-8FE4F.svg loading=lazy> <span class=chatlog__reaction-count>7</span></div><div class=chatlog__reaction title=poop><img class="chatlog__emoji chatlog__emoji--small" alt=💩 src=/assets/1f4a9-1C1C9.svg loading=lazy> <span class=chatlog__reaction-count>2</span></div></div></div></div></div></div>
+<div class=chatlog__message-group><div id=chatlog__message-container-1483064527716089896 class=chatlog__message-container data-message-id=1483064527716089896><div class=chatlog__message><div class=chatlog__message-aside><img class=chatlog__avatar src=/assets/3-FB033.png alt=Avatar loading=lazy></div><div class=chatlog__message-primary><div class=chatlog__header><span class=chatlog__author style=color:rgb(214,104,79) title=dunghackcasio data-user-id=1456250044192788646>Bếp trưởng vặn bếp ga</span> <span class=chatlog__timestamp title="Monday, March 16, 2026 6:28 PM"><a href=#chatlog__message-container-1483064527716089896>3/16/2026 6:28 PM</a></span></div><div class="chatlog__content chatlog__markdown"><span class=chatlog__markdown-preserve><h1>Scrolling text for 570esp:</h1> <code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">A F 0 0
+cv24 M 1 0
+cv08 pi cv16 Ran#
+(-) cs23 0 0
+cv24 M 1 0
+Permu pi Combi pi
+(-) cs23 0 0
+cv24 M 1 0
+Permu pi mp 0
+A 4 0 0
+cv24 M 1 0
+cv08 pi cs29 pi
+(-) cs23 0 0
+
+tanh( , 0 0
+x10 Ans
+sinh( , 0 0
+&lt;32 bytes to spell&gt;
+sin 2 0 0
+0 0</code>
+Cre: <a href="https://community.casiocalc.org/topic/7583-fx-82-83gt-115-991es-plus-hacking/page-9">https://community.casiocalc.org/topic/7583-fx-82-83gt-115-991es-plus-hacking/page-9</a></span> <span class=chatlog__edited-timestamp title="Monday, March 16, 2026 6:29 PM">(edited)</span></div><div class=chatlog__embed><div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div><div class=chatlog__embed-content-container><div class=chatlog__embed-content><div class=chatlog__embed-text><div class=chatlog__embed-title><a class=chatlog__embed-title-link href=https://community.casiocalc.org/topic/7583-fx-82-83gt-115-991es-plus-hacking/page-9><div class="chatlog__markdown chatlog__markdown-preserve">FX-82/-83GT/-115/-991ES PLUS Hacking - Page 9 - Casio CFX/AFX/FX/Pr...</div></a></div><div class=chatlog__embed-description><div class="chatlog__markdown chatlog__markdown-preserve">Page 9 of 13 - FX-82/-83GT/-115/-991ES PLUS Hacking - posted in Casio CFX/AFX/FX/Prizm : Hello,
+Im the (un)happy owner of a (casio,obvs) fx-92 Ver A calculator which is the french/belgian version of the fx-82 series.
+As I told @SopaXorzTaker in the chat, I know quite a few things in the binary exploitation field(On PCs but also some embedded dev...</div></div></div><div class=chatlog__embed-thumbnail-container><a class=chatlog__embed-thumbnail-link href=/assets/logo2_small-50613.png> <img class=chatlog__embed-thumbnail src=/assets/logo2_small-50613.png alt=Thumbnail loading=lazy> </a></div></div></div></div><div class=chatlog__reactions><div class=chatlog__reaction title=penguin><img class="chatlog__emoji chatlog__emoji--small" alt=🐧 src=/assets/1f427-DA043.svg loading=lazy> <span class=chatlog__reaction-count>2</span></div></div></div></div></div></div>
+
+</div>
+<div class=postamble><div class=postamble__entry>Exported 76 message(s)</div><div class=postamble__entry>Timezone: UTC+7</div></div>
+
+<script id="bigcio-avatar-fix-script">
+  (function () {
+    function getInitial(img) {
+      var message = img.closest('.chatlog__message');
+      var author = message ? message.querySelector('.chatlog__author, .chatlog__reply-author') : null;
+      var text = author ? author.textContent : '';
+      var clean = (text || '').trim();
+      return clean ? clean.charAt(0).toUpperCase() : '?';
+    }
+
+    function applyFallback(img) {
+      if (!img || img.dataset.bigcioAvatarFixed === '1') {
+        return;
+      }
+
+      img.dataset.bigcioAvatarFixed = '1';
+      var placeholder = document.createElement('span');
+      placeholder.className = 'chatlog__avatar-fallback';
+      placeholder.textContent = getInitial(img);
+
+      var width = img.getAttribute('width');
+      var height = img.getAttribute('height');
+      if (width) {
+        placeholder.style.width = width + 'px';
+      }
+      if (height) {
+        placeholder.style.height = height + 'px';
+      }
+
+      img.replaceWith(placeholder);
+    }
+
+    function watch(img) {
+      if (!img) {
+        return;
+      }
+
+      img.addEventListener('error', function () {
+        applyFallback(img);
+      }, { once: true });
+
+      var src = (img.getAttribute('src') || '').trim();
+      if (!src) {
+        applyFallback(img);
+      }
+    }
+
+    var avatars = document.querySelectorAll('img.chatlog__avatar, img.chatlog__reply-avatar');
+    avatars.forEach(watch);
+  })();
+</script>
