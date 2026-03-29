@@ -30,6 +30,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    environment: Production
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
@@ -50,7 +51,7 @@ jobs:
       - name: Validate API key secret
         run: |
           if [ -z "${GEMINI_API_KEY}" ]; then
-            echo "::error::Missing GEMINI_API_KEY secret in repository settings."
+            echo "::error::Missing GEMINI_API_KEY secret in environment Production (or repository secrets)."
             exit 1
           fi
 
