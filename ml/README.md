@@ -172,3 +172,14 @@ Cach dung nhanh:
 3. Vao tab `Actions` -> chon `Generate Samples Only`
 4. Bam `Run workflow`, chon model/mac dinh va so docs
 5. Tai artifact `generated-samples` sau khi job xong
+
+Chay nhieu action song song (khong trung mau):
+
+1. Run A: `start_index=0`, `end_index=100`, `artifact_name=generated-samples-a`
+2. Run B: `start_index=100`, `end_index=200`, `artifact_name=generated-samples-b`
+3. Run C: `start_index=200`, `end_index=0`, `artifact_name=generated-samples-c`
+
+Luu y:
+
+- Dat `max_docs=0` khi dung start/end range de lay het docs trong range.
+- Giu `max_samples_per_source=2` de tranh 1 file lap qua nhieu mau.

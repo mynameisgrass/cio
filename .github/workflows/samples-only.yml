@@ -1,4 +1,5 @@
 name: Generate Samples Only
+run-name: samples-${{ inputs.model }}-${{ inputs.start_index }}-${{ inputs.end_index }}
 
 on:
   workflow_dispatch:
@@ -11,10 +12,26 @@ on:
         description: Max documents to distill (0 = all)
         required: false
         default: "80"
+      start_index:
+        description: Start index in corpus (0-based)
+        required: false
+        default: "0"
+      end_index:
+        description: End index in corpus (exclusive, 0 = until end)
+        required: false
+        default: "0"
       tasks_per_doc:
         description: Samples requested per document
         required: false
         default: "2"
+      max_samples_per_source:
+        description: Max accepted samples per source file
+        required: false
+        default: "2"
+      artifact_name:
+        description: Artifact name for this run
+        required: false
+        default: generated-samples
       include_all_assets:
         description: Include all files in guidesnpdf/assets (not only keyword-matched)
         required: false
@@ -82,7 +99,10 @@ jobs:
             --output ml/data/distill/sft_candidates_ci.jsonl \
             --model "${{ inputs.model }}" \
             --max-docs "${{ inputs.max_docs }}" \
+            --start-index "${{ inputs.start_index }}" \
+            --end-index "${{ inputs.end_index }}" \
             --tasks-per-doc "${{ inputs.tasks_per_doc }}" \
+            --max-samples-per-source "${{ inputs.max_samples_per_source }}" \
             --sleep-sec 0.12 \
             --max-retries 2 \
             --retry-sec 0.8 \
@@ -98,7 +118,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: generated-samples
+          name: ${{ inputs.artifact_name }}
           path: |
             ml/data/raw_ci/game_corpus_stats.json
             ml/data/distill/sft_candidates_ci.jsonl
@@ -111,6 +131,10 @@ jobs:
             echo ""
             echo "- Model: ${{ inputs.model }}"
             echo "- Max docs: ${{ inputs.max_docs }}"
+            echo "- Start index: ${{ inputs.start_index }}"
+            echo "- End index: ${{ inputs.end_index }}"
             echo "- Tasks per doc: ${{ inputs.tasks_per_doc }}"
+            echo "- Max samples/source: ${{ inputs.max_samples_per_source }}"
             echo "- Samples generated: ${{ steps.count.outputs.samples }}"
+            echo "- Artifact: ${{ inputs.artifact_name }}"
           } >> "$GITHUB_STEP_SUMMARY"
