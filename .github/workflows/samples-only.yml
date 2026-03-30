@@ -24,6 +24,26 @@ on:
         description: Samples requested per document
         required: false
         default: "2"
+      temperature:
+        description: Sampling temperature
+        required: false
+        default: "0.2"
+      sleep_sec:
+        description: Delay between docs (seconds)
+        required: false
+        default: "0.12"
+      max_retries:
+        description: Retries per doc
+        required: false
+        default: "2"
+      retry_sec:
+        description: Base retry backoff (seconds)
+        required: false
+        default: "0.8"
+      json_fix_retries:
+        description: JSON repair retries
+        required: false
+        default: "1"
       max_samples_per_source:
         description: Max accepted samples per source file
         required: false
@@ -102,11 +122,12 @@ jobs:
             --start-index "${{ inputs.start_index }}" \
             --end-index "${{ inputs.end_index }}" \
             --tasks-per-doc "${{ inputs.tasks_per_doc }}" \
+            --temperature "${{ inputs.temperature }}" \
             --max-samples-per-source "${{ inputs.max_samples_per_source }}" \
-            --sleep-sec 0.12 \
-            --max-retries 2 \
-            --retry-sec 0.8 \
-            --json-fix-retries 1
+            --sleep-sec "${{ inputs.sleep_sec }}" \
+            --max-retries "${{ inputs.max_retries }}" \
+            --retry-sec "${{ inputs.retry_sec }}" \
+            --json-fix-retries "${{ inputs.json_fix_retries }}"
 
       - name: Count generated samples
         id: count
@@ -134,6 +155,11 @@ jobs:
             echo "- Start index: ${{ inputs.start_index }}"
             echo "- End index: ${{ inputs.end_index }}"
             echo "- Tasks per doc: ${{ inputs.tasks_per_doc }}"
+            echo "- Temperature: ${{ inputs.temperature }}"
+            echo "- Sleep sec: ${{ inputs.sleep_sec }}"
+            echo "- Max retries: ${{ inputs.max_retries }}"
+            echo "- Retry sec: ${{ inputs.retry_sec }}"
+            echo "- JSON fix retries: ${{ inputs.json_fix_retries }}"
             echo "- Max samples/source: ${{ inputs.max_samples_per_source }}"
             echo "- Samples generated: ${{ steps.count.outputs.samples }}"
             echo "- Artifact: ${{ inputs.artifact_name }}"
