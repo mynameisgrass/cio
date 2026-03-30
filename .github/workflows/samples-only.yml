@@ -136,6 +136,31 @@ jobs:
           count=$(wc -l < ml/data/distill/sft_candidates_ci.jsonl || echo 0)
           echo "samples=${count}" >> "$GITHUB_OUTPUT"
 
+      - name: Read distill stats
+        id: stats
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path("ml/data/distill/sft_candidates_ci.stats.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+
+          fields = {
+              "input_docs": data.get("input_docs", 0),
+              "attempted_docs": data.get("attempted_docs", 0),
+              "processed_docs": data.get("processed_docs", 0),
+              "failed_docs": data.get("failed_docs", 0),
+              "selected_docs": data.get("selected_docs", 0),
+          }
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              for key, value in fields.items():
+                  handle.write(f"{key}={value}\n")
+          PY
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -161,6 +186,11 @@ jobs:
             echo "- Retry sec: ${{ inputs.retry_sec }}"
             echo "- JSON fix retries: ${{ inputs.json_fix_retries }}"
             echo "- Max samples/source: ${{ inputs.max_samples_per_source }}"
+            echo "- Input docs: ${{ steps.stats.outputs.input_docs }}"
+            echo "- Selected docs: ${{ steps.stats.outputs.selected_docs }}"
+            echo "- Attempted docs: ${{ steps.stats.outputs.attempted_docs }}"
+            echo "- Processed docs: ${{ steps.stats.outputs.processed_docs }}"
+            echo "- Failed docs: ${{ steps.stats.outputs.failed_docs }}"
             echo "- Samples generated: ${{ steps.count.outputs.samples }}"
             echo "- Artifact: ${{ inputs.artifact_name }}"
           } >> "$GITHUB_STEP_SUMMARY"
