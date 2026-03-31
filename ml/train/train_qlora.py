@@ -45,6 +45,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-steps", type=int, default=-1)
     parser.add_argument("--bf16", action="store_true")
     parser.add_argument("--force-cpu", action="store_true")
+    parser.add_argument(
+        "--no-4bit",
+        action="store_true",
+        help="Disable 4-bit loading and use full-precision LoRA path",
+    )
     return parser.parse_args()
 
 
@@ -76,6 +81,18 @@ def pick_compute_dtype(force_bf16: bool) -> torch.dtype:
         return torch.bfloat16
 
     return torch.float16
+
+
+def can_use_4bit() -> tuple[bool, str]:
+    if not torch.cuda.is_available():
+        return False, "CUDA is not available"
+
+    try:
+        import bitsandbytes  # noqa: F401
+    except Exception as exc:
+        return False, f"bitsandbytes import failed: {exc}"
+
+    return True, ""
 
 
 def detect_lora_target_modules(model: torch.nn.Module) -> list[str]:
@@ -137,22 +154,52 @@ def main() -> int:
     compute_dtype = pick_compute_dtype(args.bf16)
 
     if use_cuda:
-        quant_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_use_double_quant=True,
-            bnb_4bit_compute_dtype=compute_dtype,
-        )
-
-        model = AutoModelForCausalLM.from_pretrained(
-            args.model_name,
-            quantization_config=quant_config,
-            torch_dtype=compute_dtype,
-            device_map="auto",
-        )
-        model = prepare_model_for_kbit_training(model)
+        device_name = torch.cuda.get_device_name(0)
+        print(f"[info] CUDA enabled on: {device_name}")
     else:
-        print("[warn] CUDA is not available. Running CPU LoRA smoke-train mode.")
+        print("[warn] CUDA disabled. Running CPU LoRA smoke-train mode.")
+
+    if use_cuda:
+        use_4bit = not args.no_4bit
+        if use_4bit:
+            ok_4bit, reason = can_use_4bit()
+            if not ok_4bit:
+                print(f"[warn] 4-bit path unavailable, fallback to standard GPU LoRA: {reason}")
+                use_4bit = False
+
+        if use_4bit:
+            try:
+                quant_config = BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_quant_type="nf4",
+                    bnb_4bit_use_double_quant=True,
+                    bnb_4bit_compute_dtype=compute_dtype,
+                )
+
+                model = AutoModelForCausalLM.from_pretrained(
+                    args.model_name,
+                    quantization_config=quant_config,
+                    torch_dtype=compute_dtype,
+                    device_map="auto",
+                )
+                model = prepare_model_for_kbit_training(model)
+                print("[info] Using 4-bit QLoRA path")
+            except Exception as exc:
+                print(f"[warn] 4-bit load failed, fallback to standard GPU LoRA: {exc}")
+                model = AutoModelForCausalLM.from_pretrained(
+                    args.model_name,
+                    torch_dtype=compute_dtype,
+                )
+                model.to("cuda")
+                print("[info] Using standard GPU LoRA path")
+        else:
+            model = AutoModelForCausalLM.from_pretrained(
+                args.model_name,
+                torch_dtype=compute_dtype,
+            )
+            model.to("cuda")
+            print("[info] Using standard GPU LoRA path")
+    else:
         model = AutoModelForCausalLM.from_pretrained(
             args.model_name,
             torch_dtype=torch.float32,

@@ -96,6 +96,9 @@ jobs:
             --min-chars 20
 
       - name: Distill ropguide samples
+        id: distill
+        timeout-minutes: 330
+        continue-on-error: true
         run: |
           set -euo pipefail
           TARGET="${{ inputs.target_samples }}"
@@ -116,24 +119,23 @@ jobs:
             --focus-hint "${{ inputs.focus_hint }}" \
             --prompt-salt "run-${GITHUB_RUN_ID}-attempt-${GITHUB_RUN_ATTEMPT}" \
             --max-chars "${{ inputs.max_chars }}" \
+            --flush-every 50 \
             --sleep-sec "${{ inputs.sleep_sec }}" \
             --max-retries "${{ inputs.max_retries }}" \
             --retry-sec "${{ inputs.retry_sec }}" \
             --json-fix-retries "${{ inputs.json_fix_retries }}"
 
-      - name: Count and enforce minimum
+      - name: Count samples
         id: count
+        if: always()
         run: |
           set -euo pipefail
           count=$(wc -l < ml/data/distill/sft_candidates_ropguide_4k.jsonl || echo 0)
-          target="${{ inputs.target_samples }}"
           echo "samples=${count}" >> "$GITHUB_OUTPUT"
-          if [ "$count" -lt "$target" ]; then
-            echo "::error::Generated ${count} samples, below required minimum ${target}."
-            exit 1
-          fi
+          echo "distill_outcome=${{ steps.distill.outcome }}" >> "$GITHUB_OUTPUT"
 
       - name: Upload artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.artifact_name }}
@@ -143,7 +145,19 @@ jobs:
             ml/data/distill/sft_candidates_ropguide_4k.jsonl
             ml/data/distill/sft_candidates_ropguide_4k.stats.json
 
+      - name: Enforce minimum after upload
+        if: always()
+        run: |
+          set -euo pipefail
+          count="${{ steps.count.outputs.samples }}"
+          target="${{ inputs.target_samples }}"
+          if [ "${count}" -lt "${target}" ]; then
+            echo "::error::Generated ${count} samples, below required minimum ${target}."
+            exit 1
+          fi
+
       - name: Write summary
+        if: always()
         run: |
           {
             echo "## Ropguide Distillation Complete"
@@ -155,6 +169,7 @@ jobs:
             echo "- Max calls/doc: ${{ inputs.max_calls_per_doc }}"
             echo "- Max stall calls: ${{ inputs.max_stall_calls }}"
             echo "- Focus hint: ${{ inputs.focus_hint }}"
+            echo "- Distill outcome: ${{ steps.count.outputs.distill_outcome }}"
             echo "- Samples generated: ${{ steps.count.outputs.samples }}"
             echo "- Artifact: ${{ inputs.artifact_name }}"
           } >> "$GITHUB_STEP_SUMMARY"

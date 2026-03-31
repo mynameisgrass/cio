@@ -91,6 +91,12 @@ def parse_args() -> argparse.Namespace:
         default="",
         help="Optional prompt salt to diversify outputs across runs",
     )
+    parser.add_argument(
+        "--flush-every",
+        type=int,
+        default=0,
+        help="Write checkpoint files every N accepted samples (0 = write once at end)",
+    )
     return parser.parse_args()
 
 
@@ -396,6 +402,11 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def write_stats(path: Path, stats: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(stats, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     args = parse_args()
 
@@ -458,6 +469,38 @@ def main() -> int:
     failed_calls = 0
     skipped_by_source_cap = 0
     stopped_by_stall = 0
+    stats_path = output_path.with_suffix(".stats.json")
+
+    def checkpoint(partial: bool) -> dict[str, Any]:
+        stats_local = {
+            "input_docs": len(docs),
+            "selected_docs": len(selected_docs),
+            "start_index": start_index,
+            "end_index": end_index,
+            "attempted_docs": attempted_docs,
+            "processed_docs": processed_docs,
+            "failed_docs": failed_docs,
+            "attempted_calls": attempted_calls,
+            "successful_calls": successful_calls,
+            "failed_calls": failed_calls,
+            "max_calls_per_doc": args.max_calls_per_doc,
+            "target_samples": args.target_samples,
+            "max_stall_calls": args.max_stall_calls,
+            "source_path_equals": args.source_path_equals,
+            "source_path_contains": args.source_path_contains,
+            "focus_hint": args.focus_hint,
+            "prompt_salt": args.prompt_salt,
+            "stopped_by_stall": stopped_by_stall,
+            "samples_written": len(rows),
+            "max_samples_per_source": args.max_samples_per_source,
+            "skipped_by_source_cap": skipped_by_source_cap,
+            "model": args.model,
+            "output": str(output_path),
+            "partial": partial,
+        }
+        write_jsonl(output_path, rows)
+        write_stats(stats_path, stats_local)
+        return stats_local
 
     for doc in selected_docs:
         if args.max_docs and attempted_docs >= args.max_docs:
@@ -558,6 +601,10 @@ def main() -> int:
                     no_new_streak += 1
                 else:
                     no_new_streak = 0
+
+                if args.flush_every > 0 and created > 0 and len(rows) % args.flush_every == 0:
+                    checkpoint(partial=True)
+
                 print(f"[ok] {doc.get('source_path')} [call {call_index}/{max_calls}] -> {created} samples")
             except Exception as exc:
                 failed_calls += 1
@@ -580,36 +627,7 @@ def main() -> int:
         else:
             failed_docs += 1
 
-    write_jsonl(output_path, rows)
-
-    stats = {
-        "input_docs": len(docs),
-        "selected_docs": len(selected_docs),
-        "start_index": start_index,
-        "end_index": end_index,
-        "attempted_docs": attempted_docs,
-        "processed_docs": processed_docs,
-        "failed_docs": failed_docs,
-        "attempted_calls": attempted_calls,
-        "successful_calls": successful_calls,
-        "failed_calls": failed_calls,
-        "max_calls_per_doc": args.max_calls_per_doc,
-        "target_samples": args.target_samples,
-        "max_stall_calls": args.max_stall_calls,
-        "source_path_equals": args.source_path_equals,
-        "source_path_contains": args.source_path_contains,
-        "focus_hint": args.focus_hint,
-        "prompt_salt": args.prompt_salt,
-        "stopped_by_stall": stopped_by_stall,
-        "samples_written": len(rows),
-        "max_samples_per_source": args.max_samples_per_source,
-        "skipped_by_source_cap": skipped_by_source_cap,
-        "model": args.model,
-        "output": str(output_path),
-    }
-
-    stats_path = output_path.with_suffix(".stats.json")
-    stats_path.write_text(json.dumps(stats, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    stats = checkpoint(partial=False)
 
     print(json.dumps(stats, ensure_ascii=False))
     if not rows:
