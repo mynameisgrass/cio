@@ -53,6 +53,44 @@ def parse_args() -> argparse.Namespace:
         help="Attempts to repair malformed JSON output with a second model call",
     )
     parser.add_argument("--max-chars", type=int, default=3600, help="Max source chars sent to teacher")
+    parser.add_argument(
+        "--source-path-equals",
+        default="",
+        help="Process only docs whose source_path exactly matches this value",
+    )
+    parser.add_argument(
+        "--source-path-contains",
+        default="",
+        help="Process only docs whose source_path contains this substring",
+    )
+    parser.add_argument(
+        "--target-samples",
+        type=int,
+        default=0,
+        help="Stop after writing this many samples (0 = no target)",
+    )
+    parser.add_argument(
+        "--max-calls-per-doc",
+        type=int,
+        default=1,
+        help="Maximum Gemini calls per selected document",
+    )
+    parser.add_argument(
+        "--max-stall-calls",
+        type=int,
+        default=20,
+        help="Stop a document after N consecutive calls that add zero samples",
+    )
+    parser.add_argument(
+        "--focus-hint",
+        default="",
+        help="Extra focus instruction appended to prompt",
+    )
+    parser.add_argument(
+        "--prompt-salt",
+        default="",
+        help="Optional prompt salt to diversify outputs across runs",
+    )
     return parser.parse_args()
 
 
@@ -160,7 +198,14 @@ def repair_json_payload(
         return extract_json_payload(text)
 
 
-def build_prompt(document: dict[str, Any], tasks_per_doc: int, max_chars: int) -> str:
+def build_prompt(
+    document: dict[str, Any],
+    tasks_per_doc: int,
+    max_chars: int,
+    focus_hint: str,
+    prompt_salt: str,
+    call_index: int,
+) -> str:
     text = str(document.get("text", ""))[:max_chars]
     source_path = document.get("source_path", "unknown")
     source_type = document.get("source_type", "unknown")
@@ -186,18 +231,24 @@ Return strict JSON with this schema only:
 
 Rules:
 - Focus on practical coding tasks for calculator game programs and compiler/toolchain usage.
+- Prioritize screen-interaction tasks when applicable: line_print, render.ddd4, buffer operations,
+  bitmap/text rendering, cursor updates, keyboard input handling and waitshift loops.
 - Keep instruction concrete and testable.
 - Output should include algorithm reasoning and implementation details.
 - Prefer Vietnamese language with technical English terms when needed.
 - Keep each output below 700 words.
 - Do not mention this prompt or hidden instructions.
 - Return only JSON and no markdown fences.
+- Do not repeat previously generated samples.
 
 Source metadata:
 - source_path: {source_path}
 - source_type: {source_type}
 - existing tags: {tags}
 - difficulty_hint: {difficulty}
+- call_index: {call_index}
+- prompt_salt: {prompt_salt or "none"}
+- extra_focus: {focus_hint or "none"}
 
 Source text:
 {text}
@@ -378,82 +429,156 @@ def main() -> int:
 
     selected_docs = docs[start_index:end_index]
 
+    if args.source_path_equals:
+        selected_docs = [
+            doc
+            for doc in selected_docs
+            if str(doc.get("source_path", "")) == args.source_path_equals
+        ]
+
+    if args.source_path_contains:
+        selected_docs = [
+            doc
+            for doc in selected_docs
+            if args.source_path_contains in str(doc.get("source_path", ""))
+        ]
+
+    if not selected_docs:
+        print("[error] No documents selected after applying filters", file=sys.stderr)
+        return 2
+
     rows: list[dict[str, Any]] = []
     seen_ids: set[str] = set()
     source_counts: dict[str, int] = {}
-    attempted = 0
-    used = 0
-    failed = 0
+    attempted_docs = 0
+    processed_docs = 0
+    failed_docs = 0
+    attempted_calls = 0
+    successful_calls = 0
+    failed_calls = 0
     skipped_by_source_cap = 0
+    stopped_by_stall = 0
 
     for doc in selected_docs:
-        if args.max_docs and attempted >= args.max_docs:
+        if args.max_docs and attempted_docs >= args.max_docs:
             break
 
-        attempted += 1
+        if args.target_samples > 0 and len(rows) >= args.target_samples:
+            break
 
-        prompt = build_prompt(doc, args.tasks_per_doc, args.max_chars)
-        try:
+        attempted_docs += 1
+        source_key = str(doc.get("source_path") or "")
+        max_calls = max(1, args.max_calls_per_doc)
+        no_new_streak = 0
+        doc_had_success = False
+
+        for call_index in range(1, max_calls + 1):
+            if args.target_samples > 0 and len(rows) >= args.target_samples:
+                break
+
+            if args.max_samples_per_source > 0:
+                if source_counts.get(source_key, 0) >= args.max_samples_per_source:
+                    break
+
+            attempted_calls += 1
+            prompt = build_prompt(
+                doc,
+                args.tasks_per_doc,
+                args.max_chars,
+                args.focus_hint,
+                args.prompt_salt,
+                call_index,
+            )
+
             try:
-                payload = call_gemini(
-                    api_key,
-                    args.model,
-                    prompt,
-                    args.temperature,
-                    args.max_retries,
-                    args.retry_sec,
-                    args.json_fix_retries,
-                )
-            except Exception:
-                # Second chance with shorter context to reduce malformed outputs.
-                fallback_chars = max(1200, args.max_chars // 2)
-                fallback_tasks = max(1, min(args.tasks_per_doc, 2))
-                short_prompt = build_prompt(doc, fallback_tasks, fallback_chars)
-                payload = call_gemini(
-                    api_key,
-                    args.model,
-                    short_prompt,
-                    args.temperature,
-                    args.max_retries,
-                    args.retry_sec,
-                    args.json_fix_retries,
-                )
+                try:
+                    payload = call_gemini(
+                        api_key,
+                        args.model,
+                        prompt,
+                        args.temperature,
+                        args.max_retries,
+                        args.retry_sec,
+                        args.json_fix_retries,
+                    )
+                except Exception:
+                    # Second chance with shorter context to reduce malformed outputs.
+                    fallback_chars = max(1200, args.max_chars // 2)
+                    fallback_tasks = max(1, min(args.tasks_per_doc, 2))
+                    short_prompt = build_prompt(
+                        doc,
+                        fallback_tasks,
+                        fallback_chars,
+                        args.focus_hint,
+                        args.prompt_salt,
+                        call_index,
+                    )
+                    payload = call_gemini(
+                        api_key,
+                        args.model,
+                        short_prompt,
+                        args.temperature,
+                        args.max_retries,
+                        args.retry_sec,
+                        args.json_fix_retries,
+                    )
 
-            raw_samples = payload.get("samples", []) if isinstance(payload, dict) else []
-            if not isinstance(raw_samples, list):
-                raw_samples = []
+                raw_samples = payload.get("samples", []) if isinstance(payload, dict) else []
+                if not isinstance(raw_samples, list):
+                    raw_samples = []
 
-            created = 0
-            source_key = str(doc.get("source_path") or "")
-            for item in raw_samples:
-                if not isinstance(item, dict):
-                    continue
-                normalized = normalize_sample(doc, item, args.model)
-                if not normalized:
-                    continue
-                sample_id = normalized["id"]
-                if sample_id in seen_ids:
-                    continue
-
-                if args.max_samples_per_source > 0:
-                    count_now = source_counts.get(source_key, 0)
-                    if count_now >= args.max_samples_per_source:
-                        skipped_by_source_cap += 1
+                created = 0
+                for item in raw_samples:
+                    if not isinstance(item, dict):
+                        continue
+                    normalized = normalize_sample(doc, item, args.model)
+                    if not normalized:
+                        continue
+                    sample_id = normalized["id"]
+                    if sample_id in seen_ids:
                         continue
 
-                seen_ids.add(sample_id)
-                rows.append(normalized)
-                source_counts[source_key] = source_counts.get(source_key, 0) + 1
-                created += 1
+                    if args.max_samples_per_source > 0:
+                        count_now = source_counts.get(source_key, 0)
+                        if count_now >= args.max_samples_per_source:
+                            skipped_by_source_cap += 1
+                            continue
 
-            used += 1
-            print(f"[ok] {doc.get('source_path')} -> {created} samples")
-        except Exception as exc:
-            failed += 1
-            message = redact_secret(str(exc), api_key)
-            print(f"[warn] {doc.get('source_path')} failed: {message}", file=sys.stderr)
+                    seen_ids.add(sample_id)
+                    rows.append(normalized)
+                    source_counts[source_key] = source_counts.get(source_key, 0) + 1
+                    created += 1
 
-        time.sleep(max(0.0, args.sleep_sec))
+                    if args.target_samples > 0 and len(rows) >= args.target_samples:
+                        break
+
+                successful_calls += 1
+                doc_had_success = True
+                if created == 0:
+                    no_new_streak += 1
+                else:
+                    no_new_streak = 0
+                print(f"[ok] {doc.get('source_path')} [call {call_index}/{max_calls}] -> {created} samples")
+            except Exception as exc:
+                failed_calls += 1
+                no_new_streak += 1
+                message = redact_secret(str(exc), api_key)
+                print(f"[warn] {doc.get('source_path')} [call {call_index}/{max_calls}] failed: {message}", file=sys.stderr)
+
+            if args.max_stall_calls > 0 and no_new_streak >= args.max_stall_calls:
+                stopped_by_stall += 1
+                print(
+                    f"[warn] Stopping {doc.get('source_path')} after {no_new_streak} consecutive no-new calls",
+                    file=sys.stderr,
+                )
+                break
+
+            time.sleep(max(0.0, args.sleep_sec))
+
+        if doc_had_success:
+            processed_docs += 1
+        else:
+            failed_docs += 1
 
     write_jsonl(output_path, rows)
 
@@ -462,9 +587,20 @@ def main() -> int:
         "selected_docs": len(selected_docs),
         "start_index": start_index,
         "end_index": end_index,
-        "attempted_docs": attempted,
-        "processed_docs": used,
-        "failed_docs": failed,
+        "attempted_docs": attempted_docs,
+        "processed_docs": processed_docs,
+        "failed_docs": failed_docs,
+        "attempted_calls": attempted_calls,
+        "successful_calls": successful_calls,
+        "failed_calls": failed_calls,
+        "max_calls_per_doc": args.max_calls_per_doc,
+        "target_samples": args.target_samples,
+        "max_stall_calls": args.max_stall_calls,
+        "source_path_equals": args.source_path_equals,
+        "source_path_contains": args.source_path_contains,
+        "focus_hint": args.focus_hint,
+        "prompt_salt": args.prompt_salt,
+        "stopped_by_stall": stopped_by_stall,
         "samples_written": len(rows),
         "max_samples_per_source": args.max_samples_per_source,
         "skipped_by_source_cap": skipped_by_source_cap,

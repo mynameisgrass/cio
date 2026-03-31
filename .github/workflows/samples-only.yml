@@ -48,6 +48,47 @@ on:
         description: Max accepted samples per source file
         required: false
         default: "2"
+      source_file:
+        description: Single workspace-relative file to include (for example ropguide.docx)
+        required: false
+        default: ""
+      only_source_files:
+        description: Process only source_file (ignore assets/compiler scan)
+        required: false
+        type: boolean
+        default: false
+      source_path_equals:
+        description: Distill only records with exact source_path match
+        required: false
+        default: ""
+      source_path_contains:
+        description: Distill only records whose source_path contains this text
+        required: false
+        default: ""
+      target_samples:
+        description: Stop after writing this many samples (0 = no target)
+        required: false
+        default: "0"
+      max_calls_per_doc:
+        description: Maximum Gemini calls per selected document
+        required: false
+        default: "1"
+      max_stall_calls:
+        description: Stop a doc after N consecutive calls with no new samples
+        required: false
+        default: "20"
+      focus_hint:
+        description: Extra prompt focus text (for example screen interaction)
+        required: false
+        default: ""
+      prompt_salt:
+        description: Salt to diversify outputs across runs/shards
+        required: false
+        default: ""
+      max_chars:
+        description: Max source chars sent to teacher per call
+        required: false
+        default: "6000"
       artifact_name:
         description: Artifact name for this run
         required: false
@@ -101,6 +142,14 @@ jobs:
             --output-dir ml/data/raw_ci
           )
 
+          if [ -n "${{ inputs.source_file }}" ]; then
+            EXTRACT_ARGS+=(--source-file "${{ inputs.source_file }}")
+          fi
+
+          if [ "${{ inputs.only_source_files }}" = "true" ]; then
+            EXTRACT_ARGS+=(--only-source-files)
+          fi
+
           if [ "${{ inputs.include_all_assets }}" = "true" ]; then
             EXTRACT_ARGS+=(--include-all)
           fi
@@ -124,6 +173,14 @@ jobs:
             --tasks-per-doc "${{ inputs.tasks_per_doc }}" \
             --temperature "${{ inputs.temperature }}" \
             --max-samples-per-source "${{ inputs.max_samples_per_source }}" \
+            --source-path-equals "${{ inputs.source_path_equals }}" \
+            --source-path-contains "${{ inputs.source_path_contains }}" \
+            --target-samples "${{ inputs.target_samples }}" \
+            --max-calls-per-doc "${{ inputs.max_calls_per_doc }}" \
+            --max-stall-calls "${{ inputs.max_stall_calls }}" \
+            --focus-hint "${{ inputs.focus_hint }}" \
+            --prompt-salt "${{ inputs.prompt_salt }}" \
+            --max-chars "${{ inputs.max_chars }}" \
             --sleep-sec "${{ inputs.sleep_sec }}" \
             --max-retries "${{ inputs.max_retries }}" \
             --retry-sec "${{ inputs.retry_sec }}" \
@@ -154,6 +211,9 @@ jobs:
               "processed_docs": data.get("processed_docs", 0),
               "failed_docs": data.get("failed_docs", 0),
               "selected_docs": data.get("selected_docs", 0),
+              "attempted_calls": data.get("attempted_calls", 0),
+              "successful_calls": data.get("successful_calls", 0),
+              "failed_calls": data.get("failed_calls", 0),
           }
 
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
@@ -186,11 +246,24 @@ jobs:
             echo "- Retry sec: ${{ inputs.retry_sec }}"
             echo "- JSON fix retries: ${{ inputs.json_fix_retries }}"
             echo "- Max samples/source: ${{ inputs.max_samples_per_source }}"
+            echo "- Source file: ${{ inputs.source_file }}"
+            echo "- Only source files: ${{ inputs.only_source_files }}"
+            echo "- Source path equals: ${{ inputs.source_path_equals }}"
+            echo "- Source path contains: ${{ inputs.source_path_contains }}"
+            echo "- Target samples: ${{ inputs.target_samples }}"
+            echo "- Max calls/doc: ${{ inputs.max_calls_per_doc }}"
+            echo "- Max stall calls: ${{ inputs.max_stall_calls }}"
+            echo "- Focus hint: ${{ inputs.focus_hint }}"
+            echo "- Prompt salt: ${{ inputs.prompt_salt }}"
+            echo "- Max chars: ${{ inputs.max_chars }}"
             echo "- Input docs: ${{ steps.stats.outputs.input_docs }}"
             echo "- Selected docs: ${{ steps.stats.outputs.selected_docs }}"
             echo "- Attempted docs: ${{ steps.stats.outputs.attempted_docs }}"
             echo "- Processed docs: ${{ steps.stats.outputs.processed_docs }}"
             echo "- Failed docs: ${{ steps.stats.outputs.failed_docs }}"
+            echo "- Attempted calls: ${{ steps.stats.outputs.attempted_calls }}"
+            echo "- Successful calls: ${{ steps.stats.outputs.successful_calls }}"
+            echo "- Failed calls: ${{ steps.stats.outputs.failed_calls }}"
             echo "- Samples generated: ${{ steps.count.outputs.samples }}"
             echo "- Artifact: ${{ inputs.artifact_name }}"
           } >> "$GITHUB_STEP_SUMMARY"

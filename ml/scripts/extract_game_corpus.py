@@ -82,6 +82,17 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Disable compiler source ingestion",
     )
+    parser.add_argument(
+        "--source-file",
+        action="append",
+        default=[],
+        help="Explicit source file path (workspace-relative). Can be repeated.",
+    )
+    parser.add_argument(
+        "--only-source-files",
+        action="store_true",
+        help="Process only files passed via --source-file",
+    )
     parser.add_argument("--min-chars", type=int, default=60, help="Minimum chars to keep a record")
     parser.add_argument("--verbose", action="store_true", help="Print per-file diagnostics")
     return parser.parse_args()
@@ -271,15 +282,28 @@ def main() -> int:
     keyword_file = (workspace / args.keyword_file).resolve()
 
     if not assets_dir.exists():
-        print(f"[error] Assets dir not found: {assets_dir}", file=sys.stderr)
-        return 1
+        if not args.only_source_files:
+            print(f"[error] Assets dir not found: {assets_dir}", file=sys.stderr)
+            return 1
 
     keywords = load_keywords(keyword_file)
 
     source_entries: list[tuple[str, Path]] = []
-    source_entries.extend(("assets", path) for path in collect_files(assets_dir))
-    if not args.no_compiler:
-        source_entries.extend(("compiler", path) for path in collect_files(compiler_dir))
+    if not args.only_source_files:
+        source_entries.extend(("assets", path) for path in collect_files(assets_dir))
+        if not args.no_compiler:
+            source_entries.extend(("compiler", path) for path in collect_files(compiler_dir))
+
+    for raw_path in args.source_file:
+        candidate = (workspace / raw_path).resolve()
+        if not candidate.exists() or not candidate.is_file():
+            print(f"[warn] source file not found or not a file: {raw_path}", file=sys.stderr)
+            continue
+        source_entries.append(("manual", candidate))
+
+    if args.only_source_files and not source_entries:
+        print("[error] --only-source-files is set but no valid --source-file was provided", file=sys.stderr)
+        return 1
 
     scanned = 0
     kept = 0

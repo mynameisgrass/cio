@@ -1,0 +1,160 @@
+name: Generate Ropguide 4000 Samples
+run-name: ropguide-${{ inputs.model }}-${{ inputs.target_samples }}-${{ github.run_number }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Gemini model name
+        required: false
+        default: gemini-flash-latest
+      target_samples:
+        description: Minimum samples required from ropguide.docx
+        required: false
+        default: "4000"
+      tasks_per_doc:
+        description: Samples requested per Gemini call
+        required: false
+        default: "8"
+      max_calls_per_doc:
+        description: Maximum Gemini calls on this single document
+        required: false
+        default: "2500"
+      max_stall_calls:
+        description: Stop if too many consecutive calls add zero new samples
+        required: false
+        default: "120"
+      temperature:
+        description: Sampling temperature
+        required: false
+        default: "0.45"
+      sleep_sec:
+        description: Delay between calls (seconds)
+        required: false
+        default: "0.08"
+      max_retries:
+        description: Retries per call
+        required: false
+        default: "2"
+      retry_sec:
+        description: Retry backoff base seconds
+        required: false
+        default: "0.8"
+      json_fix_retries:
+        description: JSON repair retries
+        required: false
+        default: "1"
+      max_chars:
+        description: Max source chars sent to teacher
+        required: false
+        default: "12000"
+      focus_hint:
+        description: Prompt focus text
+        required: false
+        default: "Uu tien bai tap thao tac man hinh: line_print, render.ddd4, buffer_clear, draw bitmap/line, key input, waitshift, menu text UI."
+      artifact_name:
+        description: Artifact name
+        required: false
+        default: generated-samples-ropguide-4k
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    environment: Production
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ml/requirements-ci.txt
+
+      - name: Validate API key secret
+        run: |
+          if [ -z "${GEMINI_API_KEY}" ]; then
+            echo "::error::Missing GEMINI_API_KEY secret in environment Production (or repository secrets)."
+            exit 1
+          fi
+
+      - name: Extract ropguide only
+        run: |
+          set -euo pipefail
+          python ml/scripts/extract_game_corpus.py \
+            --output-dir ml/data/raw_ropguide_ci \
+            --source-file ropguide.docx \
+            --only-source-files \
+            --min-chars 20
+
+      - name: Distill ropguide samples
+        run: |
+          set -euo pipefail
+          TARGET="${{ inputs.target_samples }}"
+          SOURCE_CAP=$((TARGET + 500))
+
+          python ml/scripts/distill_with_gemini.py \
+            --input ml/data/raw_ropguide_ci/game_corpus.jsonl \
+            --output ml/data/distill/sft_candidates_ropguide_4k.jsonl \
+            --model "${{ inputs.model }}" \
+            --max-docs 1 \
+            --source-path-equals ropguide.docx \
+            --tasks-per-doc "${{ inputs.tasks_per_doc }}" \
+            --temperature "${{ inputs.temperature }}" \
+            --max-samples-per-source "${SOURCE_CAP}" \
+            --target-samples "${TARGET}" \
+            --max-calls-per-doc "${{ inputs.max_calls_per_doc }}" \
+            --max-stall-calls "${{ inputs.max_stall_calls }}" \
+            --focus-hint "${{ inputs.focus_hint }}" \
+            --prompt-salt "run-${GITHUB_RUN_ID}-attempt-${GITHUB_RUN_ATTEMPT}" \
+            --max-chars "${{ inputs.max_chars }}" \
+            --sleep-sec "${{ inputs.sleep_sec }}" \
+            --max-retries "${{ inputs.max_retries }}" \
+            --retry-sec "${{ inputs.retry_sec }}" \
+            --json-fix-retries "${{ inputs.json_fix_retries }}"
+
+      - name: Count and enforce minimum
+        id: count
+        run: |
+          set -euo pipefail
+          count=$(wc -l < ml/data/distill/sft_candidates_ropguide_4k.jsonl || echo 0)
+          target="${{ inputs.target_samples }}"
+          echo "samples=${count}" >> "$GITHUB_OUTPUT"
+          if [ "$count" -lt "$target" ]; then
+            echo "::error::Generated ${count} samples, below required minimum ${target}."
+            exit 1
+          fi
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: |
+            ml/data/raw_ropguide_ci/game_corpus.jsonl
+            ml/data/raw_ropguide_ci/game_corpus_stats.json
+            ml/data/distill/sft_candidates_ropguide_4k.jsonl
+            ml/data/distill/sft_candidates_ropguide_4k.stats.json
+
+      - name: Write summary
+        run: |
+          {
+            echo "## Ropguide Distillation Complete"
+            echo ""
+            echo "- Source file: ropguide.docx"
+            echo "- Model: ${{ inputs.model }}"
+            echo "- Target samples: ${{ inputs.target_samples }}"
+            echo "- Tasks per call: ${{ inputs.tasks_per_doc }}"
+            echo "- Max calls/doc: ${{ inputs.max_calls_per_doc }}"
+            echo "- Max stall calls: ${{ inputs.max_stall_calls }}"
+            echo "- Focus hint: ${{ inputs.focus_hint }}"
+            echo "- Samples generated: ${{ steps.count.outputs.samples }}"
+            echo "- Artifact: ${{ inputs.artifact_name }}"
+          } >> "$GITHUB_STEP_SUMMARY"
