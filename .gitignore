@@ -25,3 +25,21 @@ ml/data/distill*/
 ml/data/processed*/
 ml/output/
 ml/runs/
+
+# Local Python environments
+.venv/
+.venv-*/
+venv/
+
+# Local editor metadata
+.vscode/
+.idea/
+
+# Large local bundles and archives
+compiler/
+*.zip
+
+# Generated local outputs
+generated-samples*/
+current.md
+_tmp_modelsmsvc_upload/

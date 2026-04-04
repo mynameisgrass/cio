@@ -8,7 +8,7 @@ Trang web tổng hợp tài liệu cộng đồng từ các tệp HTML export tr
 - Index attachment (PDF/DOCX/TXT/image...) trong `guidesnpdf/assets`
 - Map thông tin owner + contributor (mention) cho từng tệp
 - Trang contributors hiển theo mẫu: `File -> Owner + Contributors`
-- Trang `Pool` có fuzzy search + lọc tag + sắp xếp thông minh (AI gợi ý)
+- Trang `Pool` có fuzzy search + lọc tag + sắp xếp thông minh (ưu tiên metadata)
 - Copy `guidesnpdf/assets` sang `public/assets`
 - Copy HTML gốc sang `public/archive`
 - Có fallback avatar cho message thiếu ảnh avatar
@@ -87,16 +87,24 @@ Nếu cần lưu file lớn nhiều:
 - Mỗi lần thêm/sửa export HTML hoặc assets, chạy lại `npm run prepare:data`
 - Nếu đổi quy tắc parser, sửa trong `scripts/build-data.mjs`
 
-## Train AI cho game-program
+## Resources
 
-Repo da co pipeline train model chuyen cho calculator-game tai thu muc `ml/`.
+Trang GUI theo phong cach GitHub:
 
-Luot chay nhanh:
+- `/resources`: danh sach resource
+- `/resources/[id]`: xem release + file tree da parse tu GitHub API
 
-1. `pip install -r ml/requirements.txt`
-2. `python ml/scripts/extract_game_corpus.py`
-3. `python ml/scripts/distill_with_gemini.py` (can `GEMINI_API_KEY`)
-4. `python ml/scripts/build_sft_dataset.py`
-5. `python ml/train/train_qlora.py`
+Repo đang theo dõi:
 
-Xem huong dan day du tai `ml/README.md`.
+- `https://github.com/telecomadm1145/CasioEmuMsvc`
+- `https://github.com/mynameisgrass/modelsmsvc`
+
+GitHub API để xem release + file:
+
+1. Danh sách release:
+	`https://api.github.com/repos/telecomadm1145/CasioEmuMsvc/releases`
+2. Release mới nhất:
+	`https://api.github.com/repos/telecomadm1145/CasioEmuMsvc/releases/latest`
+3. Danh sách file/thư mục ở repo root:
+	`https://api.github.com/repos/telecomadm1145/CasioEmuMsvc/contents`
+

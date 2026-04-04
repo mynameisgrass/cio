@@ -1,0 +1,26 @@
+{
+  "repos": [
+    {
+      "id": "casio-emu-msvc",
+      "name": "CasioEmuMsvc",
+      "description": "Theo doi release va file source cua telecomadm1145/CasioEmuMsvc",
+      "repoUrl": "https://github.com/telecomadm1145/CasioEmuMsvc",
+      "api": {
+        "releases": "https://api.github.com/repos/telecomadm1145/CasioEmuMsvc/releases",
+        "latestRelease": "https://api.github.com/repos/telecomadm1145/CasioEmuMsvc/releases/latest",
+        "contents": "https://api.github.com/repos/telecomadm1145/CasioEmuMsvc/contents"
+      }
+    },
+    {
+      "id": "modelsmsvc",
+      "name": "modelsmsvc",
+      "description": "Kho models da upload de moi nguoi xem source va tai ve",
+      "repoUrl": "https://github.com/mynameisgrass/modelsmsvc",
+      "api": {
+        "releases": "https://api.github.com/repos/mynameisgrass/modelsmsvc/releases",
+        "latestRelease": "https://api.github.com/repos/mynameisgrass/modelsmsvc/releases/latest",
+        "contents": "https://api.github.com/repos/mynameisgrass/modelsmsvc/contents"
+      }
+    }
+  ]
+}

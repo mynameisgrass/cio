@@ -135,7 +135,7 @@ export default function PoolBrowser({ files, tags, initialTag, initialQuery }) {
             value={sortMode}
             onChange={(event) => setSortMode(event.target.value)}
           >
-            <option value="smart">Thông minh (AI gợi ý)</option>
+            <option value="smart">Thông minh (ưu tiên metadata)</option>
             <option value="name-asc">Tên A-Z</option>
             <option value="name-desc">Tên Z-A</option>
           </select>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCatalog } from "../lib/data";
+import { getCatalog, getResources } from "../lib/data";
 
 function formatNumber(value) {
   return new Intl.NumberFormat("vi-VN").format(value || 0);
@@ -7,6 +7,7 @@ function formatNumber(value) {
 
 export default function HomePage() {
   const catalog = getCatalog();
+  const resources = getResources();
   const files = catalog.files || [];
   const channels = catalog.channels || [];
   const tags = (catalog.tags || []).filter((tag) => tag.fileCount > 0);
@@ -128,6 +129,46 @@ export default function HomePage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="stack gap-md reveal delay-2">
+        <div className="section-head">
+          <h2>Resources theo dõi repo</h2>
+          <Link href="/resources">Mở trang Resources</Link>
+        </div>
+
+        <div className="card-grid">
+          {resources.map((resource) => (
+            <article key={resource.id} className="file-card">
+              <div className="file-card-head">
+                <h3>{resource.name}</h3>
+                <span className="badge">GitHub</span>
+              </div>
+
+              <p>{resource.description || "Không có mô tả"}</p>
+
+              <div className="file-card-actions">
+                <Link href={`/resources/${resource.id}`}>GUI Browse</Link>
+                <a href={resource.repoUrl} target="_blank" rel="noreferrer">
+                  Repo
+                </a>
+                <a href={resource.api?.releases} target="_blank" rel="noreferrer">
+                  API Releases
+                </a>
+                <a href={resource.api?.contents} target="_blank" rel="noreferrer">
+                  API Files
+                </a>
+              </div>
+            </article>
+          ))}
+
+          {!resources.length ? (
+            <article className="file-card">
+              <h3>Chưa có resource nào</h3>
+              <p>Thêm repo theo dõi vào data/resources.json để hiển thị tại đây.</p>
+            </article>
+          ) : null}
         </div>
       </section>
 

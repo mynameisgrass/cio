@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
             <Link href="/">Thư viện</Link>
             <Link href="/pool">Pool</Link>
             <Link href="/contributors">Đóng góp</Link>
+            <Link href="/resources">Resources</Link>
             <Link href="/admin">Admin</Link>
           </nav>
         </header>

@@ -465,6 +465,76 @@ h3 {
   margin-top: 0;
 }
 
+.repo-grid,
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.repo-stat,
+.release-card,
+.browser-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.8rem;
+  background: rgba(248, 255, 250, 0.95);
+}
+
+.repo-stat span {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+}
+
+.repo-stat strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.release-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.release-card p {
+  margin: 0.45rem 0;
+  color: var(--ink-soft);
+}
+
+.breadcrumb-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.breadcrumb-sep {
+  opacity: 0.75;
+}
+
+.repo-table {
+  min-width: 740px;
+}
+
+.api-state {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: rgba(246, 255, 247, 0.9);
+}
+
+.api-error {
+  border-color: rgba(190, 80, 80, 0.45);
+  background: rgba(255, 243, 243, 0.95);
+  color: #7d2e2e;
+}
+
 .reveal {
   animation: riseIn 420ms ease-out both;
 }
@@ -492,7 +562,9 @@ h3 {
   .hero,
   .card-grid,
   .channel-grid,
-  .admin-grid {
+  .admin-grid,
+  .repo-grid,
+  .release-grid {
     grid-template-columns: 1fr;
   }
 
