@@ -53,6 +53,18 @@ function buildResourcePathHref(resourceId, pathValue) {
   return `/resources/${resourceId}?path=${encodeURIComponent(path)}`;
 }
 
+function buildFolderZipHref(resourceId, pathValue) {
+  const path = normalizeResourcePath(pathValue);
+  if (!path) {
+    return `/api/resources/download?resourceId=${encodeURIComponent(resourceId)}`;
+  }
+  return `/api/resources/download?resourceId=${encodeURIComponent(resourceId)}&path=${encodeURIComponent(path)}`;
+}
+
+function buildRepoZipHref(resourceId) {
+  return `/api/resources/download?resourceId=${encodeURIComponent(resourceId)}&type=repo`;
+}
+
 export function generateStaticParams() {
   return getResources().map((resource) => ({ id: resource.id }));
 }
@@ -112,6 +124,9 @@ export default async function ResourceDetailPage({ params, searchParams }) {
         <div className="hero-actions">
           <a href={resource.repoUrl} target="_blank" rel="noreferrer" className="button button-main">
             Mo tren GitHub
+          </a>
+          <a href={buildRepoZipHref(resource.id)} className="button button-ghost">
+            Download repo ZIP
           </a>
           <a href={resource.api.releases} target="_blank" rel="noreferrer" className="button button-ghost">
             API Releases
@@ -208,6 +223,9 @@ export default async function ResourceDetailPage({ params, searchParams }) {
       <section className="stack gap-md reveal delay-2">
         <div className="section-head">
           <h2>Source browser</h2>
+          <a href={buildFolderZipHref(resource.id, activePath)} className="button button-ghost">
+            Download folder ZIP
+          </a>
         </div>
 
         <div className="browser-card">
@@ -258,7 +276,11 @@ export default async function ResourceDetailPage({ params, searchParams }) {
                       <td data-label="Size">{formatBytes(entry.size)}</td>
                       <td data-label="Open">
                         {entry.type === "dir" ? (
-                          <Link href={buildResourcePathHref(resource.id, entry.path)}>Browse</Link>
+                          <>
+                            <Link href={buildResourcePathHref(resource.id, entry.path)}>Browse</Link>
+                            {" | "}
+                            <a href={buildFolderZipHref(resource.id, entry.path)}>ZIP</a>
+                          </>
                         ) : (
                           <>
                             <a href={entry.htmlUrl} target="_blank" rel="noreferrer">

@@ -93,6 +93,8 @@ Trang GUI theo phong cach GitHub:
 
 - `/resources`: danh sach resource
 - `/resources/[id]`: xem release + file tree da parse tu GitHub API
+- Download ZIP toan repo: `/api/resources/download?resourceId=<id>&type=repo`
+- Download ZIP theo folder hien tai: `/api/resources/download?resourceId=<id>&path=<folder-path>`
 
 Repo đang theo dõi:
 
